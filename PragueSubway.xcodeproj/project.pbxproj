@@ -19,6 +19,9 @@
 		7D2888221AE403C3000FDB46 /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888211AE403C3000FDB46 /* Station.m */; };
 		7D2888251AE403C4000FDB46 /* Departure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888241AE403C4000FDB46 /* Departure.m */; };
 		7D2888281AE403C4000FDB46 /* SubwayLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888271AE403C4000FDB46 /* SubwayLine.m */; };
+		7D28882C1AE406B6000FDB46 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D28882B1AE406B6000FDB46 /* DataService.m */; };
+		7D28882F1AE408EE000FDB46 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D28882E1AE408EE000FDB46 /* UIKit.framework */; };
+		7D2888311AE40914000FDB46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2888301AE40914000FDB46 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,10 @@
 		7D2888241AE403C4000FDB46 /* Departure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Departure.m; sourceTree = "<group>"; };
 		7D2888261AE403C4000FDB46 /* SubwayLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubwayLine.h; sourceTree = "<group>"; };
 		7D2888271AE403C4000FDB46 /* SubwayLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubwayLine.m; sourceTree = "<group>"; };
+		7D28882A1AE406B6000FDB46 /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
+		7D28882B1AE406B6000FDB46 /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
+		7D28882E1AE408EE000FDB46 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7D2888301AE40914000FDB46 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D2888311AE40914000FDB46 /* Foundation.framework in Frameworks */,
+				7D28882F1AE408EE000FDB46 /* UIKit.framework in Frameworks */,
 				7D28881F1AE40241000FDB46 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,7 +86,9 @@
 		7D2887CE1AE3F36E000FDB46 = {
 			isa = PBXGroup;
 			children = (
+				7D2888301AE40914000FDB46 /* Foundation.framework */,
 				7D2887D91AE3F36E000FDB46 /* PragueSubway */,
+				7D28882E1AE408EE000FDB46 /* UIKit.framework */,
 				7D2888141AE401E1000FDB46 /* CoreData.framework */,
 				7D2887F61AE3F36E000FDB46 /* PragueSubwayTests */,
 				7D2887D81AE3F36E000FDB46 /* Products */,
@@ -99,6 +110,7 @@
 				7D2888121AE40161000FDB46 /* Controller */,
 				7D2888111AE40152000FDB46 /* View */,
 				7D2888131AE4016D000FDB46 /* Data */,
+				7D2888291AE40670000FDB46 /* Service */,
 				7D2887DE1AE3F36E000FDB46 /* AppDelegate.h */,
 				7D2887DF1AE3F36E000FDB46 /* AppDelegate.m */,
 				7D2887EA1AE3F36E000FDB46 /* Images.xcassets */,
@@ -163,6 +175,15 @@
 				7D2887E11AE3F36E000FDB46 /* PragueSubway.xcdatamodeld */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		7D2888291AE40670000FDB46 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7D28882A1AE406B6000FDB46 /* DataService.h */,
+				7D28882B1AE406B6000FDB46 /* DataService.m */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +289,7 @@
 				7D2887E01AE3F36E000FDB46 /* AppDelegate.m in Sources */,
 				7D2888221AE403C3000FDB46 /* Station.m in Sources */,
 				7D2887E31AE3F36E000FDB46 /* PragueSubway.xcdatamodeld in Sources */,
+				7D28882C1AE406B6000FDB46 /* DataService.m in Sources */,
 				7D2887E61AE3F36E000FDB46 /* ViewController.m in Sources */,
 				7D2888251AE403C4000FDB46 /* Departure.m in Sources */,
 				7D2887DD1AE3F36E000FDB46 /* main.m in Sources */,
