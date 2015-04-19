@@ -14,7 +14,7 @@
 @interface Departure : NSManagedObject
 
 @property (nonatomic, retain) NSString * day;
-@property (nonatomic, retain) NSNumber * time;
+@property (nonatomic) double time;
 @property (nonatomic, retain) Station *directionStation;
 @property (nonatomic, retain) Station *station;
 

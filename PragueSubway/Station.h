@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class NSManagedObject;
+@class Departure, SubwayLine;
 
 @interface Station : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * drawPosX;
-@property (nonatomic, retain) NSNumber * drawPosY;
+@property (nonatomic) float drawPosX;
+@property (nonatomic) float drawPosY;
 @property (nonatomic, retain) NSDecimalNumber * latitude;
 @property (nonatomic, retain) NSDecimalNumber * longitude;
 @property (nonatomic, retain) NSString * name;
@@ -25,24 +25,24 @@
 
 @interface Station (CoreDataGeneratedAccessors)
 
-- (void)addDeparturesObject:(NSManagedObject *)value;
-- (void)removeDeparturesObject:(NSManagedObject *)value;
+- (void)addDeparturesObject:(Departure *)value;
+- (void)removeDeparturesObject:(Departure *)value;
 - (void)addDepartures:(NSSet *)values;
 - (void)removeDepartures:(NSSet *)values;
 
-- (void)addDeparturesDirectStationObject:(NSManagedObject *)value;
-- (void)removeDeparturesDirectStationObject:(NSManagedObject *)value;
+- (void)addDeparturesDirectStationObject:(Departure *)value;
+- (void)removeDeparturesDirectStationObject:(Departure *)value;
 - (void)addDeparturesDirectStation:(NSSet *)values;
 - (void)removeDeparturesDirectStation:(NSSet *)values;
 
-- (void)insertObject:(NSManagedObject *)value inLineAtIndex:(NSUInteger)idx;
+- (void)insertObject:(SubwayLine *)value inLineAtIndex:(NSUInteger)idx;
 - (void)removeObjectFromLineAtIndex:(NSUInteger)idx;
 - (void)insertLine:(NSArray *)value atIndexes:(NSIndexSet *)indexes;
 - (void)removeLineAtIndexes:(NSIndexSet *)indexes;
-- (void)replaceObjectInLineAtIndex:(NSUInteger)idx withObject:(NSManagedObject *)value;
+- (void)replaceObjectInLineAtIndex:(NSUInteger)idx withObject:(SubwayLine *)value;
 - (void)replaceLineAtIndexes:(NSIndexSet *)indexes withLine:(NSArray *)values;
-- (void)addLineObject:(NSManagedObject *)value;
-- (void)removeLineObject:(NSManagedObject *)value;
+- (void)addLineObject:(SubwayLine *)value;
+- (void)removeLineObject:(SubwayLine *)value;
 - (void)addLine:(NSOrderedSet *)values;
 - (void)removeLine:(NSOrderedSet *)values;
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "Station.h"
+#import "Departure.h"
+#import "SubwayLine.h"
 
 
 @implementation Station
