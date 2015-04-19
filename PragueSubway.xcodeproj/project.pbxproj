@@ -60,6 +60,8 @@
 		7D28882B1AE406B6000FDB46 /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
 		7D28882E1AE408EE000FDB46 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7D2888301AE40914000FDB46 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7D2888321AE40BAC000FDB46 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		7D2888351AE40D46000FDB46 /* PragueSubway-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PragueSubway-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +88,8 @@
 		7D2887CE1AE3F36E000FDB46 = {
 			isa = PBXGroup;
 			children = (
-				7D2888301AE40914000FDB46 /* Foundation.framework */,
 				7D2887D91AE3F36E000FDB46 /* PragueSubway */,
+				7D2888301AE40914000FDB46 /* Foundation.framework */,
 				7D28882E1AE408EE000FDB46 /* UIKit.framework */,
 				7D2888141AE401E1000FDB46 /* CoreData.framework */,
 				7D2887F61AE3F36E000FDB46 /* PragueSubwayTests */,
@@ -122,8 +124,10 @@
 		7D2887DA1AE3F36E000FDB46 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7D2888351AE40D46000FDB46 /* PragueSubway-Prefix.pch */,
 				7D2887DB1AE3F36E000FDB46 /* Info.plist */,
 				7D2887DC1AE3F36E000FDB46 /* main.m */,
+				7D2888321AE40BAC000FDB46 /* Constants.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -419,6 +423,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PragueSubway/PragueSubway-Prefix.pch";
 				INFOPLIST_FILE = PragueSubway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -429,6 +435,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PragueSubway/PragueSubway-Prefix.pch";
 				INFOPLIST_FILE = PragueSubway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

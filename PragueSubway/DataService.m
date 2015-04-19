@@ -112,6 +112,7 @@
     NSError *error;
     NSArray *fetchedArray = [self.managedObjectContext executeFetchRequest:request error:&error];
     if( error ){
+        TRC_ERR(@"%@", error);
         return @[];
     }
     return fetchedArray;
