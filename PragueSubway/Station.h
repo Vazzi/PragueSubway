@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <UIKit/UIKit.h>
 
 @class Departure, SubwayLine;
 
@@ -21,6 +22,9 @@
 @property (nonatomic, retain) NSSet *departures;
 @property (nonatomic, retain) NSSet *departuresDirectStation;
 @property (nonatomic, retain) NSOrderedSet *line;
+
+- (CGPoint)getdrawPoint;
+
 @end
 
 @interface Station (CoreDataGeneratedAccessors)
