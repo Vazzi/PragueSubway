@@ -83,14 +83,12 @@
 		7D2887D91AE3F36E000FDB46 /* PragueSubway */ = {
 			isa = PBXGroup;
 			children = (
+				7D2888121AE40161000FDB46 /* Controller */,
+				7D2888111AE40152000FDB46 /* View */,
+				7D2888131AE4016D000FDB46 /* Data */,
 				7D2887DE1AE3F36E000FDB46 /* AppDelegate.h */,
 				7D2887DF1AE3F36E000FDB46 /* AppDelegate.m */,
-				7D2887E41AE3F36E000FDB46 /* ViewController.h */,
-				7D2887E51AE3F36E000FDB46 /* ViewController.m */,
-				7D2887E71AE3F36E000FDB46 /* Main.storyboard */,
 				7D2887EA1AE3F36E000FDB46 /* Images.xcassets */,
-				7D2887EC1AE3F36E000FDB46 /* LaunchScreen.xib */,
-				7D2887E11AE3F36E000FDB46 /* PragueSubway.xcdatamodeld */,
 				7D2887DA1AE3F36E000FDB46 /* Supporting Files */,
 			);
 			path = PragueSubway;
@@ -120,6 +118,32 @@
 				7D2887F81AE3F36E000FDB46 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7D2888111AE40152000FDB46 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7D2887E71AE3F36E000FDB46 /* Main.storyboard */,
+				7D2887EC1AE3F36E000FDB46 /* LaunchScreen.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		7D2888121AE40161000FDB46 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7D2887E41AE3F36E000FDB46 /* ViewController.h */,
+				7D2887E51AE3F36E000FDB46 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		7D2888131AE4016D000FDB46 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7D2887E11AE3F36E000FDB46 /* PragueSubway.xcdatamodeld */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,6 +444,7 @@
 				7D2887FF1AE3F36E000FDB46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D2888001AE3F36E000FDB46 /* Build configuration list for PBXNativeTarget "PragueSubwayTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +453,7 @@
 				7D2888021AE3F36E000FDB46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
