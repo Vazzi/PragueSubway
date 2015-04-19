@@ -98,7 +98,24 @@
     }
 }
 
+#pragma mark - Data manupulation methods
 
+/*! Search records.
+ \param entityString class description string
+ \param predicate
+ \return Array with finded records
+ */
+- (NSArray *)recordsIn:(NSString *) entityString predicate:(NSPredicate *)predicate
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:entityString];
+    [request setPredicate:predicate];
+    NSError *error;
+    NSArray *fetchedArray = [self.managedObjectContext executeFetchRequest:request error:&error];
+    if( error ){
+        return @[];
+    }
+    return fetchedArray;
+}
 
 
 @end
