@@ -8,8 +8,11 @@
 
 #import  "DataService.h"
 
+@class Station;
+
 @interface DataService (Station)
 
+- (Station *)createStationWithDict:(NSDictionary *)data;
 - (NSArray *)stationsArray;
 
 @end

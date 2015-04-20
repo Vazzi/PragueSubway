@@ -12,6 +12,13 @@
 
 @implementation DataService (Station)
 
+-(Station *)createStationWithDict:(NSDictionary *)data {
+    NSString *entityString = [[Station class] description];
+    Station *record = [NSEntityDescription insertNewObjectForEntityForName:entityString inManagedObjectContext:self.managedObjectContext];
+    [record setValuesForKeysWithDictionary:data];
+    return record;
+}
+
 -(NSArray *)stationsArray {
     NSString *entityString = [[Station class] description];
     return [self recordsIn:entityString predicate:nil];
