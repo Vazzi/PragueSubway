@@ -22,6 +22,7 @@
 		7D28882C1AE406B6000FDB46 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D28882B1AE406B6000FDB46 /* DataService.m */; };
 		7D28882F1AE408EE000FDB46 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D28882E1AE408EE000FDB46 /* UIKit.framework */; };
 		7D2888311AE40914000FDB46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2888301AE40914000FDB46 /* Foundation.framework */; };
+		7DAE6A2D1AE4DD890062054C /* DataService+Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE6A2C1AE4DD890062054C /* DataService+Station.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		7D2888301AE40914000FDB46 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7D2888321AE40BAC000FDB46 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		7D2888351AE40D46000FDB46 /* PragueSubway-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PragueSubway-Prefix.pch"; sourceTree = "<group>"; };
+		7DAE6A2B1AE4DD890062054C /* DataService+Station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataService+Station.h"; sourceTree = "<group>"; };
+		7DAE6A2C1AE4DD890062054C /* DataService+Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataService+Station.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +189,8 @@
 			children = (
 				7D28882A1AE406B6000FDB46 /* DataService.h */,
 				7D28882B1AE406B6000FDB46 /* DataService.m */,
+				7DAE6A2B1AE4DD890062054C /* DataService+Station.h */,
+				7DAE6A2C1AE4DD890062054C /* DataService+Station.m */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				7D2888251AE403C4000FDB46 /* Departure.m in Sources */,
 				7D2887DD1AE3F36E000FDB46 /* main.m in Sources */,
 				7D2888281AE403C4000FDB46 /* SubwayLine.m in Sources */,
+				7DAE6A2D1AE4DD890062054C /* DataService+Station.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
