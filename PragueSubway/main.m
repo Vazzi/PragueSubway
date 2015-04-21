@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "DataService+InitialData.h"
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
+        
+        [[DataService sharedService] createAndSaveInitialData];
+        
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
