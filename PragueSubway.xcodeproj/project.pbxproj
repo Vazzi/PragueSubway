@@ -23,6 +23,7 @@
 		7D28882F1AE408EE000FDB46 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D28882E1AE408EE000FDB46 /* UIKit.framework */; };
 		7D2888311AE40914000FDB46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2888301AE40914000FDB46 /* Foundation.framework */; };
 		7D3725231AE6312E00E30D21 /* DataService+SubwayLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3725221AE6312E00E30D21 /* DataService+SubwayLine.m */; };
+		7D3725261AE6327700E30D21 /* DataService+Departure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3725251AE6327700E30D21 /* DataService+Departure.m */; };
 		7DAE6A2D1AE4DD890062054C /* DataService+Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE6A2C1AE4DD890062054C /* DataService+Station.m */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,8 @@
 		7D2888351AE40D46000FDB46 /* PragueSubway-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PragueSubway-Prefix.pch"; sourceTree = "<group>"; };
 		7D3725211AE6312E00E30D21 /* DataService+SubwayLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataService+SubwayLine.h"; sourceTree = "<group>"; };
 		7D3725221AE6312E00E30D21 /* DataService+SubwayLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataService+SubwayLine.m"; sourceTree = "<group>"; };
+		7D3725241AE6327700E30D21 /* DataService+Departure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataService+Departure.h"; sourceTree = "<group>"; };
+		7D3725251AE6327700E30D21 /* DataService+Departure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataService+Departure.m"; sourceTree = "<group>"; };
 		7DAE6A2B1AE4DD890062054C /* DataService+Station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataService+Station.h"; sourceTree = "<group>"; };
 		7DAE6A2C1AE4DD890062054C /* DataService+Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataService+Station.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,6 +196,8 @@
 				7D28882A1AE406B6000FDB46 /* DataService.h */,
 				7D28882B1AE406B6000FDB46 /* DataService.m */,
 				7DAE6A2B1AE4DD890062054C /* DataService+Station.h */,
+				7D3725241AE6327700E30D21 /* DataService+Departure.h */,
+				7D3725251AE6327700E30D21 /* DataService+Departure.m */,
 				7DAE6A2C1AE4DD890062054C /* DataService+Station.m */,
 				7D3725211AE6312E00E30D21 /* DataService+SubwayLine.h */,
 				7D3725221AE6312E00E30D21 /* DataService+SubwayLine.m */,
@@ -307,6 +312,7 @@
 				7D28882C1AE406B6000FDB46 /* DataService.m in Sources */,
 				7D2887E61AE3F36E000FDB46 /* ViewController.m in Sources */,
 				7D2888251AE403C4000FDB46 /* Departure.m in Sources */,
+				7D3725261AE6327700E30D21 /* DataService+Departure.m in Sources */,
 				7D2887DD1AE3F36E000FDB46 /* main.m in Sources */,
 				7D2888281AE403C4000FDB46 /* SubwayLine.m in Sources */,
 				7DAE6A2D1AE4DD890062054C /* DataService+Station.m in Sources */,
