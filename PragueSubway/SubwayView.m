@@ -54,7 +54,80 @@
     
     for (int i = 1; i < line.stations.count; i++) {
         station = line.stations[i];
-        CGContextAddLineToPoint(context, station.drawPosX, station.drawPosY);
+        if ([station.name isEqualToString:@"Můstek"] && [line.name isEqualToString:@"A"]) {
+            Station *stationBefore = line.stations[i-1];
+            CGContextAddCurveToPoint(context,
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     stationBefore.drawPosY,
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     stationBefore.drawPosY,
+                                     station.drawPosX, station.drawPosY);
+        } else if ([station.name isEqualToString:@"Můstek"] && [line.name isEqualToString:@"B"]) {
+            Station *stationBefore = line.stations[i-1];
+            CGContextAddCurveToPoint(context,
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     stationBefore.drawPosY,
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     stationBefore.drawPosY,
+                                     station.drawPosX, station.drawPosY);
+        
+        } else if ([station.name isEqualToString:@"Náměstí republiky"]) {
+            Station *stationBefore = line.stations[i-1];
+            CGContextAddCurveToPoint(context,
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     station.drawPosY,
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     station.drawPosY,
+                                     station.drawPosX, station.drawPosY);
+            
+        } else if ([station.name isEqualToString:@"Muzeum"] && [line.name isEqualToString:@"C"]) {
+            Station *stationBefore = line.stations[i-1];
+            CGContextAddCurveToPoint(context,
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     stationBefore.drawPosY,
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     stationBefore.drawPosY,
+                                     station.drawPosX, station.drawPosY);
+            
+        } else if ([station.name isEqualToString:@"Florenc"] && [line.name isEqualToString:@"B"]) {
+            Station *stationBefore = line.stations[i-1];
+            CGContextAddCurveToPoint(context,
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     stationBefore.drawPosY,
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     stationBefore.drawPosY,
+                                     station.drawPosX, station.drawPosY);
+            
+        } else if ([station.name isEqualToString:@"Vltavská"]) {
+            Station *stationBefore = line.stations[i-1];
+            CGContextAddCurveToPoint(context,
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     station.drawPosY,
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     station.drawPosY,
+                                     station.drawPosX, station.drawPosY);
+            
+        } else if ([station.name isEqualToString:@"Křižíkova"]) {
+            Station *stationBefore = line.stations[i-1];
+            CGContextAddCurveToPoint(context,
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     station.drawPosY,
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     station.drawPosY,
+                                     station.drawPosX, station.drawPosY);
+            
+        }else if ([station.name isEqualToString:@"Náměstí Míru"]) {
+            Station *stationBefore = line.stations[i-1];
+            CGContextAddCurveToPoint(context,
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     station.drawPosY,
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     station.drawPosY,
+                                     station.drawPosX, station.drawPosY);
+            
+        } else {
+            CGContextAddLineToPoint(context, station.drawPosX, station.drawPosY);
+        }
 
     }
     CGContextDrawPath(context, kCGPathStroke);
