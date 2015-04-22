@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "SubwayView.h"
 
 @interface ViewController ()
+
+@property (strong, nonatomic) SubwayView *subwayView;
 
 @end
 
@@ -16,7 +19,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.subwayView = [[SubwayView alloc] initWithFrame:self.view.bounds];
+    [self.subwayView setBackgroundColor:[UIColor whiteColor]];
+    [self.view addSubview:self.subwayView];
+    
+    [((UIScrollView *)self.view) setContentSize:self.subwayView.frame.size];
+
 }
 
 - (void)didReceiveMemoryWarning {

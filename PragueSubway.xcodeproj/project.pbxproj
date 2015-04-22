@@ -26,6 +26,7 @@
 		7D3725261AE6327700E30D21 /* DataService+Departure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3725251AE6327700E30D21 /* DataService+Departure.m */; };
 		7D37252D1AE66CBE00E30D21 /* DataService+InitialData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D37252C1AE66CBE00E30D21 /* DataService+InitialData.m */; };
 		7DAE6A2D1AE4DD890062054C /* DataService+Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE6A2C1AE4DD890062054C /* DataService+Station.m */; };
+		7DBB60081AE78FE5007C6B2A /* SubwayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB60071AE78FE5007C6B2A /* SubwayView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		7D37252C1AE66CBE00E30D21 /* DataService+InitialData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataService+InitialData.m"; sourceTree = "<group>"; };
 		7DAE6A2B1AE4DD890062054C /* DataService+Station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataService+Station.h"; sourceTree = "<group>"; };
 		7DAE6A2C1AE4DD890062054C /* DataService+Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataService+Station.m"; sourceTree = "<group>"; };
+		7DBB60061AE78FE5007C6B2A /* SubwayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubwayView.h; sourceTree = "<group>"; };
+		7DBB60071AE78FE5007C6B2A /* SubwayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubwayView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +178,8 @@
 			children = (
 				7D2887E41AE3F36E000FDB46 /* ViewController.h */,
 				7D2887E51AE3F36E000FDB46 /* ViewController.m */,
+				7DBB60061AE78FE5007C6B2A /* SubwayView.h */,
+				7DBB60071AE78FE5007C6B2A /* SubwayView.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -199,9 +204,9 @@
 				7D28882A1AE406B6000FDB46 /* DataService.h */,
 				7D28882B1AE406B6000FDB46 /* DataService.m */,
 				7DAE6A2B1AE4DD890062054C /* DataService+Station.h */,
+				7DAE6A2C1AE4DD890062054C /* DataService+Station.m */,
 				7D3725241AE6327700E30D21 /* DataService+Departure.h */,
 				7D3725251AE6327700E30D21 /* DataService+Departure.m */,
-				7DAE6A2C1AE4DD890062054C /* DataService+Station.m */,
 				7D3725211AE6312E00E30D21 /* DataService+SubwayLine.h */,
 				7D3725221AE6312E00E30D21 /* DataService+SubwayLine.m */,
 				7D37252B1AE66CBE00E30D21 /* DataService+InitialData.h */,
@@ -311,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D2887E01AE3F36E000FDB46 /* AppDelegate.m in Sources */,
+				7DBB60081AE78FE5007C6B2A /* SubwayView.m in Sources */,
 				7D2888221AE403C3000FDB46 /* Station.m in Sources */,
 				7D37252D1AE66CBE00E30D21 /* DataService+InitialData.m in Sources */,
 				7D3725231AE6312E00E30D21 /* DataService+SubwayLine.m in Sources */,
