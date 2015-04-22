@@ -16,6 +16,8 @@
 
 @implementation DataService (InitialData)
 
+#pragma mark - Create data
+
 - (void)createAndSaveInitialData {
     
     // Do nothing if there are already some data
@@ -26,6 +28,8 @@
     NSDictionary *lines = [self createInitialSubwayLines];
     [self createInitialStationsWithLines:lines];
 }
+
+#pragma mark Create subway lines
 
 - (NSDictionary *)createInitialSubwayLines {
     NSArray *subwayLinesDict = [self SubwayLinesData];
@@ -44,6 +48,8 @@
              @{@"name": @"B", @"color": [UIColor colorWithRed: 0.988 green: 0.745 blue: 0.125 alpha: 1]},
              @{@"name": @"C", @"color": [UIColor colorWithRed: 0.98 green: 0.0667 blue: 0 alpha: 1]}];
 }
+
+#pragma mark Create stations
 
 - (void)createInitialStationsWithLines:(NSDictionary *)subwayLines {
    
@@ -125,6 +131,8 @@
     
 }
 
+#pragma mark - Coordinates
+
 - (CGFloat)getYForLine:(int) line {
     return DRAW_INSETS_TOP + (line * DRAW_Y_STEP);
 }
@@ -134,6 +142,8 @@
     CGFloat left = DRAW_INSETS_SIDE + DRAW_SIDE_STATIONS_SIZE + DRAW_MIDDLE_INSETS_SIDE;
     return left + (xMiddleStep * position);
 }
+
+#pragma mark - Data
 
 - (NSDictionary *)lineAStations {
     return @{@"left" : @[@{@"name": @"Nemocnice Motol", @"latitude": @0.0, @"longitude": @0.0},

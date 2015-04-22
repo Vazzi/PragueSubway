@@ -20,6 +20,7 @@
         return nil;
     }
     
+    // Scale
     CGFloat originalHeight = DRAW_HEIGHT;
     CGFloat scale = frame.size.height / originalHeight;
     self.transform = CGAffineTransformMakeScale(scale, scale);
@@ -27,6 +28,8 @@
     
     return self;
 }
+
+#pragma mark - Drawing
 
 - (void)drawRect:(CGRect)rect {
     
@@ -53,20 +56,6 @@
     }
 }
 
-- (CGRect)stationPositionRect:(Station *)station {
-    return CGRectMake(station.getDrawPoint.x - DRAW_STATION_SIZE / 2,
-                      station.getDrawPoint.y - DRAW_STATION_SIZE / 2,
-                      DRAW_STATION_SIZE,
-                      DRAW_STATION_SIZE);
-}
-
-- (CGRect)stationNameRect:(Station *)station {
-    return CGRectMake(station.getDrawPoint.x - DRAW_STATION_SIZE * 1.25,
-                      station.getDrawPoint.y + DRAW_STATION_SIZE * 0.6,
-                      DRAW_STATION_SIZE * 2.5,
-                      DRAW_STATION_SIZE);
-}
-
 - (NSAttributedString *)attrString:(NSString *)text fontSize:(int)size color:(UIColor *)color {
     
     UIFont* font = [UIFont fontWithName:@"Arial" size:size];
@@ -83,6 +72,22 @@
                                                                   attributes:stringAttrs];
     
     return attrStr;
+}
+
+#pragma mark - Rectangles
+
+- (CGRect)stationPositionRect:(Station *)station {
+    return CGRectMake(station.getDrawPoint.x - DRAW_STATION_SIZE / 2,
+                      station.getDrawPoint.y - DRAW_STATION_SIZE / 2,
+                      DRAW_STATION_SIZE,
+                      DRAW_STATION_SIZE);
+}
+
+- (CGRect)stationNameRect:(Station *)station {
+    return CGRectMake(station.getDrawPoint.x - DRAW_STATION_SIZE * 1.25,
+                      station.getDrawPoint.y + DRAW_STATION_SIZE * 0.6,
+                      DRAW_STATION_SIZE * 2.5,
+                      DRAW_STATION_SIZE);
 }
 
 
