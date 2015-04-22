@@ -61,20 +61,13 @@
 }
 
 - (void)drawStationsOfLine:(SubwayLine *)line {
-    CGContextRef context = UIGraphicsGetCurrentContext();
     
     for (Station *station in line.stations) {
         // Text
         NSAttributedString* attrStr = [self attrString:station.name fontSize:25 color:[UIColor blackColor]];
         [attrStr drawInRect:[self stationNameRect:station]];
-        
         // Station
-        CGRect rect = [self stationPositionRect:station];
-        CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
-        CGContextSetFillColorWithColor(context, line.UIColor.CGColor);
-        CGContextSetLineWidth(context, 5.0);
-        CGContextFillEllipseInRect (context, rect);
-        CGContextStrokeEllipseInRect(context, rect);
+        [self drawStation:station];
     }
 }
 
@@ -85,7 +78,16 @@
     CGContextMoveToPoint(context, point1.x, point1.y);
     CGContextAddLineToPoint(context, point2.x, point2.y);
     CGContextDrawPath(context, kCGPathEOFillStroke);
-    
+}
+
+- (void)drawStation:(Station *)station {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGRect rect = [self stationPositionRect:station];
+    CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
+    CGContextSetFillColorWithColor(context, ((SubwayLine *)station.line[0]).UIColor.CGColor);
+    CGContextSetLineWidth(context, DRAW_STATION_STROKE);
+    CGContextFillEllipseInRect (context, rect);
+    CGContextStrokeEllipseInRect(context, rect);
 }
 
 - (NSAttributedString *)attrString:(NSString *)text fontSize:(int)size color:(UIColor *)color {
