@@ -105,7 +105,7 @@
  \param predicate
  \return Array with finded records
  */
-- (NSArray *)recordsIn:(NSString *) entityString predicate:(NSPredicate *)predicate
+- (NSArray *)recordsIn:(NSString *) entityString withPredicate:(NSPredicate *)predicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:entityString];
     [request setPredicate:predicate];

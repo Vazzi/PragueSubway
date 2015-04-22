@@ -20,7 +20,7 @@
 
 - (NSArray *)departuresArray {
     NSString *entityString = [[Departure class] description];
-    return [self recordsIn:entityString predicate:nil];
+    return [self recordsIn:entityString withPredicate:nil];
 }
 
 

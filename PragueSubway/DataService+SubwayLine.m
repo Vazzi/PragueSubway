@@ -26,7 +26,7 @@
 
 - (NSArray *)subwayLineArray {
     NSString *entityString = [[SubwayLine class] description];
-    return [self recordsIn:entityString predicate:nil];
+    return [self recordsIn:entityString withPredicate:nil];
 }
 
 @end
