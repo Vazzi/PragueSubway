@@ -23,7 +23,7 @@
 @property (nonatomic, retain) NSSet *departuresDirectStation;
 @property (nonatomic, retain) NSOrderedSet *line;
 
-- (CGPoint)getdrawPoint;
+- (CGPoint)getDrawPoint;
 
 @end
 

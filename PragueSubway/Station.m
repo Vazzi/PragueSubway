@@ -22,8 +22,8 @@
 @dynamic departuresDirectStation;
 @dynamic line;
 
-- (CGPoint)getdrawPoint {
-    return CGPointMake(self.drawPosX, self.drawPosX);
+- (CGPoint)getDrawPoint {
+    return CGPointMake(self.drawPosX, self.drawPosY);
 }
 
 @end
