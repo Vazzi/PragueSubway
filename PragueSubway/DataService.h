@@ -19,5 +19,6 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 - (NSArray *)recordsIn:(NSString *) entityString predicate:(NSPredicate *)predicate;
+- (id)recordIn:(NSString *) entityString withPredicate:(NSPredicate *)predicate;
 
 @end

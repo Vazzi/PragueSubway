@@ -111,12 +111,33 @@
     [request setPredicate:predicate];
     NSError *error;
     NSArray *fetchedArray = [self.managedObjectContext executeFetchRequest:request error:&error];
-    if( error ){
+    if (error){
         TRC_ERR(@"%@", error);
         return @[];
     }
     return fetchedArray;
 }
 
+
+/*! Search one record.
+ \param entityString class description string
+ \param predicate
+ \return finded record
+ */
+- (id)recordIn:(NSString *) entityString withPredicate:(NSPredicate *)predicate
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:entityString];
+    [request setPredicate:predicate];
+    [request setFetchLimit:1];
+    NSError *error;
+    NSArray *fetchedArray = [self.managedObjectContext executeFetchRequest:request error:&error];
+    if (error) {
+        TRC_ERR(@"%@", error);
+        return nil;
+    } else if (fetchedArray.count == 0) {
+        return nil;
+    }
+    return fetchedArray.firstObject;
+}
 
 @end
