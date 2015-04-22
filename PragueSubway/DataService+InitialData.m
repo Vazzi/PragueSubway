@@ -9,8 +9,11 @@
 #import "DataService+InitialData.h"
 #import "DataService+SubwayLine.h"
 #import "DataService+Station.h"
+#import "DataService+Departure.h"
 
 #import "Station.h"
+#import "Departure.h"
+#import "SubwayLine.h"
 
 #import <UIKit/UIKit.h>
 
@@ -25,8 +28,10 @@
         return;
     }
     
-    NSDictionary *lines = [self createInitialSubwayLines];
-    [self createInitialStationsWithLines:lines];
+    NSDictionary *linesDict = [self createInitialSubwayLines];
+    [self createInitialStationsWithLines:linesDict];
+    [self createDeparturesForAllStations];
+    
 }
 
 #pragma mark Create subway lines
@@ -43,12 +48,6 @@
              @"C":lineC};
 }
 
-- (NSArray *)SubwayLinesData {
-    return @[@{@"name": @"A", @"color": [UIColor colorWithRed: 0.161 green: 0.694 blue: 0.235 alpha: 1]},
-             @{@"name": @"B", @"color": [UIColor colorWithRed: 0.988 green: 0.745 blue: 0.125 alpha: 1]},
-             @{@"name": @"C", @"color": [UIColor colorWithRed: 0.98 green: 0.0667 blue: 0 alpha: 1]}];
-}
-
 #pragma mark Create stations
 
 - (void)createInitialStationsWithLines:(NSDictionary *)subwayLines {
@@ -57,24 +56,20 @@
     NSDictionary *stationsB = [self lineBStations];
     NSDictionary *stationsC = [self lineCStations];
     
-    SubwayLine *lineA = [[DataService sharedService] subwayLineWithName:@"A"];
-    SubwayLine *lineB = [[DataService sharedService] subwayLineWithName:@"B"];
-    SubwayLine *lineC = [[DataService sharedService] subwayLineWithName:@"C"];
-    
     // Left side stations
     CGFloat x = DRAW_INSETS_SIDE;
-    [self createStations:stationsA[@"left"] withLine:lineA onYPosition:0 leftX:x];
-    [self createStations:stationsB[@"left"] withLine:lineB onYPosition:2 leftX:x];
-    [self createStations:stationsC[@"left"] withLine:lineC onYPosition:4 leftX:x];
+    [self createStations:stationsA[@"left"] withLine:subwayLines[@"A"] onYPosition:0 leftX:x];
+    [self createStations:stationsB[@"left"] withLine:subwayLines[@"B"] onYPosition:2 leftX:x];
+    [self createStations:stationsC[@"left"] withLine:subwayLines[@"C"] onYPosition:4 leftX:x];
 
     // Middle stations
     [self createMiddleStationsWithLines:subwayLines];
 
     // Right side stations
     x = DRAW_INSETS_SIDE + DRAW_SIDE_STATIONS_SIZE + 2 * DRAW_MIDDLE_INSETS_SIDE + DRAW_MIDDLE_STATIONS_SIZE;
-    [self createStations:stationsA[@"right"] withLine:lineA onYPosition:4 leftX:x];
-    [self createStations:stationsB[@"right"] withLine:lineB onYPosition:2 leftX:x];
-    [self createStations:stationsC[@"right"] withLine:lineC onYPosition:0 leftX:x];
+    [self createStations:stationsA[@"right"] withLine:subwayLines[@"A"] onYPosition:4 leftX:x];
+    [self createStations:stationsB[@"right"] withLine:subwayLines[@"B"] onYPosition:2 leftX:x];
+    [self createStations:stationsC[@"right"] withLine:subwayLines[@"C"] onYPosition:0 leftX:x];
 
 }
 
@@ -131,6 +126,38 @@
     
 }
 
+#pragma mark Create departures
+
+- (void)createDeparturesForAllStations {
+    NSArray *subwayLines = [[DataService sharedService] subwayLineArray];
+    
+    for (SubwayLine *line in subwayLines) {
+        for (Station *station in line.stations) {
+            if (![station isEqual:line.stations.lastObject]) {
+                [self generateDeparturesForStation:station toStation:line.stations.lastObject];
+            }
+            if (![station isEqual:line.stations.firstObject]) {
+                [self generateDeparturesForStation:station toStation:line.stations.firstObject];
+            }
+        }
+    }
+}
+
+- (void)generateDeparturesForStation:(Station *)station toStation:(Station *)toStation {
+    double time = 4*60 + 40;
+    double endTime = 23*60 + 50;
+    
+    while(time < endTime) {
+        Departure *departure = [[DataService sharedService] createDepartureWithDict:nil];
+        departure.time = time;
+        departure.station = station;
+        departure.directionStation = toStation;
+        departure.day = @"W";
+        
+        time += 3 + rand() % (10-3);
+    }
+}
+
 #pragma mark - Coordinates
 
 - (CGFloat)getYForLine:(int) line {
@@ -144,6 +171,15 @@
 }
 
 #pragma mark - Data
+
+#pragma mark Subway lines
+
+- (NSArray *)SubwayLinesData {
+    return @[@{@"name": @"A", @"color": [UIColor colorWithRed: 0.161 green: 0.694 blue: 0.235 alpha: 1]},
+             @{@"name": @"B", @"color": [UIColor colorWithRed: 0.988 green: 0.745 blue: 0.125 alpha: 1]},
+             @{@"name": @"C", @"color": [UIColor colorWithRed: 0.98 green: 0.0667 blue: 0 alpha: 1]}];
+}
+#pragma mark Stations
 
 - (NSDictionary *)lineAStations {
     return @{@"left" : @[@{@"name": @"Nemocnice Motol", @"latitude": @0.0, @"longitude": @0.0},
@@ -221,5 +257,6 @@
              @{@"name": @"Florenc", @"latitude": @0.0, @"longitude": @0.0},
              ];
 }
+
 
 @end
