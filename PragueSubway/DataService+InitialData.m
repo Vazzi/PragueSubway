@@ -109,11 +109,11 @@
             [station addLineObject:line[@"C"]];
             [station addLineObject:line[@"A"]];
         } else if ([station.name isEqualToString:@"Hlavní nádraží"]) {
-            station.drawPosX = [self getMiddleXPosition:2];
+            station.drawPosX = [self getMiddleXPosition:1.5];
             station.drawPosY = [self getYForLine:2];
             [station addLineObject:line[@"C"]];
         } else if ([station.name isEqualToString:@"Florenc"]) {
-            station.drawPosX = [self getMiddleXPosition:3];
+            station.drawPosX = [self getMiddleXPosition:2];
             station.drawPosY = [self getYForLine:1];
             [station addLineObject:line[@"C"]];
             [station addLineObject:line[@"B"]];
@@ -164,8 +164,8 @@
     return DRAW_INSETS_TOP + (line * DRAW_Y_STEP);
 }
 
-- (CGFloat)getMiddleXPosition:(int) position {
-    CGFloat xMiddleStep = DRAW_MIDDLE_STATIONS_SIZE / 3;
+- (CGFloat)getMiddleXPosition:(float) position {
+    CGFloat xMiddleStep = DRAW_MIDDLE_STATIONS_SIZE / 2;
     CGFloat left = DRAW_INSETS_SIDE + DRAW_SIDE_STATIONS_SIZE + DRAW_MIDDLE_INSETS_SIDE;
     return left + (xMiddleStep * position);
 }
