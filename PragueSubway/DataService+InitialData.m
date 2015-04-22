@@ -72,9 +72,9 @@
 
     // Right side stations
     x = DRAW_INSETS_SIDE + DRAW_SIDE_STATIONS_SIZE + 2 * DRAW_MIDDLE_INSETS_SIDE + DRAW_MIDDLE_STATIONS_SIZE;
-    [self createStations:stationsA[@"right"] withLine:lineA onYPosition:0 leftX:x];
+    [self createStations:stationsA[@"right"] withLine:lineA onYPosition:4 leftX:x];
     [self createStations:stationsB[@"right"] withLine:lineB onYPosition:2 leftX:x];
-    [self createStations:stationsC[@"right"] withLine:lineC onYPosition:4 leftX:x];
+    [self createStations:stationsC[@"right"] withLine:lineC onYPosition:0 leftX:x];
 
 }
 
@@ -217,8 +217,9 @@
     return @[@{@"name": @"Můstek", @"latitude": @0.0, @"longitude": @0.0},
              @{@"name": @"Muzeum", @"latitude": @0.0, @"longitude": @0.0},
              @{@"name": @"Hlavní nádraží", @"latitude": @0.0, @"longitude": @0.0},
+             @{@"name": @"Náměstí republiky", @"latitude": @0.0, @"longitude": @0.0},
              @{@"name": @"Florenc", @"latitude": @0.0, @"longitude": @0.0},
-             @{@"name": @"Náměstí republiky", @"latitude": @0.0, @"longitude": @0.0},];
+             ];
 }
 
 @end
