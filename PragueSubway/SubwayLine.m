@@ -16,4 +16,8 @@
 @dynamic name;
 @dynamic stations;
 
+-(UIColor *)UIColor {
+    return (UIColor *)self.color;
+}
+
 @end

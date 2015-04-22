@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <UIKit/UIKit.h>
 
 @class Station;
 
@@ -16,6 +17,9 @@
 @property (nonatomic, retain) id color;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSOrderedSet *stations;
+
+- (UIColor *)UIColor;
+
 @end
 
 @interface SubwayLine (CoreDataGeneratedAccessors)
