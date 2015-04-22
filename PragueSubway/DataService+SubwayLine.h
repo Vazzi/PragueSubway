@@ -13,6 +13,7 @@
 @interface DataService (SubwayLine)
 
 - (SubwayLine *)createSubwayLineWithDict:(NSDictionary *)data;
+- (SubwayLine *)subwayLineWithName:(NSString *)name;
 - (NSArray *)subwayLineArray;
 
 @end
