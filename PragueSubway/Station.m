@@ -26,4 +26,10 @@
     return CGPointMake(self.drawPosX, self.drawPosY);
 }
 
+- (void)addLineObject:(SubwayLine *)value {
+    NSMutableOrderedSet *tempSet = [NSMutableOrderedSet orderedSetWithOrderedSet:self.line];
+    [tempSet addObject:value];
+    self.line = tempSet;
+}
+
 @end
