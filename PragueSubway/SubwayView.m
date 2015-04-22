@@ -37,16 +37,38 @@
     for (SubwayLine *line in lines) {
         [self drawSubwayLine:line];
     }
+    
+    for (SubwayLine *line in lines) {
+        [self drawStationsOfLine:line];
+    }
 
 }
 
 - (void)drawSubwayLine:(SubwayLine *)line {
     CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetLineWidth(context, DRAW_LINE_WIDTH);
+    CGContextSetStrokeColorWithColor(context, line.UIColor.CGColor);
+    Station *station = line.stations[0];
+    
+    CGContextMoveToPoint(context, station.drawPosX, station.drawPosY);
+    
+    for (int i = 1; i < line.stations.count; i++) {
+        station = line.stations[i];
+        CGContextAddLineToPoint(context, station.drawPosX, station.drawPosY);
+
+    }
+    CGContextDrawPath(context, kCGPathStroke);
+}
+
+- (void)drawStationsOfLine:(SubwayLine *)line {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
     for (Station *station in line.stations) {
-        
+        // Text
         NSAttributedString* attrStr = [self attrString:station.name fontSize:25 color:[UIColor blackColor]];
         [attrStr drawInRect:[self stationNameRect:station]];
         
+        // Station
         CGRect rect = [self stationPositionRect:station];
         CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
         CGContextSetFillColorWithColor(context, line.UIColor.CGColor);
@@ -54,6 +76,16 @@
         CGContextFillEllipseInRect (context, rect);
         CGContextStrokeEllipseInRect(context, rect);
     }
+}
+
+- (void)drawLineBetweenPoint:(CGPoint)point1 andPoint:(CGPoint)point2 withColor:(UIColor *)color {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetLineWidth(context, DRAW_LINE_WIDTH);
+    CGContextSetStrokeColorWithColor(context, color.CGColor);
+    CGContextMoveToPoint(context, point1.x, point1.y);
+    CGContextAddLineToPoint(context, point2.x, point2.y);
+    CGContextDrawPath(context, kCGPathEOFillStroke);
+    
 }
 
 - (NSAttributedString *)attrString:(NSString *)text fontSize:(int)size color:(UIColor *)color {
