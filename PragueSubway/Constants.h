@@ -9,6 +9,17 @@
 #ifndef PragueSubway_Constants_h
 #define PragueSubway_Constants_h
 
+#define DRAW_SIDE_STATIONS_SIZE 1900
+#define DRAW_Y_STEP 120
+#define DRAW_MIDDLE_STATIONS_SIZE 600
+#define DRAW_MIDDLE_INSETS_SIDE 250
+#define DRAW_INSETS_TOP 160
+#define DRAW_INSETS_SIDE 200
+#define DRAW_STATION_SIZE 80
+
+#define DRAW_WIDTH (2*DRAW_INSETS_SIDE+2*DRAW_SIDE_STATIONS_SIZE+2*DRAW_MIDDLE_INSETS_SIDE+DRAW_MIDDLE_STATIONS_SIZE)
+#define DRAW_HEIGHT (5*DRAW_Y_STEP+DRAW_INSETS_TOP*2)
+
 #ifdef DEBUG
 #define TRC_OBJ(A)                          NSLog(@"%@", A)
 #define TRC_DATA(A)                         NSLog(@"DATA %10db: %@", [A length], [[NSString alloc] initWithData:A encoding:NSUTF8StringEncoding])
