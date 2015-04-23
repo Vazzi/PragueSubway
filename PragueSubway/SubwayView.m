@@ -40,7 +40,7 @@
     }
     NSArray *stations = [[DataService sharedService] stationsArray];
     [self drawStations:stations];
-
+    
 }
 
 - (void)drawSubwayLine:(SubwayLine *)line {
@@ -68,7 +68,7 @@
                                      station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
                                      stationBefore.drawPosY,
                                      station.drawPosX, station.drawPosY);
-        
+            
         } else if ([station.name isEqualToString:@"Náměstí republiky"]) {
             CGContextAddCurveToPoint(context,
                                      station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
@@ -149,12 +149,20 @@
 - (void)drawStation:(Station *)station {
     // Text
     NSAttributedString* attrStr = [self attrString:station.name fontSize:26 color:[UIColor blackColor]];
-    [attrStr drawInRect:[self stationNameRect:station scale:1]];
-     // Station
+    if ([station.name isEqualToString:@"Hlavní nádraží"]) {
+        CGRect rect = [self stationNameRightRect:station scale:1];
+        rect.origin.y += DRAW_STATION_SIZE * 0.3;
+        rect.origin.x -= DRAW_STATION_SIZE * 0.28;
+        [attrStr drawInRect:rect];
+    } else {
+        [attrStr drawInRect:[self stationNameRect:station scale:1]];
+    }
+    
+    // Station
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGRect rect = [self stationPositionRect:station scale:1];
     CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
-    CGContextSetFillColorWithColor(context, [station getLine].UIColor.CGColor);
+    CGContextSetFillColorWithColor(context, [station getFirstLine].UIColor.CGColor);
     CGContextSetLineWidth(context, DRAW_STATION_STROKE);
     CGContextFillEllipseInRect (context, rect);
     CGContextStrokeEllipseInRect(context, rect);
@@ -169,7 +177,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGRect rect = [self stationPositionRect:station scale:1.1];
     CGFloat radius = 10.0;
-    CGContextSetStrokeColorWithColor(context, [station getLine].UIColor.CGColor);
+    CGContextSetStrokeColorWithColor(context, [station getFirstLine].UIColor.CGColor);
     CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
     
     CGFloat minx = CGRectGetMinX(rect), midx = CGRectGetMidX(rect), maxx = CGRectGetMaxX(rect);
@@ -184,14 +192,22 @@
     
     CGContextDrawPath(context, kCGPathFillStroke);
     // Line name
-    NSAttributedString* attrStrS = [self attrString:[station getLine].name
+    NSAttributedString* attrStrS = [self attrString:[station getFirstLine].name
                                            fontSize:DRAW_STATION_SIZE
-                                              color:[station getLine].UIColor];
+                                              color:[station getFirstLine].UIColor];
     [attrStrS drawInRect:rect];
 }
 
 -(void)drawTransferStation:(Station *)station {
-    
+    if ([station.name isEqualToString:@"Můstek"]) {
+        
+    } else if ([station.name isEqualToString:@"Muzeum"]) {
+        
+        
+    } else if ([station.name isEqualToString:@"Florenc"]) {
+        
+        
+    }
 }
 
 - (NSAttributedString *)attrString:(NSString *)text fontSize:(int)size color:(UIColor *)color {
@@ -226,6 +242,14 @@
                       station.getDrawPoint.y + (DRAW_STATION_SIZE * scale) * 0.7,
                       (DRAW_STATION_SIZE * scale) * 2.5,
                       (DRAW_STATION_SIZE * scale));
+}
+
+- (CGRect)stationNameRightRect:(Station *)station scale:(CGFloat)scale {
+    return CGRectMake(station.getDrawPoint.x + ((DRAW_STATION_SIZE * scale) / 2),
+                      station.getDrawPoint.y,
+                      (DRAW_STATION_SIZE * scale) * 2.5,
+                      (DRAW_STATION_SIZE * scale));
+    
 }
 
 
