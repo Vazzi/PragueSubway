@@ -152,7 +152,11 @@
     if ([station.name isEqualToString:@"Hlavní nádraží"]) {
         CGRect rect = [self stationNameRightRect:station scale:1];
         rect.origin.y += DRAW_STATION_SIZE * 0.3;
-        rect.origin.x -= DRAW_STATION_SIZE * 0.28;
+        rect.size.width = DRAW_STATION_SIZE * 1.2;
+        [attrStr drawInRect:rect];
+    } else  if ([station.name isEqualToString:@"Náměstí republiky"]) {
+        CGRect rect = [self stationNameRect:station scale:1];
+        rect.origin.y -= DRAW_STATION_SIZE * 2;
         [attrStr drawInRect:rect];
     } else {
         [attrStr drawInRect:[self stationNameRect:station scale:1]];
@@ -199,15 +203,18 @@
 }
 
 -(void)drawTransferStation:(Station *)station {
+    NSAttributedString* attrStr = [self attrString:station.name fontSize:26 color:[UIColor blackColor]];
+    CGRect rect;
     if ([station.name isEqualToString:@"Můstek"]) {
-        
+        rect = [self stationNameLeftRect:station scale:1.2];
+        rect.size.width = DRAW_STATION_SIZE * 1.2;
     } else if ([station.name isEqualToString:@"Muzeum"]) {
-        
-        
+        rect = [self stationNameRightRect:station scale:1.2];
     } else if ([station.name isEqualToString:@"Florenc"]) {
-        
-        
+        rect = [self stationNameLeftRect:station scale:1.2];
+        rect.size.width = DRAW_STATION_SIZE * 1.2;
     }
+    [attrStr drawInRect: rect];
 }
 
 - (NSAttributedString *)attrString:(NSString *)text fontSize:(int)size color:(UIColor *)color {
@@ -246,10 +253,16 @@
 
 - (CGRect)stationNameRightRect:(Station *)station scale:(CGFloat)scale {
     return CGRectMake(station.getDrawPoint.x + ((DRAW_STATION_SIZE * scale) / 2),
-                      station.getDrawPoint.y,
+                      station.getDrawPoint.y - (DRAW_STATION_SIZE * scale) / 4,
                       (DRAW_STATION_SIZE * scale) * 2.5,
                       (DRAW_STATION_SIZE * scale));
-    
+}
+
+- (CGRect)stationNameLeftRect:(Station *)station scale:(CGFloat)scale {
+    return CGRectMake(station.getDrawPoint.x - ((DRAW_STATION_SIZE * scale) / 2) - (DRAW_STATION_SIZE * scale) * 1.2,
+                      station.getDrawPoint.y - (DRAW_STATION_SIZE * scale) / 4,
+                      (DRAW_STATION_SIZE * scale),
+                      (DRAW_STATION_SIZE * scale) * 1.2);
 }
 
 
