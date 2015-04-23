@@ -81,9 +81,9 @@
             
         } else if ([station.name isEqualToString:@"Muzeum"] && [line.name isEqualToString:@"C"]) {
             CGContextAddCurveToPoint(context,
-                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) * 0.3),
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) * 0.2),
                                      stationBefore.drawPosY,
-                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) * 0.3),
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) * 0.2),
                                      stationBefore.drawPosY,
                                      station.drawPosX, station.drawPosY);
             
@@ -113,9 +113,9 @@
             
         }else if ([station.name isEqualToString:@"Náměstí Míru"]) {
             CGContextAddCurveToPoint(context,
-                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) * 0.6),
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) * 0.8),
                                      station.drawPosY,
-                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) * 0.6),
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) * 0.8),
                                      station.drawPosY,
                                      station.drawPosX, station.drawPosY);
             
