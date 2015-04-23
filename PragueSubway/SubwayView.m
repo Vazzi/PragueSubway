@@ -8,6 +8,7 @@
 
 #import "SubwayView.h"
 #import "DataService+SubwayLine.h"
+#import "DataService+Station.h"
 #import "Station.h"
 #import "SubwayLine.h"
 
@@ -37,10 +38,8 @@
     for (SubwayLine *line in lines) {
         [self drawSubwayLine:line];
     }
-    
-    for (SubwayLine *line in lines) {
-        [self drawStationsOfLine:line];
-    }
+    NSArray *stations = [[DataService sharedService] stationsArray];
+    [self drawStations:stations];
 
 }
 
@@ -54,8 +53,8 @@
     
     for (int i = 1; i < line.stations.count; i++) {
         station = line.stations[i];
+        Station *stationBefore = line.stations[i-1];
         if ([station.name isEqualToString:@"Můstek"] && [line.name isEqualToString:@"A"]) {
-            Station *stationBefore = line.stations[i-1];
             CGContextAddCurveToPoint(context,
                                      station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
                                      stationBefore.drawPosY,
@@ -63,7 +62,6 @@
                                      stationBefore.drawPosY,
                                      station.drawPosX, station.drawPosY);
         } else if ([station.name isEqualToString:@"Můstek"] && [line.name isEqualToString:@"B"]) {
-            Station *stationBefore = line.stations[i-1];
             CGContextAddCurveToPoint(context,
                                      station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
                                      stationBefore.drawPosY,
@@ -72,7 +70,6 @@
                                      station.drawPosX, station.drawPosY);
         
         } else if ([station.name isEqualToString:@"Náměstí republiky"]) {
-            Station *stationBefore = line.stations[i-1];
             CGContextAddCurveToPoint(context,
                                      station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
                                      station.drawPosY,
@@ -81,7 +78,6 @@
                                      station.drawPosX, station.drawPosY);
             
         } else if ([station.name isEqualToString:@"Muzeum"] && [line.name isEqualToString:@"C"]) {
-            Station *stationBefore = line.stations[i-1];
             CGContextAddCurveToPoint(context,
                                      station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
                                      stationBefore.drawPosY,
@@ -90,7 +86,6 @@
                                      station.drawPosX, station.drawPosY);
             
         } else if ([station.name isEqualToString:@"Florenc"] && [line.name isEqualToString:@"B"]) {
-            Station *stationBefore = line.stations[i-1];
             CGContextAddCurveToPoint(context,
                                      station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
                                      stationBefore.drawPosY,
@@ -99,7 +94,6 @@
                                      station.drawPosX, station.drawPosY);
             
         } else if ([station.name isEqualToString:@"Vltavská"]) {
-            Station *stationBefore = line.stations[i-1];
             CGContextAddCurveToPoint(context,
                                      station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
                                      station.drawPosY,
@@ -108,7 +102,6 @@
                                      station.drawPosX, station.drawPosY);
             
         } else if ([station.name isEqualToString:@"Křižíkova"]) {
-            Station *stationBefore = line.stations[i-1];
             CGContextAddCurveToPoint(context,
                                      station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
                                      station.drawPosY,
@@ -117,7 +110,6 @@
                                      station.drawPosX, station.drawPosY);
             
         }else if ([station.name isEqualToString:@"Náměstí Míru"]) {
-            Station *stationBefore = line.stations[i-1];
             CGContextAddCurveToPoint(context,
                                      station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
                                      station.drawPosY,
@@ -128,14 +120,14 @@
         } else {
             CGContextAddLineToPoint(context, station.drawPosX, station.drawPosY);
         }
-
     }
+    
     CGContextDrawPath(context, kCGPathStroke);
 }
 
-- (void)drawStationsOfLine:(SubwayLine *)line {
+- (void)drawStations:(NSArray *)stations {
     
-    for (Station *station in line.stations) {
+    for (Station *station in stations) {
         // Text
         NSAttributedString* attrStr = [self attrString:station.name fontSize:25 color:[UIColor blackColor]];
         [attrStr drawInRect:[self stationNameRect:station]];
