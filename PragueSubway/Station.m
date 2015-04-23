@@ -27,8 +27,8 @@
 }
 
 - (bool)isEndStation {
-    Station *first = ((SubwayLine *)self.line.firstObject).stations.firstObject;
-    Station *last = ((SubwayLine *)self.line.firstObject).stations.lastObject;
+    Station *first = [self getLine].stations.firstObject;
+    Station *last =  [self getLine].stations.lastObject;
     if ([first isEqual:self]) {
         return true;
     }
@@ -40,6 +40,10 @@
 
 - (bool)isTransferStation {
     return (self.line.count > 1);
+}
+
+- (SubwayLine *)getLine {
+    return (SubwayLine *)self.line.firstObject;
 }
 
 - (void)addLineObject:(SubwayLine *)value {

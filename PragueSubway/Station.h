@@ -26,6 +26,7 @@
 - (CGPoint)getDrawPoint;
 - (bool)isEndStation;
 - (bool)isTransferStation;
+- (SubwayLine *)getLine;
 
 @end
 
