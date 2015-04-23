@@ -148,20 +148,46 @@
 
 - (void)drawStation:(Station *)station {
     // Text
-    NSAttributedString* attrStr = [self attrString:station.name fontSize:25 color:[UIColor blackColor]];
-    [attrStr drawInRect:[self stationNameRect:station]];
+    NSAttributedString* attrStr = [self attrString:station.name fontSize:26 color:[UIColor blackColor]];
+    [attrStr drawInRect:[self stationNameRect:station scale:1]];
      // Station
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGRect rect = [self stationPositionRect:station];
+    CGRect rect = [self stationPositionRect:station scale:1];
     CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
-    CGContextSetFillColorWithColor(context, ((SubwayLine *)station.line[0]).UIColor.CGColor);
+    CGContextSetFillColorWithColor(context, [station getLine].UIColor.CGColor);
     CGContextSetLineWidth(context, DRAW_STATION_STROKE);
     CGContextFillEllipseInRect (context, rect);
     CGContextStrokeEllipseInRect(context, rect);
 }
 
 -(void)drawEndStation:(Station *)station {
+    // Text
+    NSAttributedString* attrStr = [self attrString:station.name fontSize:26 color:[UIColor blackColor]];
+    [attrStr drawInRect:[self stationNameRect:station scale:1.1]];
     
+    // Station
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGRect rect = [self stationPositionRect:station scale:1.1];
+    CGFloat radius = 10.0;
+    CGContextSetStrokeColorWithColor(context, [station getLine].UIColor.CGColor);
+    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
+    
+    CGFloat minx = CGRectGetMinX(rect), midx = CGRectGetMidX(rect), maxx = CGRectGetMaxX(rect);
+    CGFloat miny = CGRectGetMinY(rect), midy = CGRectGetMidY(rect), maxy = CGRectGetMaxY(rect);
+    CGContextMoveToPoint(context, minx, midy);
+    CGContextSetLineWidth(context, DRAW_STATION_STROKE);
+    CGContextAddArcToPoint(context, minx, miny, midx, miny, radius);
+    CGContextAddArcToPoint(context, maxx, miny, maxx, midy, radius);
+    CGContextAddArcToPoint(context, maxx, maxy, midx, maxy, radius);
+    CGContextAddArcToPoint(context, minx, maxy, minx, midy, radius);
+    CGContextClosePath(context);
+    
+    CGContextDrawPath(context, kCGPathFillStroke);
+    // Line name
+    NSAttributedString* attrStrS = [self attrString:[station getLine].name
+                                           fontSize:DRAW_STATION_SIZE
+                                              color:[station getLine].UIColor];
+    [attrStrS drawInRect:rect];
 }
 
 -(void)drawTransferStation:(Station *)station {
@@ -188,18 +214,18 @@
 
 #pragma mark - Rectangles
 
-- (CGRect)stationPositionRect:(Station *)station {
-    return CGRectMake(station.getDrawPoint.x - DRAW_STATION_SIZE / 2,
-                      station.getDrawPoint.y - DRAW_STATION_SIZE / 2,
-                      DRAW_STATION_SIZE,
-                      DRAW_STATION_SIZE);
+- (CGRect)stationPositionRect:(Station *)station scale:(CGFloat)scale {
+    return CGRectMake(station.getDrawPoint.x - (DRAW_STATION_SIZE * scale) / 2,
+                      station.getDrawPoint.y - (DRAW_STATION_SIZE * scale) / 2,
+                      (DRAW_STATION_SIZE * scale),
+                      (DRAW_STATION_SIZE * scale));
 }
 
-- (CGRect)stationNameRect:(Station *)station {
-    return CGRectMake(station.getDrawPoint.x - DRAW_STATION_SIZE * 1.25,
-                      station.getDrawPoint.y + DRAW_STATION_SIZE * 0.6,
-                      DRAW_STATION_SIZE * 2.5,
-                      DRAW_STATION_SIZE);
+- (CGRect)stationNameRect:(Station *)station scale:(CGFloat)scale {
+    return CGRectMake(station.getDrawPoint.x - (DRAW_STATION_SIZE * scale) * 1.25,
+                      station.getDrawPoint.y + (DRAW_STATION_SIZE * scale) * 0.7,
+                      (DRAW_STATION_SIZE * scale) * 2.5,
+                      (DRAW_STATION_SIZE * scale));
 }
 
 
