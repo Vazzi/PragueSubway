@@ -126,13 +126,14 @@
 }
 
 - (void)drawStations:(NSArray *)stations {
-    
     for (Station *station in stations) {
-        // Text
-        NSAttributedString* attrStr = [self attrString:station.name fontSize:25 color:[UIColor blackColor]];
-        [attrStr drawInRect:[self stationNameRect:station]];
-        // Station
-        [self drawStation:station];
+        if ([station isEndStation]) {
+            [self drawEndStation:station];
+        } else if ([station isTransferStation]) {
+            [self drawTransferStation:station];
+        } else {
+            [self drawStation:station];
+        }
     }
 }
 
@@ -146,6 +147,10 @@
 }
 
 - (void)drawStation:(Station *)station {
+    // Text
+    NSAttributedString* attrStr = [self attrString:station.name fontSize:25 color:[UIColor blackColor]];
+    [attrStr drawInRect:[self stationNameRect:station]];
+     // Station
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGRect rect = [self stationPositionRect:station];
     CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
@@ -153,6 +158,14 @@
     CGContextSetLineWidth(context, DRAW_STATION_STROKE);
     CGContextFillEllipseInRect (context, rect);
     CGContextStrokeEllipseInRect(context, rect);
+}
+
+-(void)drawEndStation:(Station *)station {
+    
+}
+
+-(void)drawTransferStation:(Station *)station {
+    
 }
 
 - (NSAttributedString *)attrString:(NSString *)text fontSize:(int)size color:(UIColor *)color {
