@@ -71,7 +71,7 @@
                                      stationBefore.drawPosY,
                                      station.drawPosX, station.drawPosY);
             
-        } else if ([station.name isEqualToString:@"Náměstí republiky"]) {
+        } else if ([station.name isEqualToString:@"Náměstí Republiky"]) {
             CGContextAddCurveToPoint(context,
                                      station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
                                      station.drawPosY,
@@ -157,7 +157,7 @@
         rect.origin.y += DRAW_STATION_SIZE * 0.3;
         rect.size.width = DRAW_STATION_SIZE * 1.2;
         [attrStr drawInRect:rect];
-    } else  if ([station.name isEqualToString:@"Náměstí republiky"]) {
+    } else  if ([station.name isEqualToString:@"Náměstí Republiky"]) {
         CGRect rect = [self stationNameRect:station scale:1];
         rect.origin.y -= DRAW_STATION_SIZE * 2;
         [attrStr drawInRect:rect];
@@ -241,7 +241,7 @@
 - (NSAttributedString *)attrString:(NSString *)text alignment:(enum NSTextAlignment)alignment {
     
     UIFont* font = [UIFont fontWithName:@"Arial" size:26];
-    
+
     NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     [style setAlignment:alignment];
     [style setLineBreakMode:NSLineBreakByWordWrapping];

@@ -117,7 +117,7 @@
             station.drawPosY = [self getYForLine:1];
             [station addLineObject:line[@"C"]];
             [station addLineObject:line[@"B"]];
-        } else if ([station.name isEqualToString:@"Náměstí republiky"]) {
+        } else if ([station.name isEqualToString:@"Náměstí Republiky"]) {
             station.drawPosX = [self getMiddleXPosition:1];
             station.drawPosY = [self getYForLine:0];
             [station addLineObject:line[@"B"]];
@@ -253,7 +253,7 @@
     return @[@{@"name": @"Můstek", @"latitude": @0.0, @"longitude": @0.0},
              @{@"name": @"Muzeum", @"latitude": @0.0, @"longitude": @0.0},
              @{@"name": @"Hlavní nádraží", @"latitude": @0.0, @"longitude": @0.0},
-             @{@"name": @"Náměstí republiky", @"latitude": @0.0, @"longitude": @0.0},
+             @{@"name": @"Náměstí Republiky", @"latitude": @0.0, @"longitude": @0.0},
              @{@"name": @"Florenc", @"latitude": @0.0, @"longitude": @0.0},
              ];
 }
