@@ -203,6 +203,23 @@
 }
 
 -(void)drawTransferStation:(Station *)station {
+    [self drawTransferStationName:station];
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+
+    CGRect stationRect = [self stationPositionRect:station scale:1.3];
+    CGContextSetFillColorWithColor(context, [station getFirstLine].UIColor.CGColor);
+    CGContextFillEllipseInRect (context, stationRect);
+    
+    CGRect substationRect = [self stationPositionRect:station scale:0.8];
+    CGContextSetFillColorWithColor(context, ((SubwayLine *)station.line[1]).UIColor.CGColor);
+    CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
+    CGContextSetLineWidth(context, DRAW_STATION_STROKE * 2);
+    CGContextStrokeEllipseInRect (context, substationRect);
+    CGContextFillEllipseInRect (context, substationRect);
+}
+
+- (void)drawTransferStationName:(Station *)station {
     NSAttributedString* attrStr = [self attrString:station.name fontSize:26 color:[UIColor blackColor]];
     CGRect rect;
     if ([station.name isEqualToString:@"Můstek"]) {
