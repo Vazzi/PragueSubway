@@ -43,6 +43,8 @@
     
 }
 
+#pragma mark Lines
+
 - (void)drawSubwayLine:(SubwayLine *)line {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetLineWidth(context, DRAW_LINE_WIDTH);
@@ -79,9 +81,9 @@
             
         } else if ([station.name isEqualToString:@"Muzeum"] && [line.name isEqualToString:@"C"]) {
             CGContextAddCurveToPoint(context,
-                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) * 0.3),
                                      stationBefore.drawPosY,
-                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) * 0.3),
                                      stationBefore.drawPosY,
                                      station.drawPosX, station.drawPosY);
             
@@ -111,9 +113,9 @@
             
         }else if ([station.name isEqualToString:@"Náměstí Míru"]) {
             CGContextAddCurveToPoint(context,
-                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) * 0.6),
                                      station.drawPosY,
-                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) / 2),
+                                     station.drawPosX - ((station.drawPosX - stationBefore.drawPosX) * 0.6),
                                      station.drawPosY,
                                      station.drawPosX, station.drawPosY);
             
@@ -125,6 +127,16 @@
     CGContextDrawPath(context, kCGPathStroke);
 }
 
+- (void)drawLineBetweenPoint:(CGPoint)point1 andPoint:(CGPoint)point2 withColor:(UIColor *)color {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetLineWidth(context, DRAW_LINE_WIDTH);
+    CGContextSetStrokeColorWithColor(context, color.CGColor);
+    CGContextMoveToPoint(context, point1.x, point1.y);
+    CGContextAddLineToPoint(context, point2.x, point2.y);
+    CGContextDrawPath(context, kCGPathEOFillStroke);
+}
+
+#pragma mark Stations
 - (void)drawStations:(NSArray *)stations {
     for (Station *station in stations) {
         if ([station isEndStation]) {
@@ -137,18 +149,9 @@
     }
 }
 
-- (void)drawLineBetweenPoint:(CGPoint)point1 andPoint:(CGPoint)point2 withColor:(UIColor *)color {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetLineWidth(context, DRAW_LINE_WIDTH);
-    CGContextSetStrokeColorWithColor(context, color.CGColor);
-    CGContextMoveToPoint(context, point1.x, point1.y);
-    CGContextAddLineToPoint(context, point2.x, point2.y);
-    CGContextDrawPath(context, kCGPathEOFillStroke);
-}
-
 - (void)drawStation:(Station *)station {
     // Text
-    NSAttributedString* attrStr = [self attrString:station.name fontSize:26 color:[UIColor blackColor]];
+    NSAttributedString* attrStr = [self attrString:station.name alignment:NSTextAlignmentCenter];
     if ([station.name isEqualToString:@"Hlavní nádraží"]) {
         CGRect rect = [self stationNameRightRect:station scale:1];
         rect.origin.y += DRAW_STATION_SIZE * 0.3;
@@ -174,7 +177,7 @@
 
 -(void)drawEndStation:(Station *)station {
     // Text
-    NSAttributedString* attrStr = [self attrString:station.name fontSize:26 color:[UIColor blackColor]];
+    NSAttributedString* attrStr = [self attrString:station.name alignment:NSTextAlignmentCenter];
     [attrStr drawInRect:[self stationNameRect:station scale:1.1]];
     
     // Station
@@ -196,9 +199,7 @@
     
     CGContextDrawPath(context, kCGPathFillStroke);
     // Line name
-    NSAttributedString* attrStrS = [self attrString:[station getFirstLine].name
-                                           fontSize:DRAW_STATION_SIZE
-                                              color:[station getFirstLine].UIColor];
+    NSAttributedString* attrStrS = [self attrLineName:[station getFirstLine]];
     [attrStrS drawInRect:rect];
 }
 
@@ -206,7 +207,7 @@
     [self drawTransferStationName:station];
     
     CGContextRef context = UIGraphicsGetCurrentContext();
-
+    
     CGRect stationRect = [self stationPositionRect:station scale:1.3];
     CGContextSetFillColorWithColor(context, [station getFirstLine].UIColor.CGColor);
     CGContextFillEllipseInRect (context, stationRect);
@@ -219,34 +220,55 @@
     CGContextFillEllipseInRect (context, substationRect);
 }
 
+#pragma mark Text
+
 - (void)drawTransferStationName:(Station *)station {
-    NSAttributedString* attrStr = [self attrString:station.name fontSize:26 color:[UIColor blackColor]];
+    NSAttributedString* attrStr;
     CGRect rect;
     if ([station.name isEqualToString:@"Můstek"]) {
-        rect = [self stationNameLeftRect:station scale:1.2];
-        rect.size.width = DRAW_STATION_SIZE * 1.2;
+        attrStr = [self attrString:station.name alignment:NSTextAlignmentRight];
+        rect = [self stationNameLeftRect:station scale:1.3];
     } else if ([station.name isEqualToString:@"Muzeum"]) {
-        rect = [self stationNameRightRect:station scale:1.2];
+        attrStr = [self attrString:station.name alignment:NSTextAlignmentLeft];
+        rect = [self stationNameRightRect:station scale:1.3];
     } else if ([station.name isEqualToString:@"Florenc"]) {
-        rect = [self stationNameLeftRect:station scale:1.2];
-        rect.size.width = DRAW_STATION_SIZE * 1.2;
+        attrStr = [self attrString:station.name alignment:NSTextAlignmentRight];
+        rect = [self stationNameLeftRect:station scale:1.3];
     }
     [attrStr drawInRect: rect];
 }
 
-- (NSAttributedString *)attrString:(NSString *)text fontSize:(int)size color:(UIColor *)color {
+- (NSAttributedString *)attrString:(NSString *)text alignment:(enum NSTextAlignment)alignment {
     
-    UIFont* font = [UIFont fontWithName:@"Arial" size:size];
+    UIFont* font = [UIFont fontWithName:@"Arial" size:26];
+    
+    NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    [style setAlignment:alignment];
+    [style setLineBreakMode:NSLineBreakByWordWrapping];
+    
+    NSDictionary* stringAttrs = @{ NSFontAttributeName : font,
+                                   NSForegroundColorAttributeName : [UIColor blackColor],
+                                   NSParagraphStyleAttributeName : style};
+    
+    NSAttributedString* attrStr = [[NSAttributedString alloc] initWithString:text
+                                                                  attributes:stringAttrs];
+    
+    return attrStr;
+}
+
+- (NSAttributedString *)attrLineName:(SubwayLine *) line {
+    
+    UIFont* font = [UIFont fontWithName:@"Arial" size:DRAW_STATION_SIZE];
     
     NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     [style setAlignment:NSTextAlignmentCenter];
     [style setLineBreakMode:NSLineBreakByWordWrapping];
     
     NSDictionary* stringAttrs = @{ NSFontAttributeName : font,
-                                   NSForegroundColorAttributeName : color,
+                                   NSForegroundColorAttributeName : line.UIColor,
                                    NSParagraphStyleAttributeName : style};
     
-    NSAttributedString* attrStr = [[NSAttributedString alloc] initWithString:text
+    NSAttributedString* attrStr = [[NSAttributedString alloc] initWithString:line.name
                                                                   attributes:stringAttrs];
     
     return attrStr;
@@ -269,7 +291,7 @@
 }
 
 - (CGRect)stationNameRightRect:(Station *)station scale:(CGFloat)scale {
-    return CGRectMake(station.getDrawPoint.x + ((DRAW_STATION_SIZE * scale) / 2),
+    return CGRectMake(station.getDrawPoint.x + ((DRAW_STATION_SIZE * scale) * 0.7),
                       station.getDrawPoint.y - (DRAW_STATION_SIZE * scale) / 4,
                       (DRAW_STATION_SIZE * scale) * 2.5,
                       (DRAW_STATION_SIZE * scale));
