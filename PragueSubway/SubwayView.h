@@ -10,4 +10,6 @@
 
 @interface SubwayView : UIView
 
+- (void)transformToHeight:(CGFloat) height;
+
 @end

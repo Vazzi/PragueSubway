@@ -32,4 +32,38 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - InterfaceOrientationMethods
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (UIInterfaceOrientationIsPortrait(interfaceOrientation) || UIInterfaceOrientationIsLandscape(interfaceOrientation));
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    if(UIInterfaceOrientationIsPortrait(toInterfaceOrientation)){
+        [self changeTheViewToPortrait:YES andDuration:duration];
+    } else if(UIInterfaceOrientationIsLandscape(toInterfaceOrientation) &&
+              UIInterfaceOrientationIsPortrait(self.interfaceOrientation)){
+        [self changeTheViewToPortrait:NO andDuration:duration];
+    }
+}
+
+- (void)changeTheViewToPortrait:(BOOL)portrait andDuration:(NSTimeInterval)duration {
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:duration];
+    
+    if (portrait) {
+        [self.subwayView transformToHeight:self.view.bounds.size.width];
+        [((UIScrollView *)self.view) setContentSize:self.subwayView.frame.size];
+    } else {
+        if (self.subwayView.frame.size.height != self.view.bounds.size.width) {
+            [self.subwayView transformToHeight:self.view.bounds.size.width];
+            [((UIScrollView *)self.view) setContentSize:self.subwayView.frame.size];
+        }
+    }
+    
+    [UIView commitAnimations];
+}
+
 @end

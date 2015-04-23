@@ -21,13 +21,16 @@
         return nil;
     }
     
-    // Scale
-    CGFloat originalHeight = DRAW_HEIGHT;
-    CGFloat scale = frame.size.height / originalHeight;
-    self.transform = CGAffineTransformMakeScale(scale, scale);
-    self.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    [self transformToHeight:frame.size.height];
     
     return self;
+}
+
+- (void)transformToHeight:(CGFloat) height {
+    CGFloat originalHeight = DRAW_HEIGHT;
+    CGFloat scale = height / originalHeight;
+    self.transform = CGAffineTransformMakeScale(scale, scale);
+    self.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
 }
 
 #pragma mark - Drawing
