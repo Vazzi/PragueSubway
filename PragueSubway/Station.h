@@ -24,6 +24,8 @@
 @property (nonatomic, retain) NSOrderedSet *line;
 
 - (CGPoint)getDrawPoint;
+- (bool)isEndStation;
+- (bool)isTransferStation;
 
 @end
 

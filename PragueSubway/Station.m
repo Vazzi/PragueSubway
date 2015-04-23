@@ -26,10 +26,27 @@
     return CGPointMake(self.drawPosX, self.drawPosY);
 }
 
+- (bool)isEndStation {
+    Station *first = ((SubwayLine *)self.line.firstObject).stations.firstObject;
+    Station *last = ((SubwayLine *)self.line.firstObject).stations.lastObject;
+    if ([first isEqual:self]) {
+        return true;
+    }
+    if ([last isEqual:self]) {
+        return true;
+    }
+    return false;
+}
+
+- (bool)isTransferStation {
+    return (self.line.count > 1);
+}
+
 - (void)addLineObject:(SubwayLine *)value {
     NSMutableOrderedSet *tempSet = [NSMutableOrderedSet orderedSetWithOrderedSet:self.line];
     [tempSet addObject:value];
     self.line = tempSet;
 }
+
 
 @end
