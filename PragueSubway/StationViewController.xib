@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StationViewController">
             <connections>
+                <outlet property="departureTableView" destination="zOH-Ad-dJy" id="2q7-fX-uHw"/>
                 <outlet property="leftStripe" destination="pr7-E4-wre" id="AXM-U4-Hk4"/>
                 <outlet property="rightStripe" destination="4ld-SJ-2ct" id="Tmj-d2-abO"/>
                 <outlet property="stationNameLabel" destination="415-Bt-IkO" id="sS4-lr-IZ1"/>
@@ -49,9 +50,14 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="zOH-Ad-dJy">
+                <tableView clipsSubviews="YES" alpha="0.97999999999999998" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="zOH-Ad-dJy">
                     <rect key="frame" x="16" y="104" width="568" height="412"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="2UO-Wa-fRz"/>
+                        <outlet property="delegate" destination="-1" id="798-MU-DKb"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
