@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D062AF91AF11A4D0009162C /* StationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D062AF71AF11A4D0009162C /* StationViewController.m */; };
+		7D062AFA1AF11A4D0009162C /* StationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D062AF81AF11A4D0009162C /* StationViewController.xib */; };
 		7D2887DD1AE3F36E000FDB46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2887DC1AE3F36E000FDB46 /* main.m */; };
 		7D2887E01AE3F36E000FDB46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2887DF1AE3F36E000FDB46 /* AppDelegate.m */; };
 		7D2887E31AE3F36E000FDB46 /* PragueSubway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D2887E11AE3F36E000FDB46 /* PragueSubway.xcdatamodeld */; };
@@ -40,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D062AF61AF11A4D0009162C /* StationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationViewController.h; sourceTree = "<group>"; };
+		7D062AF71AF11A4D0009162C /* StationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationViewController.m; sourceTree = "<group>"; };
+		7D062AF81AF11A4D0009162C /* StationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StationViewController.xib; sourceTree = "<group>"; };
 		7D2887D71AE3F36E000FDB46 /* PragueSubway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PragueSubway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D2887DB1AE3F36E000FDB46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D2887DC1AE3F36E000FDB46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -180,6 +185,9 @@
 				7D2887E51AE3F36E000FDB46 /* ViewController.m */,
 				7DBB60061AE78FE5007C6B2A /* SubwayView.h */,
 				7DBB60071AE78FE5007C6B2A /* SubwayView.m */,
+				7D062AF61AF11A4D0009162C /* StationViewController.h */,
+				7D062AF71AF11A4D0009162C /* StationViewController.m */,
+				7D062AF81AF11A4D0009162C /* StationViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -298,6 +306,7 @@
 				7D2887E91AE3F36E000FDB46 /* Main.storyboard in Resources */,
 				7D2887EE1AE3F36E000FDB46 /* LaunchScreen.xib in Resources */,
 				7D2887EB1AE3F36E000FDB46 /* Images.xcassets in Resources */,
+				7D062AFA1AF11A4D0009162C /* StationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +337,7 @@
 				7D2887DD1AE3F36E000FDB46 /* main.m in Sources */,
 				7D2888281AE403C4000FDB46 /* SubwayLine.m in Sources */,
 				7DAE6A2D1AE4DD890062054C /* DataService+Station.m in Sources */,
+				7D062AF91AF11A4D0009162C /* StationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
