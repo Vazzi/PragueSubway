@@ -88,10 +88,14 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UILabel *label = [[UILabel alloc] init];
-    [label setText:@"  Smer Dejvice"];
+    [label setFont:[UIFont systemFontOfSize:18]];
+    [label setText:[NSString stringWithFormat:@"  Směr: %@", self.station.name]];
     return label;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 42;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
@@ -104,7 +108,7 @@
     // Set the data for this cell:
     [cell setAccessoryView:nil];
     [cell setAccessoryType:UITableViewCellAccessoryNone];
-    cell.textLabel.text = self.station.name;
+    cell.textLabel.text = @"0:00:00";
     
     // set the accessory view:
     cell.accessoryType =  UITableViewCellAccessoryDisclosureIndicator;
