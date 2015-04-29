@@ -76,13 +76,10 @@
 
 #pragma mark - UITableViewDelegate and DataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return self.station.line.count * 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-    // If you're serving data from an array, return the length of the array:
     return 1;
 }
 
@@ -105,13 +102,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     
-    // Set the data for this cell:
-    [cell setAccessoryView:nil];
     [cell setAccessoryType:UITableViewCellAccessoryNone];
     cell.textLabel.text = @"0:00:00";
-    
-    // set the accessory view:
-    cell.accessoryType =  UITableViewCellAccessoryDisclosureIndicator;
+    [cell.textLabel setFont:[UIFont systemFontOfSize:22]];
+    cell.imageView.image = [UIImage imageNamed:@"clock"];
     
     return cell;
 }
