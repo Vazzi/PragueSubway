@@ -175,6 +175,7 @@
 		7D2888111AE40152000FDB46 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7D062AF81AF11A4D0009162C /* StationViewController.xib */,
 				7D2887E71AE3F36E000FDB46 /* Main.storyboard */,
 				7D2887EC1AE3F36E000FDB46 /* LaunchScreen.xib */,
 				7D8C44611AF1779C00A7363A /* DepartureSectionHeaderView.h */,
@@ -192,7 +193,6 @@
 				7DBB60071AE78FE5007C6B2A /* SubwayView.m */,
 				7D062AF61AF11A4D0009162C /* StationViewController.h */,
 				7D062AF71AF11A4D0009162C /* StationViewController.m */,
-				7D062AF81AF11A4D0009162C /* StationViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
