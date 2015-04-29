@@ -10,6 +10,7 @@
 #import "Station.h"
 #import "SubwayLine.h"
 #import <QuartzCore/QuartzCore.h>
+#import "DepartureSectionHeaderView.h"
 
 @interface StationViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -84,14 +85,21 @@
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UILabel *label = [[UILabel alloc] init];
-    [label setFont:[UIFont systemFontOfSize:18]];
-    [label setText:[NSString stringWithFormat:@"  Směr: %@", self.station.name]];
-    return label;
+    DepartureSectionHeaderView *view = [[DepartureSectionHeaderView alloc] initWithFrame:CGRectZero];
+    [view.stationLabel setText:self.station.name];
+    
+    return view;
 }
+//
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"DepartureSectionHeaderView" owner:self options:nil];;
+//    DepartureSectionHeaderView *view = views.firstObject;
+//    [view.stationNameLabel setText:self.station.name];
+//    return view;
+//}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 42;
+    return 56;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
