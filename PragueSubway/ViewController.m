@@ -11,8 +11,6 @@
 #import "StationViewController.h"
 #import "Station.h"
 
-#import "BlurryModalSegue.h"
-
 @interface ViewController () <UIScrollViewDelegate, SubwayViewDelegate, StationViewDelegate>
 
 @property (strong, nonatomic) SubwayView *subwayView;
