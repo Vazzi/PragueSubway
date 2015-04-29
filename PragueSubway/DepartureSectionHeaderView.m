@@ -21,6 +21,7 @@
 
 - (void)createLayoutAndSubviews {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+    [label setBaselineAdjustment:UIBaselineAdjustmentAlignCenters];
     label.translatesAutoresizingMaskIntoConstraints = NO;
     [label setFont:[UIFont systemFontOfSize:20]];
     

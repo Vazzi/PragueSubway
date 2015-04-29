@@ -90,13 +90,6 @@
     
     return view;
 }
-//
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"DepartureSectionHeaderView" owner:self options:nil];;
-//    DepartureSectionHeaderView *view = views.firstObject;
-//    [view.stationNameLabel setText:self.station.name];
-//    return view;
-//}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 56;
@@ -112,7 +105,8 @@
     
     [cell setAccessoryType:UITableViewCellAccessoryNone];
     cell.textLabel.text = @"0:00:00";
-    [cell.textLabel setFont:[UIFont systemFontOfSize:22]];
+    [cell.textLabel setFont:[UIFont systemFontOfSize:32]];
+    [cell.textLabel setBaselineAdjustment:UIBaselineAdjustmentAlignCenters];
     cell.imageView.image = [UIImage imageNamed:@"clock"];
     
     return cell;
