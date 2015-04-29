@@ -32,6 +32,9 @@
     [self stylizeDepartureTable];
     [self stylizeCancelButton];
     
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,7 +73,9 @@
 #pragma mark - Actions
 
 - (IBAction)cancelAction:(UIButton *)sender {
+    
     [self dismissViewControllerAnimated:NO completion:^{
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
         [self.delegate stationViewDidDismiss];
     }];
 }
