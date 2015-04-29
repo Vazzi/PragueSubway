@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gli-Q7-csx">
-                    <rect key="frame" x="16" y="490" width="568" height="60"/>
+                    <rect key="frame" x="16" y="524" width="568" height="60"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="5OJ-6f-jgA"/>
@@ -28,23 +28,31 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Station Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="415-Bt-IkO">
-                    <rect key="frame" x="20" y="60" width="560" height="60"/>
+                    <rect key="frame" x="20" y="48" width="560" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="62f-u8-LE1"/>
+                        <constraint firstAttribute="height" constant="40" id="62f-u8-LE1"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="zOH-Ad-dJy">
+                    <rect key="frame" x="16" y="104" width="568" height="412"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                </tableView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="zOH-Ad-dJy" firstAttribute="top" secondItem="415-Bt-IkO" secondAttribute="bottom" constant="16" id="1nn-Ii-RuQ"/>
                 <constraint firstItem="415-Bt-IkO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="58N-o7-fbe"/>
-                <constraint firstAttribute="bottom" secondItem="gli-Q7-csx" secondAttribute="bottom" constant="50" id="A3V-cE-dTd"/>
+                <constraint firstAttribute="bottom" secondItem="gli-Q7-csx" secondAttribute="bottom" constant="16" id="A3V-cE-dTd"/>
+                <constraint firstItem="gli-Q7-csx" firstAttribute="top" secondItem="zOH-Ad-dJy" secondAttribute="bottom" constant="8" id="MDt-Ww-Nrs"/>
+                <constraint firstItem="zOH-Ad-dJy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Mch-nS-4za"/>
                 <constraint firstAttribute="trailing" secondItem="gli-Q7-csx" secondAttribute="trailing" constant="16" id="Rrx-wB-fkJ"/>
                 <constraint firstItem="gli-Q7-csx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="bEM-jh-rFQ"/>
                 <constraint firstAttribute="trailing" secondItem="415-Bt-IkO" secondAttribute="trailing" constant="20" symbolic="YES" id="eo8-Ub-8k4"/>
-                <constraint firstItem="415-Bt-IkO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="oI0-R2-BIT"/>
+                <constraint firstAttribute="trailing" secondItem="zOH-Ad-dJy" secondAttribute="trailing" constant="16" id="o1g-Sm-aPv"/>
+                <constraint firstItem="415-Bt-IkO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="48" id="oI0-R2-BIT"/>
             </constraints>
             <point key="canvasLocation" x="741" y="434"/>
         </view>
