@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StationViewController">
             <connections>
+                <outlet property="leftStripe" destination="pr7-E4-wre" id="AXM-U4-Hk4"/>
+                <outlet property="rightStripe" destination="4ld-SJ-2ct" id="Tmj-d2-abO"/>
                 <outlet property="stationNameLabel" destination="415-Bt-IkO" id="sS4-lr-IZ1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -15,6 +17,17 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ld-SJ-2ct" userLabel="RightStripe">
+                    <rect key="frame" x="550" y="0.0" width="50" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="vK0-gB-fkj"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pr7-E4-wre" userLabel="LeftStripe">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gli-Q7-csx">
                     <rect key="frame" x="16" y="524" width="568" height="60"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,16 +57,33 @@
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="zOH-Ad-dJy" firstAttribute="top" secondItem="415-Bt-IkO" secondAttribute="bottom" constant="16" id="1nn-Ii-RuQ"/>
+                <constraint firstAttribute="bottom" secondItem="4ld-SJ-2ct" secondAttribute="bottom" id="1rW-bz-U1j"/>
                 <constraint firstItem="415-Bt-IkO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="58N-o7-fbe"/>
                 <constraint firstAttribute="bottom" secondItem="gli-Q7-csx" secondAttribute="bottom" constant="16" id="A3V-cE-dTd"/>
+                <constraint firstAttribute="bottom" secondItem="pr7-E4-wre" secondAttribute="bottom" id="DLG-E8-5Mn"/>
+                <constraint firstItem="4ld-SJ-2ct" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DUZ-jx-fk4"/>
+                <constraint firstItem="4ld-SJ-2ct" firstAttribute="top" secondItem="415-Bt-IkO" secondAttribute="bottom" id="Ge4-P4-fin"/>
                 <constraint firstItem="gli-Q7-csx" firstAttribute="top" secondItem="zOH-Ad-dJy" secondAttribute="bottom" constant="8" id="MDt-Ww-Nrs"/>
                 <constraint firstItem="zOH-Ad-dJy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Mch-nS-4za"/>
+                <constraint firstItem="4ld-SJ-2ct" firstAttribute="width" secondItem="pr7-E4-wre" secondAttribute="width" id="NY6-XT-LSH"/>
                 <constraint firstAttribute="trailing" secondItem="gli-Q7-csx" secondAttribute="trailing" constant="16" id="Rrx-wB-fkJ"/>
+                <constraint firstItem="pr7-E4-wre" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="X3J-Iv-W9M"/>
+                <constraint firstItem="gli-Q7-csx" firstAttribute="top" secondItem="pr7-E4-wre" secondAttribute="bottom" id="YjZ-2S-MI6"/>
                 <constraint firstItem="gli-Q7-csx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="bEM-jh-rFQ"/>
                 <constraint firstAttribute="trailing" secondItem="415-Bt-IkO" secondAttribute="trailing" constant="20" symbolic="YES" id="eo8-Ub-8k4"/>
+                <constraint firstAttribute="trailing" secondItem="4ld-SJ-2ct" secondAttribute="trailing" id="hSa-F3-dfy"/>
                 <constraint firstAttribute="trailing" secondItem="zOH-Ad-dJy" secondAttribute="trailing" constant="16" id="o1g-Sm-aPv"/>
                 <constraint firstItem="415-Bt-IkO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="48" id="oI0-R2-BIT"/>
+                <constraint firstItem="pr7-E4-wre" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="s9B-ej-iNT"/>
+                <constraint firstItem="gli-Q7-csx" firstAttribute="top" secondItem="4ld-SJ-2ct" secondAttribute="bottom" id="zmx-7a-xCJ"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="YjZ-2S-MI6"/>
+                    <exclude reference="zmx-7a-xCJ"/>
+                    <exclude reference="Ge4-P4-fin"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="741" y="434"/>
         </view>
     </objects>
