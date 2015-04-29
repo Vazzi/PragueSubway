@@ -211,7 +211,7 @@
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGRect stationRect = [self stationPositionRect:station scale:1.3];
+    CGRect stationRect = [self stationPositionRect:station scale:DRAW_STATION_LARGE_SCALE];
     CGContextSetFillColorWithColor(context, [station getFirstLine].UIColor.CGColor);
     CGContextFillEllipseInRect (context, stationRect);
     
@@ -230,13 +230,13 @@
     CGRect rect;
     if ([station.name isEqualToString:@"Můstek"]) {
         attrStr = [self attrString:station.name alignment:NSTextAlignmentRight];
-        rect = [self stationNameLeftRect:station scale:1.3];
+        rect = [self stationNameLeftRect:station scale:DRAW_STATION_LARGE_SCALE];
     } else if ([station.name isEqualToString:@"Muzeum"]) {
         attrStr = [self attrString:station.name alignment:NSTextAlignmentLeft];
-        rect = [self stationNameRightRect:station scale:1.3];
+        rect = [self stationNameRightRect:station scale:DRAW_STATION_LARGE_SCALE];
     } else if ([station.name isEqualToString:@"Florenc"]) {
         attrStr = [self attrString:station.name alignment:NSTextAlignmentRight];
-        rect = [self stationNameLeftRect:station scale:1.3];
+        rect = [self stationNameLeftRect:station scale:DRAW_STATION_LARGE_SCALE];
     }
     [attrStr drawInRect: rect];
 }
@@ -305,6 +305,26 @@
                       station.getDrawPoint.y - (DRAW_STATION_SIZE * scale) / 4,
                       (DRAW_STATION_SIZE * scale),
                       (DRAW_STATION_SIZE * scale) * 1.2);
+}
+
+#pragma mark - Touch
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint touchLocation = [touch locationInView:self];
+    
+    NSArray *stations = [[DataService sharedService] stationsArray];
+    
+    for (Station *station in stations) {
+        CGFloat scale = ([station isEndStation] || [station isTransferStation]) ? DRAW_STATION_LARGE_SCALE : 1;
+        CGRect stationRect = [self stationPositionRect:station scale:scale];
+        if (CGRectContainsPoint(stationRect, touchLocation)) {
+            [self.subwayDelegate stationTouched:station];
+            return;
+        }
+    }
+    
 }
 
 @end
