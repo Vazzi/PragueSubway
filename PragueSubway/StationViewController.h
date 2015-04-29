@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Station;
+
 @interface StationViewController : UIViewController
+
+@property (nonatomic, weak) Station* station;
 
 @end

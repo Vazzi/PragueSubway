@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SubwayView.h"
+#import "StationViewController.h"
 
 @interface ViewController () <SubwayViewDelegate>
 
@@ -70,7 +71,13 @@
 #pragma mark - SubwayViewDelegate 
 
 - (void)stationTouched:(Station *)station {
-    TRC_OBJ(station);
+    
+    StationViewController *stationView = [[StationViewController alloc] initWithNibName:@"StationViewController" bundle:nil];
+    [stationView setStation:station];
+    
+    
+    [self presentViewController:stationView animated:YES completion:nil];
+    
 }
 
 @end

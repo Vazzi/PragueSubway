@@ -7,15 +7,21 @@
 //
 
 #import "StationViewController.h"
+#import "Station.h"
 
 @interface StationViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *stationNameLabel;
 
 @end
 
 @implementation StationViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.stationNameLabel setText:self.station.name];
     // Do any additional setup after loading the view from its nib.
 }
 
