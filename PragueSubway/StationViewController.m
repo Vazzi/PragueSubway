@@ -9,6 +9,7 @@
 #import "StationViewController.h"
 #import "Station.h"
 #import "SubwayLine.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface StationViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIView *leftStripe;
 @property (weak, nonatomic) IBOutlet UIView *rightStripe;
 @property (weak, nonatomic) IBOutlet UITableView *departureTableView;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 @end
 
@@ -26,12 +28,25 @@
     
     [self.stationNameLabel setText:self.station.name];
     [self setBackgroundColorAndColorsOfStripes];
+    [self stylizeDepartureTable];
+    [self stylizeCancelButton];
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)stylizeCancelButton {
+    self.cancelButton.layer.cornerRadius = 15.0f;
+    
+}
+
+- (void)stylizeDepartureTable {
+    self.departureTableView.layer.cornerRadius = 15.0f;
+    [self.departureTableView setClipsToBounds:YES];
+    
 }
 
 #pragma mark - View

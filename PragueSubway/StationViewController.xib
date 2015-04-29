@@ -6,7 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StationViewController">
             <connections>
-                <outlet property="departureTableView" destination="zOH-Ad-dJy" id="2q7-fX-uHw"/>
+                <outlet property="cancelButton" destination="gli-Q7-csx" id="Csh-gZ-nS6"/>
+                <outlet property="departureTableView" destination="zOH-Ad-dJy" id="qW3-oM-Wld"/>
                 <outlet property="leftStripe" destination="pr7-E4-wre" id="AXM-U4-Hk4"/>
                 <outlet property="rightStripe" destination="4ld-SJ-2ct" id="Tmj-d2-abO"/>
                 <outlet property="stationNameLabel" destination="415-Bt-IkO" id="sS4-lr-IZ1"/>
@@ -46,7 +47,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="62f-u8-LE1"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
