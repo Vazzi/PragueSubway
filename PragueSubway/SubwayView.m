@@ -307,5 +307,4 @@
                       (DRAW_STATION_SIZE * scale) * 1.2);
 }
 
-
 @end

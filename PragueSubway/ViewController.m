@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "SubwayView.h"
 
-@interface ViewController ()
+@interface ViewController () <SubwayViewDelegate>
 
 @property (strong, nonatomic) SubwayView *subwayView;
 
@@ -21,6 +21,7 @@
     [super viewDidLoad];
     self.subwayView = [[SubwayView alloc] initWithFrame:self.view.bounds];
     [self.subwayView setBackgroundColor:[UIColor whiteColor]];
+    [self.subwayView setSubwayDelegate:self];
     [self.view addSubview:self.subwayView];
     
     [((UIScrollView *)self.view) setContentSize:self.subwayView.frame.size];
@@ -64,6 +65,12 @@
     }
     
     [UIView commitAnimations];
+}
+
+#pragma mark - SubwayViewDelegate 
+
+- (void)stationTouched:(Station *)station {
+    TRC_OBJ(station);
 }
 
 @end
