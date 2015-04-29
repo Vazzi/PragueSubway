@@ -12,7 +12,7 @@
 
 @protocol SubwayViewDelegate <NSObject>
 
-- (void)stationTouched:(Station *)station;
+- (void)stationTouched:(Station *)station rect:(CGRect)rectToZoom;
 
 @end
 

@@ -15,34 +15,36 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Station Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="415-Bt-IkO">
-                    <rect key="frame" x="20" y="115" width="560" height="42"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="42" id="62f-u8-LE1"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gli-Q7-csx">
-                    <rect key="frame" x="30" y="48" width="70" height="30"/>
+                    <rect key="frame" x="16" y="490" width="568" height="60"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="70" id="Lhn-Ss-8xy"/>
-                        <constraint firstAttribute="height" constant="30" id="wpW-a5-igH"/>
+                        <constraint firstAttribute="height" constant="60" id="5OJ-6f-jgA"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <state key="normal" title="&lt; Zpět"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
+                    <state key="normal" title="Zpět"/>
                     <connections>
                         <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="sxI-1L-NAE"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Station Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="415-Bt-IkO">
+                    <rect key="frame" x="20" y="60" width="560" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="62f-u8-LE1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="415-Bt-IkO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="58N-o7-fbe"/>
-                <constraint firstItem="gli-Q7-csx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="QMV-pB-CRg"/>
+                <constraint firstAttribute="bottom" secondItem="gli-Q7-csx" secondAttribute="bottom" constant="50" id="A3V-cE-dTd"/>
+                <constraint firstAttribute="trailing" secondItem="gli-Q7-csx" secondAttribute="trailing" constant="16" id="Rrx-wB-fkJ"/>
+                <constraint firstItem="gli-Q7-csx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="bEM-jh-rFQ"/>
                 <constraint firstAttribute="trailing" secondItem="415-Bt-IkO" secondAttribute="trailing" constant="20" symbolic="YES" id="eo8-Ub-8k4"/>
-                <constraint firstItem="gli-Q7-csx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="48" id="mOu-hC-zu3"/>
-                <constraint firstItem="415-Bt-IkO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="115" id="oI0-R2-BIT"/>
+                <constraint firstItem="415-Bt-IkO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="oI0-R2-BIT"/>
             </constraints>
             <point key="canvasLocation" x="741" y="434"/>
         </view>

@@ -8,6 +8,7 @@
 
 #import "StationViewController.h"
 #import "Station.h"
+#import "SubwayLine.h"
 
 @interface StationViewController ()
 
@@ -22,6 +23,7 @@
     [super viewDidLoad];
     
     [self.stationNameLabel setText:self.station.name];
+    [self.view setBackgroundColor:[[self.station getFirstLine] UIColor]];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -30,7 +32,9 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)cancelAction:(UIButton *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:NO completion:^{
+        [self.delegate stationViewDidDismiss];
+    }];
 }
 
 /*

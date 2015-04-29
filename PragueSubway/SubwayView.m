@@ -320,7 +320,7 @@
         CGFloat scale = ([station isEndStation] || [station isTransferStation]) ? DRAW_STATION_LARGE_SCALE : 1;
         CGRect stationRect = [self stationPositionRect:station scale:scale];
         if (CGRectContainsPoint(stationRect, touchLocation)) {
-            [self.subwayDelegate stationTouched:station];
+            [self.subwayDelegate stationTouched:station rect:[self stationPositionRect:station scale: 0.5]];
             return;
         }
     }

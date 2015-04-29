@@ -10,8 +10,15 @@
 
 @class Station;
 
+@protocol StationViewDelegate <NSObject>
+
+- (void)stationViewDidDismiss;
+
+@end
+
 @interface StationViewController : UIViewController
 
 @property (nonatomic, weak) Station* station;
+@property (nonatomic, assign) id<StationViewDelegate> delegate;
 
 @end

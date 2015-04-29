@@ -9,10 +9,17 @@
 #import "ViewController.h"
 #import "SubwayView.h"
 #import "StationViewController.h"
+#import "Station.h"
 
-@interface ViewController () <SubwayViewDelegate>
+#import "BlurryModalSegue.h"
+
+@interface ViewController () <UIScrollViewDelegate, SubwayViewDelegate, StationViewDelegate>
 
 @property (strong, nonatomic) SubwayView *subwayView;
+@property (weak, nonatomic) Station* stationToGo;
+@property BOOL isZoomedToStation;
+@property CGRect originalZoomRect;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -23,9 +30,10 @@
     self.subwayView = [[SubwayView alloc] initWithFrame:self.view.bounds];
     [self.subwayView setBackgroundColor:[UIColor whiteColor]];
     [self.subwayView setSubwayDelegate:self];
-    [self.view addSubview:self.subwayView];
+    [self.scrollView addSubview:self.subwayView];
+    [self.scrollView setDelegate:self];
     
-    [((UIScrollView *)self.view) setContentSize:self.subwayView.frame.size];
+    [self.scrollView setContentSize:self.subwayView.frame.size];
 
 }
 
@@ -57,11 +65,11 @@
     
     if (portrait) {
         [self.subwayView transformToHeight:self.view.bounds.size.width];
-        [((UIScrollView *)self.view) setContentSize:self.subwayView.frame.size];
+        [(self.scrollView) setContentSize:self.subwayView.frame.size];
     } else {
         if (self.subwayView.frame.size.height != self.view.bounds.size.width) {
             [self.subwayView transformToHeight:self.view.bounds.size.width];
-            [((UIScrollView *)self.view) setContentSize:self.subwayView.frame.size];
+            [(self.scrollView) setContentSize:self.subwayView.frame.size];
         }
     }
     
@@ -70,14 +78,72 @@
 
 #pragma mark - SubwayViewDelegate 
 
-- (void)stationTouched:(Station *)station {
+- (void)stationTouched:(Station *)station rect:(CGRect)rectToZoom {
+    [self prepareToZoom];
+    self.isZoomedToStation = YES;
+    self.stationToGo = station;
+    [self setOriginalZoomRectForCurrentPosition];
+    [self.scrollView zoomToRect:rectToZoom animated:YES];
+}
+
+#pragma mark - StationViewDelegate
+
+- (void)stationViewDidDismiss {
+    [self.scrollView zoomToRect:self.originalZoomRect animated:YES];
+}
+
+#pragma mark - ScrollViewDelegate
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return self.subwayView;
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
     
+    if (self.isZoomedToStation) {
+        [self showStationView];
+        self.stationToGo = nil;
+        self.isZoomedToStation = NO;
+    } else {
+        [self afterZoom];
+    }
+    
+}
+
+#pragma mark -
+
+- (void)setOriginalZoomRectForCurrentPosition {
+    CGRect visibleRect;
+    visibleRect.origin = self.scrollView.contentOffset;
+    visibleRect.size = self.scrollView.frame.size;
+    CGFloat scale = 1.0 / [self.scrollView zoomScale];
+    visibleRect.origin.x *= scale;
+    visibleRect.size.width *= scale;
+    visibleRect.size.height *= scale;
+    visibleRect.origin.y *= scale;
+    self.originalZoomRect = visibleRect;
+}
+
+- (void)showStationView {
     StationViewController *stationView = [[StationViewController alloc] initWithNibName:@"StationViewController" bundle:nil];
-    [stationView setStation:station];
+    [stationView setStation:self.stationToGo];
+    [stationView setDelegate:self];
     
+    [self presentViewController:stationView animated:NO completion:nil];
     
-    [self presentViewController:stationView animated:YES completion:nil];
-    
+}
+
+- (void)prepareToZoom {
+    UIScrollView *scrollView = self.scrollView;
+    [scrollView setMinimumZoomScale:0];
+    [scrollView setMaximumZoomScale:500];
+    [scrollView setScrollEnabled:NO];
+}
+
+- (void)afterZoom {
+    UIScrollView *scrollView = self.scrollView;
+    [scrollView setMinimumZoomScale:1];
+    [scrollView setMaximumZoomScale:1];
+    [scrollView setScrollEnabled:YES];
 }
 
 @end
