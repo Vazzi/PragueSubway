@@ -24,6 +24,7 @@
 		7D28882C1AE406B6000FDB46 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D28882B1AE406B6000FDB46 /* DataService.m */; };
 		7D28882F1AE408EE000FDB46 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D28882E1AE408EE000FDB46 /* UIKit.framework */; };
 		7D2888311AE40914000FDB46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2888301AE40914000FDB46 /* Foundation.framework */; };
+		7D329BC51AF21B690087C3C5 /* DeparturesTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D329BC41AF21B690087C3C5 /* DeparturesTimer.m */; };
 		7D3725231AE6312E00E30D21 /* DataService+SubwayLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3725221AE6312E00E30D21 /* DataService+SubwayLine.m */; };
 		7D3725261AE6327700E30D21 /* DataService+Departure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3725251AE6327700E30D21 /* DataService+Departure.m */; };
 		7D37252D1AE66CBE00E30D21 /* DataService+InitialData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D37252C1AE66CBE00E30D21 /* DataService+InitialData.m */; };
@@ -73,6 +74,8 @@
 		7D2888301AE40914000FDB46 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7D2888321AE40BAC000FDB46 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		7D2888351AE40D46000FDB46 /* PragueSubway-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PragueSubway-Prefix.pch"; sourceTree = "<group>"; };
+		7D329BC31AF21B690087C3C5 /* DeparturesTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeparturesTimer.h; sourceTree = "<group>"; };
+		7D329BC41AF21B690087C3C5 /* DeparturesTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeparturesTimer.m; sourceTree = "<group>"; };
 		7D3725211AE6312E00E30D21 /* DataService+SubwayLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataService+SubwayLine.h"; sourceTree = "<group>"; };
 		7D3725221AE6312E00E30D21 /* DataService+SubwayLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataService+SubwayLine.m"; sourceTree = "<group>"; };
 		7D3725241AE6327700E30D21 /* DataService+Departure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataService+Departure.h"; sourceTree = "<group>"; };
@@ -135,6 +138,7 @@
 				7D2888121AE40161000FDB46 /* Controller */,
 				7D2888111AE40152000FDB46 /* View */,
 				7D2888131AE4016D000FDB46 /* Data */,
+				7D329BC21AF219C10087C3C5 /* Model */,
 				7D2888291AE40670000FDB46 /* Service */,
 				7D2887DE1AE3F36E000FDB46 /* AppDelegate.h */,
 				7D2887DF1AE3F36E000FDB46 /* AppDelegate.m */,
@@ -226,6 +230,15 @@
 				7D37252C1AE66CBE00E30D21 /* DataService+InitialData.m */,
 			);
 			name = Service;
+			sourceTree = "<group>";
+		};
+		7D329BC21AF219C10087C3C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7D329BC31AF21B690087C3C5 /* DeparturesTimer.h */,
+				7D329BC41AF21B690087C3C5 /* DeparturesTimer.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +354,7 @@
 				7D2888251AE403C4000FDB46 /* Departure.m in Sources */,
 				7D3725261AE6327700E30D21 /* DataService+Departure.m in Sources */,
 				7D2887DD1AE3F36E000FDB46 /* main.m in Sources */,
+				7D329BC51AF21B690087C3C5 /* DeparturesTimer.m in Sources */,
 				7D2888281AE403C4000FDB46 /* SubwayLine.m in Sources */,
 				7DAE6A2D1AE4DD890062054C /* DataService+Station.m in Sources */,
 				7D062AF91AF11A4D0009162C /* StationViewController.m in Sources */,
