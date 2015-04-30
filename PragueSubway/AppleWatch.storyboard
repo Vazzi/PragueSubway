@@ -10,11 +10,7 @@
             <objects>
                 <controller id="OpT-3i-4Aq">
                     <items>
-                        <button width="1" alignment="left" title="Nejbližší stanice" id="eFl-ku-tI4">
-                            <connections>
-                                <segue destination="y3b-Yp-3aq" kind="push" id="KDi-MJ-2fJ"/>
-                            </connections>
-                        </button>
+                        <button width="1" alignment="left" title="Nejbližší stanice" id="eFl-ku-tI4"/>
                         <table alignment="left" id="A5y-Is-gfE">
                             <items>
                                 <tableRow id="QSa-6L-s66">
@@ -25,7 +21,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="562" y="437.5"/>
+            <point key="canvasLocation" x="562" y="428"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="iCD-tL-H1A">
@@ -50,13 +46,16 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="840" y="566"/>
+            <point key="canvasLocation" x="839" y="675"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="enx-P1-lq0">
             <objects>
                 <controller id="XHx-ZM-LQ9">
                     <items>
+                        <label width="1" alignment="left" text="Linka A" textAlignment="center" id="Opu-6Q-1RU" userLabel="LineName">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
                         <table alignment="left" id="t0t-Hh-xEn">
                             <items>
                                 <tableRow id="rBN-ii-WfB">
@@ -74,7 +73,4 @@
             <point key="canvasLocation" x="562" y="675"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="vCp-CX-tLM"/>
-    </inferredMetricsTieBreakers>
 </document>
