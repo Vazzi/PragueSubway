@@ -15,7 +15,26 @@
                                 <action selector="nearStationAction" destination="aGO-bM-rRh" id="zKb-e9-gcM"/>
                             </connections>
                         </button>
+                        <table alignment="left" id="wbv-az-nyf">
+                            <items>
+                                <tableRow identifier="LineRowType" id="t0T-d6-gcz" customClass="LineRowType">
+                                    <group key="rootItem" width="1" alignment="left" id="Lxr-5N-jnX">
+                                        <items>
+                                            <label width="1" height="1" alignment="left" text="Label" textAlignment="center" id="XD8-PG-QAq" userLabel="LineName"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="LineTitle" destination="XD8-PG-QAq" id="P7m-ML-VpB"/>
+                                        <outlet property="group" destination="Lxr-5N-jnX" id="Dj2-9Z-6Gh"/>
+                                        <segue destination="Ksr-We-teL" kind="push" identifier="toLine" id="fHr-hi-yvE"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
+                    <connections>
+                        <outlet property="linesTable" destination="wbv-az-nyf" id="g1a-f0-avk"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="406" y="377"/>
@@ -57,7 +76,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="406" y="638"/>
+            <point key="canvasLocation" x="665" y="377"/>
         </scene>
     </scenes>
 </document>

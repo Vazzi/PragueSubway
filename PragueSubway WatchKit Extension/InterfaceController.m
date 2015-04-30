@@ -12,6 +12,8 @@
 #import "LineRowType.h"
 #import "SubwayLine.h"
 
+#define SEQUE_IDETIFIER_TO_LINE @"toLine"
+
 @interface InterfaceController()
 
 @property (weak, nonatomic) IBOutlet WKInterfaceTable *linesTable;
@@ -36,6 +38,13 @@
         [row.LineTitle setText:line.name];
         [row.group setBackgroundColor:[line UIColor]];
     }
+}
+
+-(id)contextForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex {
+    if ([segueIdentifier isEqualToString:SEQUE_IDETIFIER_TO_LINE]) {
+        return self.lines[rowIndex];
+    }
+    return nil;
 }
 
 - (void)willActivate {
