@@ -62,7 +62,7 @@
     double currentTime = [self getCurrentTime];
     for (NSInteger i = self.departureIndex; YES; i = (i+1) % self.sortedDeparures.count) {
         Departure *departure = self.sortedDeparures[i];
-        if ((departure.time - currentTime) >= 0) {
+        if ((currentTime - departure.time) >= 0) {
             self.departureIndex = i;
             break;
         }
