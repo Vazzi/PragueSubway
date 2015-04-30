@@ -8,6 +8,12 @@
 
 #import "DepartureSectionHeaderView.h"
 
+@interface DepartureSectionHeaderView ()
+
+@property (strong, nonatomic) UIImageView *arrowImageView;
+
+@end
+
 @implementation DepartureSectionHeaderView
 
 - (instancetype)initWithFrame:(CGRect) frame {
@@ -27,7 +33,9 @@
     
     
     UIImage *image = [UIImage imageNamed:@"arrow"];
+
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.image = [imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     imageView.translatesAutoresizingMaskIntoConstraints = NO;
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:label];
@@ -50,6 +58,11 @@
                                              metrics:nil
                                                views:NSDictionaryOfVariableBindings(label)]];
     self.stationLabel = label;
+    self.arrowImageView = imageView;
+}
+
+- (void)setArrowColor:(UIColor *)color {
+    [self.arrowImageView setTintColor:color];
 }
 
 @end

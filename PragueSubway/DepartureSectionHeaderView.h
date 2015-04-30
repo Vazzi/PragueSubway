@@ -12,4 +12,5 @@
 
 @property (nonatomic, strong) UILabel *stationLabel;
 
+- (void)setArrowColor:(UIColor *)color;
 @end

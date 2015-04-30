@@ -108,6 +108,7 @@
     
     Departure *departure = [self.departuresTimers[section] getDeparture];
     [view.stationLabel setText:departure.directionStation.name];
+    [view setArrowColor:[[departure.directionStation getFirstLine] UIColor]];
     
     return view;
 }
