@@ -29,6 +29,7 @@
 - (SubwayLine *)getFirstLine;
 - (NSInteger)getNumberOfDirections;
 - (NSArray *)getAllDeparturesGroupedByDirections;
+- (NSArray *)getDeparturesGroupedByDirectionsForLine:(SubwayLine *)line;
 
 @end
 
