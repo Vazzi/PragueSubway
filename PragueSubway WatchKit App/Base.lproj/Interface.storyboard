@@ -17,10 +17,10 @@
             </objects>
             <point key="canvasLocation" x="406" y="377"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Station Interface Controller-->
         <scene sceneID="dxE-Jo-FL3">
             <objects>
-                <controller id="Wox-sv-dsh">
+                <controller id="Wox-sv-dsh" customClass="StationInterfaceController">
                     <items>
                         <label width="1" alignment="left" text="Station name" textAlignment="center" id="uGx-jI-p19" userLabel="StationName">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="621" y="638"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Line Interface Controller-->
         <scene sceneID="Wpl-Ia-1ub">
             <objects>
-                <controller id="Ksr-We-teL">
+                <controller id="Ksr-We-teL" customClass="LineInterfaceController">
                     <items>
                         <label width="1" alignment="left" text="Linka A" textAlignment="center" id="MiW-7z-QbH" userLabel="LineName">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
