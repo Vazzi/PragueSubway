@@ -27,6 +27,7 @@
 - (bool)isEndStation;
 - (bool)isTransferStation;
 - (SubwayLine *)getFirstLine;
+- (NSInteger)getNumberOfDirections;
 
 @end
 

@@ -52,5 +52,14 @@
     self.line = tempSet;
 }
 
+- (NSInteger)getNumberOfDirections {
+    if ([self isEndStation]) {
+        return 1;
+    } else if ([self isTransferStation]) {
+        return self.line.count * 2;
+    }
+    return 2;
+}
+
 
 @end
