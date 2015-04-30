@@ -116,10 +116,8 @@
 		7D2887CE1AE3F36E000FDB46 = {
 			isa = PBXGroup;
 			children = (
+				7DA0F4A51AF262E7006FD465 /* Frameworks */,
 				7D2887D91AE3F36E000FDB46 /* PragueSubway */,
-				7D2888301AE40914000FDB46 /* Foundation.framework */,
-				7D28882E1AE408EE000FDB46 /* UIKit.framework */,
-				7D2888141AE401E1000FDB46 /* CoreData.framework */,
 				7D2887F61AE3F36E000FDB46 /* PragueSubwayTests */,
 				7D2887D81AE3F36E000FDB46 /* Products */,
 			);
@@ -250,6 +248,16 @@
 				7DA0F47C1AF259FB006FD465 /* AppleWatch.storyboard */,
 			);
 			name = Watch;
+			sourceTree = "<group>";
+		};
+		7DA0F4A51AF262E7006FD465 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D2888301AE40914000FDB46 /* Foundation.framework */,
+				7D28882E1AE408EE000FDB46 /* UIKit.framework */,
+				7D2888141AE401E1000FDB46 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
