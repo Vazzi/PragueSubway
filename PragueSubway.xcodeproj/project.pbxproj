@@ -12,6 +12,27 @@
 		7D24A8101AF26532002221E0 /* LineInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D24A80F1AF26532002221E0 /* LineInterfaceController.m */; };
 		7D24A8131AF2653D002221E0 /* StationInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D24A8121AF2653D002221E0 /* StationInterfaceController.m */; };
 		7D24A8161AF2689C002221E0 /* LineRowType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D24A8151AF2689C002221E0 /* LineRowType.m */; };
+		7D24A8531AF27AD9002221E0 /* SubwayLine.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888261AE403C4000FDB46 /* SubwayLine.h */; };
+		7D24A8541AF27AD9002221E0 /* SubwayLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888271AE403C4000FDB46 /* SubwayLine.m */; };
+		7D24A8551AF27AD9002221E0 /* Departure.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888231AE403C4000FDB46 /* Departure.h */; };
+		7D24A8561AF27AD9002221E0 /* Departure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888241AE403C4000FDB46 /* Departure.m */; };
+		7D24A8571AF27AD9002221E0 /* Station.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888201AE403C3000FDB46 /* Station.h */; };
+		7D24A8581AF27AD9002221E0 /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888211AE403C3000FDB46 /* Station.m */; };
+		7D24A8591AF27AD9002221E0 /* PragueSubway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D2887E11AE3F36E000FDB46 /* PragueSubway.xcdatamodeld */; };
+		7D24A85A1AF27AD9002221E0 /* DeparturesTimer.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D329BC31AF21B690087C3C5 /* DeparturesTimer.h */; };
+		7D24A85B1AF27AD9002221E0 /* DeparturesTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D329BC41AF21B690087C3C5 /* DeparturesTimer.m */; };
+		7D24A85C1AF27AD9002221E0 /* DataService.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D28882A1AE406B6000FDB46 /* DataService.h */; };
+		7D24A85D1AF27AD9002221E0 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D28882B1AE406B6000FDB46 /* DataService.m */; };
+		7D24A85E1AF27AD9002221E0 /* DataService+Station.h in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE6A2B1AE4DD890062054C /* DataService+Station.h */; };
+		7D24A85F1AF27AD9002221E0 /* DataService+Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE6A2C1AE4DD890062054C /* DataService+Station.m */; };
+		7D24A8601AF27AD9002221E0 /* DataService+Departure.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D3725241AE6327700E30D21 /* DataService+Departure.h */; };
+		7D24A8611AF27AD9002221E0 /* DataService+Departure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3725251AE6327700E30D21 /* DataService+Departure.m */; };
+		7D24A8621AF27AD9002221E0 /* DataService+SubwayLine.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D3725211AE6312E00E30D21 /* DataService+SubwayLine.h */; };
+		7D24A8631AF27AD9002221E0 /* DataService+SubwayLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3725221AE6312E00E30D21 /* DataService+SubwayLine.m */; };
+		7D24A8641AF27AD9002221E0 /* DataService+InitialData.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D37252B1AE66CBE00E30D21 /* DataService+InitialData.h */; };
+		7D24A8651AF27AD9002221E0 /* DataService+InitialData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D37252C1AE66CBE00E30D21 /* DataService+InitialData.m */; };
+		7D24A8661AF27AE2002221E0 /* PragueSubway-Prefix.pch in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888351AE40D46000FDB46 /* PragueSubway-Prefix.pch */; };
+		7D24A8671AF27AE2002221E0 /* Constants.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888321AE40BAC000FDB46 /* Constants.h */; };
 		7D2887DD1AE3F36E000FDB46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2887DC1AE3F36E000FDB46 /* main.m */; };
 		7D2887E01AE3F36E000FDB46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2887DF1AE3F36E000FDB46 /* AppDelegate.m */; };
 		7D2887E31AE3F36E000FDB46 /* PragueSubway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D2887E11AE3F36E000FDB46 /* PragueSubway.xcdatamodeld */; };
@@ -548,6 +569,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D24A8661AF27AE2002221E0 /* PragueSubway-Prefix.pch in Sources */,
+				7D24A8671AF27AE2002221E0 /* Constants.h in Sources */,
+				7D24A8531AF27AD9002221E0 /* SubwayLine.h in Sources */,
+				7D24A8541AF27AD9002221E0 /* SubwayLine.m in Sources */,
+				7D24A8551AF27AD9002221E0 /* Departure.h in Sources */,
+				7D24A8561AF27AD9002221E0 /* Departure.m in Sources */,
+				7D24A8571AF27AD9002221E0 /* Station.h in Sources */,
+				7D24A8581AF27AD9002221E0 /* Station.m in Sources */,
+				7D24A8591AF27AD9002221E0 /* PragueSubway.xcdatamodeld in Sources */,
+				7D24A85A1AF27AD9002221E0 /* DeparturesTimer.h in Sources */,
+				7D24A85B1AF27AD9002221E0 /* DeparturesTimer.m in Sources */,
+				7D24A85C1AF27AD9002221E0 /* DataService.h in Sources */,
+				7D24A85D1AF27AD9002221E0 /* DataService.m in Sources */,
+				7D24A85E1AF27AD9002221E0 /* DataService+Station.h in Sources */,
+				7D24A85F1AF27AD9002221E0 /* DataService+Station.m in Sources */,
+				7D24A8601AF27AD9002221E0 /* DataService+Departure.h in Sources */,
+				7D24A8611AF27AD9002221E0 /* DataService+Departure.m in Sources */,
+				7D24A8621AF27AD9002221E0 /* DataService+SubwayLine.h in Sources */,
+				7D24A8631AF27AD9002221E0 /* DataService+SubwayLine.m in Sources */,
+				7D24A8641AF27AD9002221E0 /* DataService+InitialData.h in Sources */,
+				7D24A8651AF27AD9002221E0 /* DataService+InitialData.m in Sources */,
 				7DA0F4B01AF26312006FD465 /* InterfaceController.m in Sources */,
 				7D24A8101AF26532002221E0 /* LineInterfaceController.m in Sources */,
 				7D24A8161AF2689C002221E0 /* LineRowType.m in Sources */,
@@ -684,6 +726,8 @@
 		7DA0F4C71AF26312006FD465 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PragueSubway/PragueSubway-Prefix.pch";
 				INFOPLIST_FILE = "PragueSubway WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";

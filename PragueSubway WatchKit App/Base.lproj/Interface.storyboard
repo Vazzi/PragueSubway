@@ -15,21 +15,6 @@
                                 <action selector="nearStationAction" destination="aGO-bM-rRh" id="zKb-e9-gcM"/>
                             </connections>
                         </button>
-                        <table alignment="left" id="GBr-gh-PWS">
-                            <items>
-                                <tableRow identifier="LineRow" id="aqX-8l-kNE" customClass="LineRowType">
-                                    <group key="rootItem" width="1" alignment="left" id="cfZ-kk-3J5">
-                                        <items>
-                                            <label width="1" height="1" alignment="left" text="Label" textAlignment="center" id="Ofo-hg-nKD" userLabel="LineName"/>
-                                        </items>
-                                    </group>
-                                    <connections>
-                                        <outlet property="LineTitle" destination="Ofo-hg-nKD" id="SaJ-OF-exa"/>
-                                        <outlet property="group" destination="cfZ-kk-3J5" id="Cms-U7-KEM"/>
-                                    </connections>
-                                </tableRow>
-                            </items>
-                        </table>
                     </items>
                 </controller>
             </objects>

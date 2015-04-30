@@ -8,6 +8,7 @@
 
 #import "InterfaceController.h"
 #import "DataService+SubwayLine.h"
+#import "DataService+InitialData.h"
 #import "LineRowType.h"
 #import "SubwayLine.h"
 
@@ -23,9 +24,11 @@
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
+    [[DataService sharedService] createAndSaveInitialData];
 
     self.lines = [[DataService sharedService] subwayLineArray];
-    [self.linesTable setNumberOfRows:self.lines.count withRowType:@"LineRow"];
+    [self.linesTable setNumberOfRows:self.lines.count withRowType:@"LineRowType"];
+    NSLog(@"%ld", (long)self.linesTable.numberOfRows);
     
     for (NSUInteger i = 0; i < self.linesTable.numberOfRows; i++) {
         LineRowType *row = [self.linesTable rowControllerAtIndex:i];
@@ -33,14 +36,13 @@
         [row.LineTitle setText:line.name];
         [row.group setBackgroundColor:[line UIColor]];
     }
-    
 }
 
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
-    
 }
+
 
 - (void)didDeactivate {
     // This method is called when watch view controller is no longer visible
