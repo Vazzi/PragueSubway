@@ -11,6 +11,7 @@
 #import "SubwayLine.h"
 #import <QuartzCore/QuartzCore.h>
 #import "DepartureSectionHeaderView.h"
+#import "DeparturesTimer.h"
 
 @interface StationViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -19,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIView *rightStripe;
 @property (weak, nonatomic) IBOutlet UITableView *departureTableView;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (strong, atomic) NSArray *departuresTimers;
 
 @end
 
@@ -32,6 +34,7 @@
     [self stylizeDepartureTable];
     [self stylizeCancelButton];
     
+    [self initializeData];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
@@ -42,15 +45,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)initializeData {
+    NSArray *departuresGroupedByDirections = [self.station getAllDeparturesGroupedByDirections];
+    
+    NSMutableArray *departuresTimersMutable = [[NSMutableArray alloc] init];
+    for (NSArray *departures in departuresGroupedByDirections) {
+        DeparturesTimer *dtimer = [[DeparturesTimer alloc] initWithDepartures:departures];
+        [dtimer start];
+        [departuresTimersMutable addObject:dtimer];
+    }
+    self.departuresTimers = [NSArray arrayWithArray:departuresTimersMutable];
+    
+}
+
 - (void)stylizeCancelButton {
     self.cancelButton.layer.cornerRadius = 15.0f;
-    
 }
 
 - (void)stylizeDepartureTable {
     self.departureTableView.layer.cornerRadius = 15.0f;
     [self.departureTableView setClipsToBounds:YES];
-    
 }
 
 #pragma mark - View
@@ -82,7 +96,7 @@
 
 #pragma mark - UITableViewDelegate and DataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self.station getNumberOfDirections];
+    return self.departuresTimers.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
