@@ -12,27 +12,6 @@
 		7D24A8101AF26532002221E0 /* LineInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D24A80F1AF26532002221E0 /* LineInterfaceController.m */; };
 		7D24A8131AF2653D002221E0 /* StationInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D24A8121AF2653D002221E0 /* StationInterfaceController.m */; };
 		7D24A8161AF2689C002221E0 /* LineRowType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D24A8151AF2689C002221E0 /* LineRowType.m */; };
-		7D24A8531AF27AD9002221E0 /* SubwayLine.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888261AE403C4000FDB46 /* SubwayLine.h */; };
-		7D24A8541AF27AD9002221E0 /* SubwayLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888271AE403C4000FDB46 /* SubwayLine.m */; };
-		7D24A8551AF27AD9002221E0 /* Departure.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888231AE403C4000FDB46 /* Departure.h */; };
-		7D24A8561AF27AD9002221E0 /* Departure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888241AE403C4000FDB46 /* Departure.m */; };
-		7D24A8571AF27AD9002221E0 /* Station.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888201AE403C3000FDB46 /* Station.h */; };
-		7D24A8581AF27AD9002221E0 /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888211AE403C3000FDB46 /* Station.m */; };
-		7D24A8591AF27AD9002221E0 /* PragueSubway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D2887E11AE3F36E000FDB46 /* PragueSubway.xcdatamodeld */; };
-		7D24A85A1AF27AD9002221E0 /* DeparturesTimer.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D329BC31AF21B690087C3C5 /* DeparturesTimer.h */; };
-		7D24A85B1AF27AD9002221E0 /* DeparturesTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D329BC41AF21B690087C3C5 /* DeparturesTimer.m */; };
-		7D24A85C1AF27AD9002221E0 /* DataService.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D28882A1AE406B6000FDB46 /* DataService.h */; };
-		7D24A85D1AF27AD9002221E0 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D28882B1AE406B6000FDB46 /* DataService.m */; };
-		7D24A85E1AF27AD9002221E0 /* DataService+Station.h in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE6A2B1AE4DD890062054C /* DataService+Station.h */; };
-		7D24A85F1AF27AD9002221E0 /* DataService+Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE6A2C1AE4DD890062054C /* DataService+Station.m */; };
-		7D24A8601AF27AD9002221E0 /* DataService+Departure.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D3725241AE6327700E30D21 /* DataService+Departure.h */; };
-		7D24A8611AF27AD9002221E0 /* DataService+Departure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3725251AE6327700E30D21 /* DataService+Departure.m */; };
-		7D24A8621AF27AD9002221E0 /* DataService+SubwayLine.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D3725211AE6312E00E30D21 /* DataService+SubwayLine.h */; };
-		7D24A8631AF27AD9002221E0 /* DataService+SubwayLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3725221AE6312E00E30D21 /* DataService+SubwayLine.m */; };
-		7D24A8641AF27AD9002221E0 /* DataService+InitialData.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D37252B1AE66CBE00E30D21 /* DataService+InitialData.h */; };
-		7D24A8651AF27AD9002221E0 /* DataService+InitialData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D37252C1AE66CBE00E30D21 /* DataService+InitialData.m */; };
-		7D24A8661AF27AE2002221E0 /* PragueSubway-Prefix.pch in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888351AE40D46000FDB46 /* PragueSubway-Prefix.pch */; };
-		7D24A8671AF27AE2002221E0 /* Constants.h in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888321AE40BAC000FDB46 /* Constants.h */; };
 		7D2887DD1AE3F36E000FDB46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2887DC1AE3F36E000FDB46 /* main.m */; };
 		7D2887E01AE3F36E000FDB46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2887DF1AE3F36E000FDB46 /* AppDelegate.m */; };
 		7D2887E31AE3F36E000FDB46 /* PragueSubway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D2887E11AE3F36E000FDB46 /* PragueSubway.xcdatamodeld */; };
@@ -62,6 +41,16 @@
 		7DAB73DB1AF287AD0008CBF9 /* StationRowType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAB73DA1AF287AD0008CBF9 /* StationRowType.m */; };
 		7DAE6A2D1AE4DD890062054C /* DataService+Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE6A2C1AE4DD890062054C /* DataService+Station.m */; };
 		7DBB60081AE78FE5007C6B2A /* SubwayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB60071AE78FE5007C6B2A /* SubwayView.m */; };
+		7DBDB1FC1AF29A7C0031C32C /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D28882B1AE406B6000FDB46 /* DataService.m */; };
+		7DBDB1FD1AF29A7E0031C32C /* DataService+Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE6A2C1AE4DD890062054C /* DataService+Station.m */; };
+		7DBDB1FE1AF29A800031C32C /* DataService+Departure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3725251AE6327700E30D21 /* DataService+Departure.m */; };
+		7DBDB1FF1AF29A820031C32C /* DataService+SubwayLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3725221AE6312E00E30D21 /* DataService+SubwayLine.m */; };
+		7DBDB2001AF29A840031C32C /* DataService+InitialData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D37252C1AE66CBE00E30D21 /* DataService+InitialData.m */; };
+		7DBDB2011AF29A880031C32C /* DeparturesTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D329BC41AF21B690087C3C5 /* DeparturesTimer.m */; };
+		7DBDB2021AF29A8D0031C32C /* SubwayLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888271AE403C4000FDB46 /* SubwayLine.m */; };
+		7DBDB2031AF29A8F0031C32C /* Departure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888241AE403C4000FDB46 /* Departure.m */; };
+		7DBDB2041AF29A910031C32C /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888211AE403C3000FDB46 /* Station.m */; };
+		7DBDB2051AF29A940031C32C /* PragueSubway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D2887E11AE3F36E000FDB46 /* PragueSubway.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -574,31 +563,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D24A8661AF27AE2002221E0 /* PragueSubway-Prefix.pch in Sources */,
-				7D24A8671AF27AE2002221E0 /* Constants.h in Sources */,
-				7D24A8531AF27AD9002221E0 /* SubwayLine.h in Sources */,
-				7D24A8541AF27AD9002221E0 /* SubwayLine.m in Sources */,
-				7D24A8551AF27AD9002221E0 /* Departure.h in Sources */,
-				7D24A8561AF27AD9002221E0 /* Departure.m in Sources */,
-				7D24A8571AF27AD9002221E0 /* Station.h in Sources */,
-				7D24A8581AF27AD9002221E0 /* Station.m in Sources */,
-				7D24A8591AF27AD9002221E0 /* PragueSubway.xcdatamodeld in Sources */,
-				7D24A85A1AF27AD9002221E0 /* DeparturesTimer.h in Sources */,
-				7D24A85B1AF27AD9002221E0 /* DeparturesTimer.m in Sources */,
-				7D24A85C1AF27AD9002221E0 /* DataService.h in Sources */,
-				7D24A85D1AF27AD9002221E0 /* DataService.m in Sources */,
-				7D24A85E1AF27AD9002221E0 /* DataService+Station.h in Sources */,
-				7D24A85F1AF27AD9002221E0 /* DataService+Station.m in Sources */,
 				7DAB73DB1AF287AD0008CBF9 /* StationRowType.m in Sources */,
-				7D24A8601AF27AD9002221E0 /* DataService+Departure.h in Sources */,
-				7D24A8611AF27AD9002221E0 /* DataService+Departure.m in Sources */,
-				7D24A8621AF27AD9002221E0 /* DataService+SubwayLine.h in Sources */,
-				7D24A8631AF27AD9002221E0 /* DataService+SubwayLine.m in Sources */,
-				7D24A8641AF27AD9002221E0 /* DataService+InitialData.h in Sources */,
-				7D24A8651AF27AD9002221E0 /* DataService+InitialData.m in Sources */,
+				7DBDB2031AF29A8F0031C32C /* Departure.m in Sources */,
 				7DA0F4B01AF26312006FD465 /* InterfaceController.m in Sources */,
 				7D24A8101AF26532002221E0 /* LineInterfaceController.m in Sources */,
+				7DBDB1FD1AF29A7E0031C32C /* DataService+Station.m in Sources */,
+				7DBDB1FF1AF29A820031C32C /* DataService+SubwayLine.m in Sources */,
+				7DBDB1FE1AF29A800031C32C /* DataService+Departure.m in Sources */,
+				7DBDB2051AF29A940031C32C /* PragueSubway.xcdatamodeld in Sources */,
+				7DBDB1FC1AF29A7C0031C32C /* DataService.m in Sources */,
+				7DBDB2011AF29A880031C32C /* DeparturesTimer.m in Sources */,
 				7D24A8161AF2689C002221E0 /* LineRowType.m in Sources */,
+				7DBDB2001AF29A840031C32C /* DataService+InitialData.m in Sources */,
+				7DBDB2021AF29A8D0031C32C /* SubwayLine.m in Sources */,
+				7DBDB2041AF29A910031C32C /* Station.m in Sources */,
 				7D24A8131AF2653D002221E0 /* StationInterfaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
