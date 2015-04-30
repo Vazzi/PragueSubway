@@ -144,8 +144,8 @@
 }
 
 - (void)generateDeparturesForStation:(Station *)station toStation:(Station *)toStation {
-    double time = 4*60 + 40;
-    double endTime = 23*60 + 50;
+    double time = 4*60*60 + 40*60 + 60 ;
+    double endTime = 23*60*60 + 50*60 + 60;
     
     while(time < endTime) {
         Departure *departure = [[DataService sharedService] createDepartureWithDict:nil];
@@ -154,7 +154,7 @@
         departure.directionStation = toStation;
         departure.day = @"W";
         
-        time += 3 + rand() % (10-3);
+        time += (3 + rand() % (10-3)) * 60;
     }
 }
 
