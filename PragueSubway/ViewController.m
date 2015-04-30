@@ -16,6 +16,7 @@
 @property (strong, nonatomic) SubwayView *subwayView;
 @property (weak, nonatomic) Station* stationToGo;
 @property BOOL isZoomedToStation;
+@property BOOL userInteractionLock;
 @property CGRect originalZoomRect;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
@@ -30,6 +31,7 @@
     [self.subwayView setSubwayDelegate:self];
     [self.scrollView addSubview:self.subwayView];
     [self.scrollView setDelegate:self];
+    self.userInteractionLock = NO;
     
     [self.scrollView setContentSize:self.subwayView.frame.size];
 
@@ -58,7 +60,7 @@
 
 - (void)changeTheViewToPortrait:(BOOL)portrait andDuration:(NSTimeInterval)duration {
     
-    [UIView beginAnimations:nil context:NULL];
+    [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:duration];
     
     if (portrait) {
@@ -77,6 +79,9 @@
 #pragma mark - SubwayViewDelegate 
 
 - (void)stationTouched:(Station *)station rect:(CGRect)rectToZoom {
+    if (self.userInteractionLock) {
+        return;
+    }
     [self prepareToZoom];
     self.isZoomedToStation = YES;
     self.stationToGo = station;
@@ -131,17 +136,18 @@
 }
 
 - (void)prepareToZoom {
-    UIScrollView *scrollView = self.scrollView;
-    [scrollView setMinimumZoomScale:0];
-    [scrollView setMaximumZoomScale:500];
-    [scrollView setScrollEnabled:NO];
+    self.userInteractionLock = YES;
+    
+    [self.scrollView setMinimumZoomScale:0];
+    [self.scrollView setMaximumZoomScale:500];
+    [self.scrollView setScrollEnabled:NO];
 }
 
 - (void)afterZoom {
-    UIScrollView *scrollView = self.scrollView;
-    [scrollView setMinimumZoomScale:1];
-    [scrollView setMaximumZoomScale:1];
-    [scrollView setScrollEnabled:YES];
+    self.userInteractionLock = NO;
+    [self.scrollView setMinimumZoomScale:1];
+    [self.scrollView setMaximumZoomScale:1];
+    [self.scrollView setScrollEnabled:YES];
 }
 
 @end
