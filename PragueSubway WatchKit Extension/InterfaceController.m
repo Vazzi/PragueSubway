@@ -26,18 +26,8 @@
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
-    [[DataService sharedService] createAndSaveInitialData];
-
-    self.lines = [[DataService sharedService] subwayLineArraySorted];
-    [self.linesTable setNumberOfRows:self.lines.count withRowType:@"LineRowType"];
-    NSLog(@"%ld", (long)self.linesTable.numberOfRows);
-    
-    for (NSUInteger i = 0; i < self.linesTable.numberOfRows; i++) {
-        LineRowType *row = [self.linesTable rowControllerAtIndex:i];
-        SubwayLine *line = self.lines[i];
-        [row.LineTitle setText:line.name];
-        [row.group setBackgroundColor:[line UIColor]];
-    }
+    [self initializeData];
+    [self setupTableData];
 }
 
 -(id)contextForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex {
@@ -57,6 +47,27 @@
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
 }
+
+#pragma mark - Setup views and data 
+- (void)initializeData {
+    [[DataService sharedService] createAndSaveInitialData];
+    
+    self.lines = [[DataService sharedService] subwayLineArraySorted];
+}
+
+- (void)setupTableData {
+    [self.linesTable setNumberOfRows:self.lines.count withRowType:@"LineRowType"];
+    
+    for (NSUInteger i = 0; i < self.linesTable.numberOfRows; i++) {
+        LineRowType *row = [self.linesTable rowControllerAtIndex:i];
+        SubwayLine *line = self.lines[i];
+        [row.LineTitle setText:line.name];
+        [row.group setBackgroundColor:[line UIColor]];
+    }
+}
+
+
+#pragma mark - Actions
 
 - (IBAction)nearStationAction {
     // TODO: Implement
