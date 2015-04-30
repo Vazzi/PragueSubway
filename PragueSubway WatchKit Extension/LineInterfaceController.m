@@ -7,8 +7,10 @@
 //
 
 #import "LineInterfaceController.h"
+#import "SubwayLine.h"
 
 @interface LineInterfaceController ()
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel *titleLabel;
 
 @end
 
@@ -17,7 +19,10 @@
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
     
-    // Configure interface objects here.
+    SubwayLine *line = context;
+    NSString *title = [NSString stringWithFormat:@"Linka %@", line.name];
+    [self.titleLabel setText:title];
+    
 }
 
 - (void)willActivate {

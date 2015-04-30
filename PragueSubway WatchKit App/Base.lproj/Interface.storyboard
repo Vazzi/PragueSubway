@@ -72,8 +72,17 @@
                         <label width="1" alignment="left" text="Linka A" textAlignment="center" id="MiW-7z-QbH" userLabel="LineName">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
-                        <table alignment="left" id="SWp-ZN-DRJ"/>
+                        <table alignment="left" id="SWp-ZN-DRJ">
+                            <items>
+                                <tableRow id="drY-wx-owO">
+                                    <group key="rootItem" width="1" alignment="left" id="5A6-0J-Fwu"/>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
+                    <connections>
+                        <outlet property="titleLabel" destination="MiW-7z-QbH" id="Bh2-D8-dQ1"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="665" y="377"/>
