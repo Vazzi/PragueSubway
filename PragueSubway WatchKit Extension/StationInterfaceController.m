@@ -23,6 +23,7 @@
 @property (strong, atomic) Station *station;
 @property (strong, atomic) DeparturesTimer *timerFirst;
 @property (strong, atomic) DeparturesTimer *timerSecond;
+@property (strong, nonatomic) NSTimer *timer;
 
 @end
 
@@ -36,6 +37,8 @@
                               line:(SubwayLine *)data[@"line"]];
     
     [self setupLabels];
+    [self setupTimerLabels];
+    
 }
 
 - (void)setupLabels {
@@ -48,6 +51,14 @@
     } else {
         Departure *secondDeparture = [self.timerSecond getDeparture];
         [self.secondToStationLabel setText:secondDeparture.directionStation.name];
+    }
+}
+
+- (void)setupTimerLabels {
+    [self.firstTimeLabel setText:[self.timerFirst getFormatedRemainingTime]];
+    
+    if (self.timerSecond != nil) {
+        [self.secondTimeLabel setText:[self.timerSecond getFormatedRemainingTime]];
     }
 }
 
@@ -70,11 +81,15 @@
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(setupTimerLabels) userInfo:nil repeats:YES];
 }
 
 - (void)didDeactivate {
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
+    
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 @end

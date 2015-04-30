@@ -44,27 +44,46 @@
             <objects>
                 <controller id="Wox-sv-dsh" customClass="StationInterfaceController">
                     <items>
-                        <label width="1" alignment="left" text="Station name" textAlignment="center" id="uGx-jI-p19" userLabel="StationName">
-                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
-                        </label>
-                        <group width="1" alignment="left" layout="vertical" id="ZmG-oD-jdp" userLabel="firstGroup">
+                        <group width="1" alignment="left" layout="vertical" id="3pr-RQ-7h4">
                             <items>
-                                <label alignment="left" text="&gt; Station" id="QUg-vE-rzx" userLabel="ToStationFirst">
-                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                <label width="1" alignment="left" text="Station name" textAlignment="center" id="uGx-jI-p19" userLabel="StationName">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
-                                <label width="1" alignment="left" text="0:00:00" textAlignment="center" id="AFB-9z-auv" userLabel="TimeFirst">
-                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
-                                </label>
-                            </items>
-                        </group>
-                        <group width="1" height="62" alignment="left" layout="vertical" id="4oj-Cr-IW6" userLabel="secondGroup">
-                            <items>
-                                <label alignment="left" text="&gt; Station" id="ceF-BA-7Dp" userLabel="ToStationSecond">
-                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
-                                </label>
-                                <label width="1" alignment="left" text="0:00:00" textAlignment="center" id="d8T-ha-Ocv" userLabel="TimeSecond">
-                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
-                                </label>
+                                <separator alignment="left" alpha="0.5" id="KMr-va-kMf"/>
+                                <group width="1" alignment="left" layout="vertical" id="ZmG-oD-jdp" userLabel="firstGroup">
+                                    <items>
+                                        <group width="1" alignment="left" id="E9B-FA-Zqi">
+                                            <items>
+                                                <label alignment="left" text="&gt;" id="E1c-XW-0ux" userLabel="&gt;">
+                                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                                </label>
+                                                <label alignment="left" text="Station" id="QUg-vE-rzx" userLabel="ToStationFirst">
+                                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <label width="1" alignment="left" text="0:00:00" textAlignment="center" id="AFB-9z-auv" userLabel="TimeFirst">
+                                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="1" height="62" alignment="left" layout="vertical" id="4oj-Cr-IW6" userLabel="secondGroup">
+                                    <items>
+                                        <group width="1" alignment="left" id="z3l-Bv-V88">
+                                            <items>
+                                                <label alignment="left" text="&gt;" id="4fT-L4-eUk" userLabel="&gt;">
+                                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                                </label>
+                                                <label alignment="left" text="Station" id="ceF-BA-7Dp" userLabel="ToStationSecond">
+                                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <label width="1" alignment="left" text="0:00:00" textAlignment="center" id="d8T-ha-Ocv" userLabel="TimeSecond">
+                                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                        </label>
+                                    </items>
+                                </group>
                             </items>
                         </group>
                     </items>
