@@ -83,7 +83,6 @@
     }
 }
 
-
 #pragma mark - Actions
 
 - (IBAction)cancelAction:(UIButton *)sender {
@@ -123,7 +122,9 @@
     }
     
     [cell setAccessoryType:UITableViewCellAccessoryNone];
-    cell.textLabel.text = @"0:00:00";
+    
+    DeparturesTimer *data = self.departuresTimers[indexPath.section];
+    cell.textLabel.text = [data getFormatedRemainingTime];
     [cell.textLabel setFont:[UIFont systemFontOfSize:32]];
     [cell.textLabel setBaselineAdjustment:UIBaselineAdjustmentAlignCenters];
     cell.imageView.image = [UIImage imageNamed:@"clock"];
