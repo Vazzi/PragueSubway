@@ -80,6 +80,9 @@
     NSInteger seconds = ti % 60;
     NSInteger minutes = (ti / 60) % 60;
     NSInteger hours = (ti / 3600);
+    if (hours == 0) {
+        return [NSString stringWithFormat:@"%02ld:%02ld", (long)minutes, (long)seconds];
+    }
     return [NSString stringWithFormat:@"%01ld:%02ld:%02ld", (long)hours, (long)minutes, (long)seconds];
 }
 
