@@ -29,15 +29,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.stationNameLabel setText:self.station.name];
-    [self setBackgroundColorAndColorsOfStripes];
-    [self stylizeDepartureTable];
-    [self stylizeCancelButton];
-    
+
+    [self viewSetup];
     [self initializeData];
-    
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
 }
 
@@ -46,6 +40,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Data
 - (void)initializeData {
     NSArray *departuresGroupedByDirections = [self.station getAllDeparturesGroupedByDirections];
     
@@ -59,6 +54,16 @@
     
 }
 
+#pragma mark - Views
+
+- (void)viewSetup {
+    [self.stationNameLabel setText:self.station.name];
+    [self setBackgroundColorAndColorsOfStripes];
+    [self stylizeDepartureTable];
+    [self stylizeCancelButton];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+}
+
 - (void)stylizeCancelButton {
     self.cancelButton.layer.cornerRadius = 15.0f;
 }
@@ -68,7 +73,6 @@
     [self.departureTableView setClipsToBounds:YES];
 }
 
-#pragma mark - View
 - (void)setBackgroundColorAndColorsOfStripes {
     UIColor *mainColor = [[self.station.line lastObject] UIColor];
     UIColor *secondaryColor = [[self.station getFirstLine] UIColor];
