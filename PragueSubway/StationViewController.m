@@ -82,7 +82,7 @@
 
 #pragma mark - UITableViewDelegate and DataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.station.line.count * 2;
+    return [self.station getNumberOfDirections];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
