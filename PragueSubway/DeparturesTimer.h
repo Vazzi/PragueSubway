@@ -14,7 +14,7 @@
 
 - (instancetype)initWithDepartures:(NSArray *)departures;
 - (Departure *)getDeparture;
-- (NSString *)getRemainingTime;
+- (NSString *)getFormatedRemainingTime;
 - (void)start;
 
 @end

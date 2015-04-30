@@ -29,21 +29,27 @@
 }
 
 - (Departure *)getDeparture {
-    return nil;
+    [self updateIndex];
+    return self.sortedDeparures[self.departureIndex];
 }
 
-- (NSString *)getRemainingTime {
-    return @"";
+- (NSString *)getFormatedRemainingTime {
+    NSDate *remainingTime = [self getRemainingTime];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"hh:mm:ss"];
+    NSString *resultString = [dateFormatter stringFromDate:remainingTime];
+    return resultString;
+    
 }
 
 - (void)start {
-    double currentTime = [[NSDate date] timeIntervalSince1970];
+    double currentTime = [self getCurrentTime];
     double differenceTime = -1;
     for (NSInteger i = 0; i < self.sortedDeparures.count; i++) {
         Departure *departure = self.sortedDeparures[i];
         double departureDifferenceTime = departure.time - currentTime;
         if (departureDifferenceTime >= 0 && departureDifferenceTime < differenceTime) {
-            self.differenceTime = departureDifferenceTime;
+            differenceTime = departureDifferenceTime;
             self.departureIndex = i;
             
         }
@@ -51,6 +57,39 @@
 }
 
 #pragma mark - Private methods
+
+- (void)updateIndex {
+    double currentTime = [self getCurrentTime];
+    for (NSInteger i = self.departureIndex; YES; i = (i+1) % self.sortedDeparures.count) {
+        Departure *departure = self.sortedDeparures[i];
+        if ((departure.time - currentTime) >= 0) {
+            self.departureIndex = i;
+            break;
+        }
+    }
+}
+
+- (double)getCurrentTime {
+    NSDate *today = [self resetTimeForDate:[NSDate date]];
+    return [[NSDate date] timeIntervalSinceDate:today];
+}
+                     
+- (NSDate*)resetTimeForDate:(NSDate*)date{
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay
+                                                                fromDate:date];
+    [components setTimeZone:[NSTimeZone defaultTimeZone]];
+    NSDate *clearedDate = [[NSCalendar currentCalendar] dateFromComponents:components];
+
+    return clearedDate;
+}
+
+- (NSDate *)getRemainingTime {
+    [self updateIndex];
+    double currentTime = [self getCurrentTime];
+    Departure *departure = self.sortedDeparures[self.departureIndex];
+    NSDate *remainingTime = [NSDate dateWithTimeIntervalSinceNow:(departure.time - currentTime)];
+    return remainingTime;
+}
 
 - (NSArray *)sortByTimeDepartures:(NSArray *)departures {
     NSArray *sortedArray;
