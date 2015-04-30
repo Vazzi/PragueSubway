@@ -88,7 +88,18 @@
 #pragma mark - Private methods
 
 - (NSArray *)getDirectionStations {
-    return [self getDirectionStationsForLine:nil];
+    NSMutableArray *directionsStations = [[NSMutableArray alloc] init];
+    NSArray *lines = [self.line  array];
+    for (SubwayLine *line in lines) {
+        if (line.stations.firstObject != self) {
+            [directionsStations addObject:line.stations.firstObject];
+        }
+        if (line.stations.lastObject != self) {
+            [directionsStations addObject:line.stations.lastObject];
+        }
+    }
+    
+    return [NSArray arrayWithArray:directionsStations];
 }
 
 - (NSArray *)getDirectionStationsForLine:(SubwayLine  *)subwayLine {
