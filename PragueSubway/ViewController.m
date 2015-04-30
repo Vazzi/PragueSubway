@@ -26,20 +26,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.subwayView = [[SubwayView alloc] initWithFrame:self.view.bounds];
-    [self.subwayView setBackgroundColor:[UIColor whiteColor]];
-    [self.subwayView setSubwayDelegate:self];
-    [self.scrollView addSubview:self.subwayView];
-    [self.scrollView setDelegate:self];
+
+    [self setupSubwayView];
     self.userInteractionLock = NO;
-    
-    [self.scrollView setContentSize:self.subwayView.frame.size];
 
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Views setup
+
+- (void)setupSubwayView {
+    self.subwayView = [[SubwayView alloc] initWithFrame:self.view.bounds];
+    [self.subwayView setBackgroundColor:[UIColor whiteColor]];
+    [self.subwayView setSubwayDelegate:self];
+    [self.scrollView addSubview:self.subwayView];
+    [self.scrollView setDelegate:self];
+    
+    [self.scrollView setContentSize:self.subwayView.frame.size];
 }
 
 #pragma mark - InterfaceOrientationMethods
