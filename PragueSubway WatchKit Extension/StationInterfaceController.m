@@ -9,6 +9,7 @@
 #import "StationInterfaceController.h"
 #import "Station.h"
 #import "DeparturesTimer.h"
+#import "Departure.h"
 
 @interface StationInterfaceController ()
 
@@ -29,21 +30,36 @@
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
-    NSDictionary *data = context;
     
+    NSDictionary *data = context;
     [self initalizeDataWithStation:(Station *)data[@"station"]
                               line:(SubwayLine *)data[@"line"]];
     
+    [self setupLabels];
+}
+
+- (void)setupLabels {
+    [self.stationNameLabel setText:self.station.name];
+    Departure *firstDeparture = [self.timerFirst getDeparture];
+    [self.firstToStationLabel setText:firstDeparture.directionStation.name];
     
+    if (self.timerSecond == nil) {
+        [self.secondGroup setHidden:YES];
+    } else {
+        Departure *secondDeparture = [self.timerSecond getDeparture];
+        [self.secondToStationLabel setText:secondDeparture.directionStation.name];
+    }
 }
 
 - (void)initalizeDataWithStation:(Station *)station line:(SubwayLine *)line {
     self.station = station;
     NSArray *departuresGrouped = [station getDeparturesGroupedByDirectionsForLine:line];
-    self.timerFirst = departuresGrouped.firstObject;
+    self.timerFirst = [[DeparturesTimer alloc] initWithDepartures:departuresGrouped.firstObject];
+    [self.timerFirst start];
     
     if (departuresGrouped.count == 2) {
-        self.timerSecond = departuresGrouped.lastObject;
+        self.timerSecond = [[DeparturesTimer alloc] initWithDepartures:departuresGrouped.lastObject];
+        [self.timerSecond start];
     } else {
         self.timerSecond = false;
     }
