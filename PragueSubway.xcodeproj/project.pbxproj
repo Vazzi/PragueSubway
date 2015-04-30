@@ -29,7 +29,12 @@
 		7D3725261AE6327700E30D21 /* DataService+Departure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3725251AE6327700E30D21 /* DataService+Departure.m */; };
 		7D37252D1AE66CBE00E30D21 /* DataService+InitialData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D37252C1AE66CBE00E30D21 /* DataService+InitialData.m */; };
 		7D8C44631AF1779C00A7363A /* DepartureSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C44621AF1779C00A7363A /* DepartureSectionHeaderView.m */; };
-		7DA0F47D1AF259FB006FD465 /* AppleWatch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DA0F47C1AF259FB006FD465 /* AppleWatch.storyboard */; };
+		7DA0F4B01AF26312006FD465 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA0F4AF1AF26312006FD465 /* InterfaceController.m */; };
+		7DA0F4B21AF26312006FD465 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA0F4B11AF26312006FD465 /* Images.xcassets */; };
+		7DA0F4B61AF26312006FD465 /* PragueSubway WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 7DA0F4B51AF26312006FD465 /* PragueSubway WatchKit App.app */; };
+		7DA0F4BE1AF26312006FD465 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DA0F4BC1AF26312006FD465 /* Interface.storyboard */; };
+		7DA0F4C01AF26312006FD465 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA0F4BF1AF26312006FD465 /* Images.xcassets */; };
+		7DA0F4C31AF26312006FD465 /* PragueSubway WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7DA0F4AA1AF26312006FD465 /* PragueSubway WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7DAE6A2D1AE4DD890062054C /* DataService+Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE6A2C1AE4DD890062054C /* DataService+Station.m */; };
 		7DBB60081AE78FE5007C6B2A /* SubwayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB60071AE78FE5007C6B2A /* SubwayView.m */; };
 /* End PBXBuildFile section */
@@ -42,7 +47,35 @@
 			remoteGlobalIDString = 7D2887D61AE3F36E000FDB46;
 			remoteInfo = PragueSubway;
 		};
+		7DA0F4B71AF26312006FD465 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D2887CF1AE3F36E000FDB46 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7DA0F4B41AF26312006FD465;
+			remoteInfo = "PragueSubway WatchKit App";
+		};
+		7DA0F4C11AF26312006FD465 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D2887CF1AE3F36E000FDB46 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7DA0F4A91AF26312006FD465;
+			remoteInfo = "PragueSubway WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7DA0F4C81AF26312006FD465 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7DA0F4C31AF26312006FD465 /* PragueSubway WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7D062AF61AF11A4D0009162C /* StationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationViewController.h; sourceTree = "<group>"; };
@@ -85,7 +118,15 @@
 		7D37252C1AE66CBE00E30D21 /* DataService+InitialData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataService+InitialData.m"; sourceTree = "<group>"; };
 		7D8C44611AF1779C00A7363A /* DepartureSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartureSectionHeaderView.h; sourceTree = "<group>"; };
 		7D8C44621AF1779C00A7363A /* DepartureSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartureSectionHeaderView.m; sourceTree = "<group>"; };
-		7DA0F47C1AF259FB006FD465 /* AppleWatch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AppleWatch.storyboard; sourceTree = "<group>"; };
+		7DA0F4AA1AF26312006FD465 /* PragueSubway WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PragueSubway WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DA0F4AD1AF26312006FD465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DA0F4AE1AF26312006FD465 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		7DA0F4AF1AF26312006FD465 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		7DA0F4B11AF26312006FD465 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7DA0F4B51AF26312006FD465 /* PragueSubway WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PragueSubway WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DA0F4BB1AF26312006FD465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DA0F4BD1AF26312006FD465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		7DA0F4BF1AF26312006FD465 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7DAE6A2B1AE4DD890062054C /* DataService+Station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataService+Station.h"; sourceTree = "<group>"; };
 		7DAE6A2C1AE4DD890062054C /* DataService+Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataService+Station.m"; sourceTree = "<group>"; };
 		7DBB60061AE78FE5007C6B2A /* SubwayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubwayView.h; sourceTree = "<group>"; };
@@ -110,15 +151,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7DA0F4A71AF26312006FD465 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		7D2887CE1AE3F36E000FDB46 = {
 			isa = PBXGroup;
 			children = (
-				7DA0F4A51AF262E7006FD465 /* Frameworks */,
+				7DA0F4AB1AF26312006FD465 /* PragueSubway WatchKit Extension */,
+				7DA0F4B91AF26312006FD465 /* PragueSubway WatchKit App */,
 				7D2887D91AE3F36E000FDB46 /* PragueSubway */,
 				7D2887F61AE3F36E000FDB46 /* PragueSubwayTests */,
+				7DA0F4A51AF262E7006FD465 /* Frameworks */,
 				7D2887D81AE3F36E000FDB46 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -128,6 +178,8 @@
 			children = (
 				7D2887D71AE3F36E000FDB46 /* PragueSubway.app */,
 				7D2887F31AE3F36E000FDB46 /* PragueSubwayTests.xctest */,
+				7DA0F4AA1AF26312006FD465 /* PragueSubway WatchKit Extension.appex */,
+				7DA0F4B51AF26312006FD465 /* PragueSubway WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,7 +187,6 @@
 		7D2887D91AE3F36E000FDB46 /* PragueSubway */ = {
 			isa = PBXGroup;
 			children = (
-				7DA0F47B1AF259D8006FD465 /* Watch */,
 				7D2888121AE40161000FDB46 /* Controller */,
 				7D2888111AE40152000FDB46 /* View */,
 				7D2888131AE4016D000FDB46 /* Data */,
@@ -242,14 +293,6 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		7DA0F47B1AF259D8006FD465 /* Watch */ = {
-			isa = PBXGroup;
-			children = (
-				7DA0F47C1AF259FB006FD465 /* AppleWatch.storyboard */,
-			);
-			name = Watch;
-			sourceTree = "<group>";
-		};
 		7DA0F4A51AF262E7006FD465 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +301,43 @@
 				7D2888141AE401E1000FDB46 /* CoreData.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DA0F4AB1AF26312006FD465 /* PragueSubway WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7DA0F4AE1AF26312006FD465 /* InterfaceController.h */,
+				7DA0F4AF1AF26312006FD465 /* InterfaceController.m */,
+				7DA0F4B11AF26312006FD465 /* Images.xcassets */,
+				7DA0F4AC1AF26312006FD465 /* Supporting Files */,
+			);
+			path = "PragueSubway WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		7DA0F4AC1AF26312006FD465 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7DA0F4AD1AF26312006FD465 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DA0F4B91AF26312006FD465 /* PragueSubway WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				7DA0F4BC1AF26312006FD465 /* Interface.storyboard */,
+				7DA0F4BF1AF26312006FD465 /* Images.xcassets */,
+				7DA0F4BA1AF26312006FD465 /* Supporting Files */,
+			);
+			path = "PragueSubway WatchKit App";
+			sourceTree = "<group>";
+		};
+		7DA0F4BA1AF26312006FD465 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7DA0F4BB1AF26312006FD465 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,10 +350,12 @@
 				7D2887D31AE3F36E000FDB46 /* Sources */,
 				7D2887D41AE3F36E000FDB46 /* Frameworks */,
 				7D2887D51AE3F36E000FDB46 /* Resources */,
+				7DA0F4C81AF26312006FD465 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7DA0F4C21AF26312006FD465 /* PBXTargetDependency */,
 			);
 			name = PragueSubway;
 			productName = PragueSubway;
@@ -298,6 +380,39 @@
 			productReference = 7D2887F31AE3F36E000FDB46 /* PragueSubwayTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		7DA0F4A91AF26312006FD465 /* PragueSubway WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DA0F4C61AF26312006FD465 /* Build configuration list for PBXNativeTarget "PragueSubway WatchKit Extension" */;
+			buildPhases = (
+				7DA0F4A61AF26312006FD465 /* Sources */,
+				7DA0F4A71AF26312006FD465 /* Frameworks */,
+				7DA0F4A81AF26312006FD465 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7DA0F4B81AF26312006FD465 /* PBXTargetDependency */,
+			);
+			name = "PragueSubway WatchKit Extension";
+			productName = "PragueSubway WatchKit Extension";
+			productReference = 7DA0F4AA1AF26312006FD465 /* PragueSubway WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		7DA0F4B41AF26312006FD465 /* PragueSubway WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DA0F4C41AF26312006FD465 /* Build configuration list for PBXNativeTarget "PragueSubway WatchKit App" */;
+			buildPhases = (
+				7DA0F4B31AF26312006FD465 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PragueSubway WatchKit App";
+			productName = "PragueSubway WatchKit App";
+			productReference = 7DA0F4B51AF26312006FD465 /* PragueSubway WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -313,6 +428,12 @@
 					7D2887F21AE3F36E000FDB46 = {
 						CreatedOnToolsVersion = 6.3;
 						TestTargetID = 7D2887D61AE3F36E000FDB46;
+					};
+					7DA0F4A91AF26312006FD465 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					7DA0F4B41AF26312006FD465 = {
+						CreatedOnToolsVersion = 6.3.1;
 					};
 				};
 			};
@@ -331,6 +452,8 @@
 			targets = (
 				7D2887D61AE3F36E000FDB46 /* PragueSubway */,
 				7D2887F21AE3F36E000FDB46 /* PragueSubwayTests */,
+				7DA0F4A91AF26312006FD465 /* PragueSubway WatchKit Extension */,
+				7DA0F4B41AF26312006FD465 /* PragueSubway WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -342,7 +465,6 @@
 			files = (
 				7D2887E91AE3F36E000FDB46 /* Main.storyboard in Resources */,
 				7D2887EE1AE3F36E000FDB46 /* LaunchScreen.xib in Resources */,
-				7DA0F47D1AF259FB006FD465 /* AppleWatch.storyboard in Resources */,
 				7D2887EB1AE3F36E000FDB46 /* Images.xcassets in Resources */,
 				7D062AFA1AF11A4D0009162C /* StationViewController.xib in Resources */,
 			);
@@ -352,6 +474,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DA0F4A81AF26312006FD465 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DA0F4B21AF26312006FD465 /* Images.xcassets in Resources */,
+				7DA0F4B61AF26312006FD465 /* PragueSubway WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DA0F4B31AF26312006FD465 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DA0F4BE1AF26312006FD465 /* Interface.storyboard in Resources */,
+				7DA0F4C01AF26312006FD465 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +529,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7DA0F4A61AF26312006FD465 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DA0F4B01AF26312006FD465 /* InterfaceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -396,6 +544,16 @@
 			isa = PBXTargetDependency;
 			target = 7D2887D61AE3F36E000FDB46 /* PragueSubway */;
 			targetProxy = 7D2887F41AE3F36E000FDB46 /* PBXContainerItemProxy */;
+		};
+		7DA0F4B81AF26312006FD465 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7DA0F4B41AF26312006FD465 /* PragueSubway WatchKit App */;
+			targetProxy = 7DA0F4B71AF26312006FD465 /* PBXContainerItemProxy */;
+		};
+		7DA0F4C21AF26312006FD465 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7DA0F4A91AF26312006FD465 /* PragueSubway WatchKit Extension */;
+			targetProxy = 7DA0F4C11AF26312006FD465 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -414,6 +572,14 @@
 				7D2887ED1AE3F36E000FDB46 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		7DA0F4BC1AF26312006FD465 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DA0F4BD1AF26312006FD465 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -483,6 +649,30 @@
 			};
 			name = Release;
 		};
+		7DA0F4C51AF26312006FD465 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = PragueSubway_WatchKit_Extension;
+				INFOPLIST_FILE = "PragueSubway WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		7DA0F4C71AF26312006FD465 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "PragueSubway WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -506,6 +696,22 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7D2888021AE3F36E000FDB46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7DA0F4C41AF26312006FD465 /* Build configuration list for PBXNativeTarget "PragueSubway WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DA0F4C51AF26312006FD465 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7DA0F4C61AF26312006FD465 /* Build configuration list for PBXNativeTarget "PragueSubway WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DA0F4C71AF26312006FD465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
