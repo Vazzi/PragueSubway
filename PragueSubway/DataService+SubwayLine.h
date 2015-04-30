@@ -15,5 +15,6 @@
 - (SubwayLine *)createSubwayLineWithDict:(NSDictionary *)data;
 - (SubwayLine *)subwayLineWithName:(NSString *)name;
 - (NSArray *)subwayLineArray;
+- (NSArray *)subwayLineArraySorted;
 
 @end

@@ -28,7 +28,7 @@
     [super awakeWithContext:context];
     [[DataService sharedService] createAndSaveInitialData];
 
-    self.lines = [[DataService sharedService] subwayLineArray];
+    self.lines = [[DataService sharedService] subwayLineArraySorted];
     [self.linesTable setNumberOfRows:self.lines.count withRowType:@"LineRowType"];
     NSLog(@"%ld", (long)self.linesTable.numberOfRows);
     

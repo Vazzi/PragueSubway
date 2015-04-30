@@ -29,4 +29,12 @@
     return [self recordsIn:entityString withPredicate:nil];
 }
 
+- (NSArray *)subwayLineArraySorted {
+    NSString *entityString = [[SubwayLine class] description];
+    NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:@"name"
+                                                         ascending:YES
+                                                          selector:@selector(localizedStandardCompare:)];
+    return [self recordsIn:entityString predicate:nil sort:sd];
+}
+
 @end

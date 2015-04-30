@@ -20,5 +20,8 @@
 - (NSURL *)applicationDocumentsDirectory;
 - (NSArray *)recordsIn:(NSString *) entityString withPredicate:(NSPredicate *)predicate;
 - (id)recordIn:(NSString *) entityString withPredicate:(NSPredicate *)predicate;
+- (NSArray *)recordsIn:(NSString *) entityString
+             predicate:(NSPredicate *)predicate
+                  sort:(NSSortDescriptor *)sortDescriptor;
 
 @end

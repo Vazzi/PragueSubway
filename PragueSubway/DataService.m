@@ -140,4 +140,27 @@
     return fetchedArray.firstObject;
 }
 
+
+/*! Search records.
+ \param entityString class description string
+ \param predicate
+ \param sortDescriptor
+ \return Array with finded records
+ */
+- (NSArray *)recordsIn:(NSString *) entityString
+             predicate:(NSPredicate *)predicate
+                  sort:(NSSortDescriptor *)sortDescriptor
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:entityString];
+    [request setPredicate:predicate];
+    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    NSError *error;
+    NSArray *fetchedArray = [self.managedObjectContext executeFetchRequest:request error:&error];
+    if( error ){
+        TRC_ERR(@"%@", error);
+        return @[];
+    }
+    return fetchedArray;
+}
+
 @end
