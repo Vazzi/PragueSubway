@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *departureTableView;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (strong, atomic) NSArray *departuresTimers;
+@property (strong, nonatomic) NSTimer *updateTimer;
 
 @end
 
@@ -32,6 +33,7 @@
 
     [self viewSetup];
     [self initializeData];
+    [self setupAndStartTimer];
     
 }
 
@@ -52,6 +54,14 @@
     }
     self.departuresTimers = [NSArray arrayWithArray:departuresTimersMutable];
     
+}
+
+- (void)setupAndStartTimer {
+    self.updateTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(updateTable) userInfo:nil repeats:YES];
+}
+
+- (void)updateTable {
+    [self.departureTableView reloadData];
 }
 
 #pragma mark - Views
@@ -94,6 +104,8 @@
     
     [self dismissViewControllerAnimated:NO completion:^{
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+        [self.updateTimer invalidate];
+        self.updateTimer = nil;
         [self.delegate stationViewDidDismiss];
     }];
 }
@@ -127,15 +139,15 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        // Setting constant properties
+        [cell setAccessoryType:UITableViewCellAccessoryNone];
+        [cell.textLabel setFont:[UIFont systemFontOfSize:32]];
+        [cell.textLabel setBaselineAdjustment:UIBaselineAdjustmentAlignCenters];
+        cell.imageView.image = [UIImage imageNamed:@"clock"];
     }
-    
-    [cell setAccessoryType:UITableViewCellAccessoryNone];
     
     DeparturesTimer *data = self.departuresTimers[indexPath.section];
     cell.textLabel.text = [data getFormatedRemainingTime];
-    [cell.textLabel setFont:[UIFont systemFontOfSize:32]];
-    [cell.textLabel setBaselineAdjustment:UIBaselineAdjustmentAlignCenters];
-    cell.imageView.image = [UIImage imageNamed:@"clock"];
     
     return cell;
 }
