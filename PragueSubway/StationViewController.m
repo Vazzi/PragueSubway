@@ -12,6 +12,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "DepartureSectionHeaderView.h"
 #import "DeparturesTimer.h"
+#import "Departure.h"
 
 @interface StationViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -104,7 +105,9 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     DepartureSectionHeaderView *view = [[DepartureSectionHeaderView alloc] initWithFrame:CGRectZero];
-    [view.stationLabel setText:self.station.name];
+    
+    Departure *departure = [self.departuresTimers[section] getDeparture];
+    [view.stationLabel setText:departure.directionStation.name];
     
     return view;
 }
