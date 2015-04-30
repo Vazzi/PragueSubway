@@ -57,15 +57,15 @@
 
 - (NSTimeInterval)updateIndexAndGetDifference {
     NSTimeInterval currentTime = [self getCurrentTime];
-    NSTimeInterval diff = 0;
-    for (NSInteger i = self.departureIndex; YES; i = (i+1) % self.sortedDeparures.count) {
+    NSTimeInterval diff = -1;
+    NSInteger i = self.departureIndex;
+    
+    for (i = self.departureIndex; YES; i = fmodf((i+1), self.sortedDeparures.count)) {
         Departure *departure = self.sortedDeparures[i];
         diff = (departure.time - currentTime);
-        if (diff > 0) {
-            self.departureIndex = i;
-            break;
-        }
+        if (diff > 0) break;
     }
+    self.departureIndex = i;
     return diff;
 }
 
@@ -91,7 +91,7 @@
     sortedArray = [departures sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
         double first = [(Departure *)a time];
         double second = [(Departure *)b time];
-        return first < second;
+        return first > second;
     }];
     return sortedArray;
 }
