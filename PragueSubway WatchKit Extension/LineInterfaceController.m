@@ -7,10 +7,14 @@
 //
 
 #import "LineInterfaceController.h"
+#import "StationRowType.h"
 #import "SubwayLine.h"
+#import "Station.h"
 
 @interface LineInterfaceController ()
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *titleLabel;
+@property (weak, nonatomic) IBOutlet WKInterfaceTable *stationsTable;
+@property (strong, atomic) NSArray *stations;
 
 @end
 
@@ -23,6 +27,16 @@
     NSString *title = [NSString stringWithFormat:@"Linka %@", line.name];
     [self.titleLabel setText:title];
     
+    self.stations = [line.stations array];;
+    
+    [self.stationsTable setNumberOfRows:self.stations.count withRowType:@"StationRowType"];
+    
+    for (NSUInteger i = 0; i < self.stationsTable.numberOfRows; i++) {
+        StationRowType *row = [self.stationsTable rowControllerAtIndex:i];
+        Station *station = self.stations[i];
+        [row.titleLabel setText:station.name];
+        [row.group setBackgroundColor:[line UIColor]];
+    }
 }
 
 - (void)willActivate {

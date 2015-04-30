@@ -74,13 +74,22 @@
                         </label>
                         <table alignment="left" id="SWp-ZN-DRJ">
                             <items>
-                                <tableRow id="drY-wx-owO">
-                                    <group key="rootItem" width="1" alignment="left" id="5A6-0J-Fwu"/>
+                                <tableRow identifier="StationRowType" id="drY-wx-owO" customClass="StationRowType">
+                                    <group key="rootItem" width="1" alignment="left" id="5A6-0J-Fwu">
+                                        <items>
+                                            <label width="1" height="1" alignment="left" text="Label" textAlignment="center" id="y9G-YC-gmT"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="group" destination="5A6-0J-Fwu" id="UJF-Jr-V50"/>
+                                        <outlet property="titleLabel" destination="y9G-YC-gmT" id="ngc-J3-8op"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
                     <connections>
+                        <outlet property="stationsTable" destination="SWp-ZN-DRJ" id="w0u-gX-qAP"/>
                         <outlet property="titleLabel" destination="MiW-7z-QbH" id="Bh2-D8-dQ1"/>
                     </connections>
                 </controller>
