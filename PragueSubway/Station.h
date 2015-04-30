@@ -28,6 +28,7 @@
 - (bool)isTransferStation;
 - (SubwayLine *)getFirstLine;
 - (NSInteger)getNumberOfDirections;
+- (NSArray *)getAllDeparturesGroupedByDirections;
 
 @end
 

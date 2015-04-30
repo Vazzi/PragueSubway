@@ -61,5 +61,40 @@
     return 2;
 }
 
+- (NSArray *)getAllDeparturesGroupedByDirections {
+    NSMutableArray *departuresArray = [[NSMutableArray alloc] init];
+    
+    NSArray *directionsStations = [self getDirectionStations];
+    for (Station *station in directionsStations) {
+        [departuresArray addObject:[self getAllDeparturesForDirections:station]];
+    }
+    
+    return [NSArray arrayWithArray:departuresArray];
+}
+
+
+#pragma mark - Private methods
+
+- (NSArray *)getDirectionStations {
+    NSMutableArray *directionsStations = [[NSMutableArray alloc] init];
+    NSArray *lines = [self.line  array];
+    for (SubwayLine *line in lines) {
+        if (line.stations.firstObject != self) {
+            [directionsStations addObject:line.stations.firstObject];
+        }
+        if (line.stations.lastObject != self) {
+            [directionsStations addObject:line.stations.lastObject];
+        }
+    }
+    
+    return [NSArray arrayWithArray:directionsStations];
+}
+
+- (NSSet *)getAllDeparturesForDirections:(Station *)station {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"directionStation.name == %@", station.name];
+    return [self.departures filteredSetUsingPredicate:predicate];
+}
+
+
 
 @end
