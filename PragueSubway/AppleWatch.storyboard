@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OpT-3i-4Aq">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="6F3-Ah-DbI">
+            <objects>
+                <controller id="OpT-3i-4Aq">
+                    <items>
+                        <button width="1" alignment="left" title="Nejbližší stanice" id="eFl-ku-tI4">
+                            <connections>
+                                <segue destination="y3b-Yp-3aq" kind="push" id="KDi-MJ-2fJ"/>
+                            </connections>
+                        </button>
+                        <table alignment="left" id="A5y-Is-gfE">
+                            <items>
+                                <tableRow id="QSa-6L-s66">
+                                    <group key="rootItem" width="1" alignment="left" id="QZj-k0-uGy"/>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="562" y="437.5"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="iCD-tL-H1A">
+            <objects>
+                <controller id="y3b-Yp-3aq">
+                    <items>
+                        <label width="1" alignment="left" text="Station name" textAlignment="center" id="nCM-wc-GN5" userLabel="StationName">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <label alignment="left" text="&gt; Station" id="69C-jo-eYx" userLabel="ToStationFirst">
+                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                        </label>
+                        <label width="1" alignment="left" text="0:00:00" textAlignment="center" id="dv7-5b-Sph" userLabel="TimeFirst">
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                        <label alignment="left" text="&gt; Station" id="wre-lx-H8Y" userLabel="ToStationSecond">
+                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                        </label>
+                        <label width="1" alignment="left" text="0:00:00" textAlignment="center" id="1Cn-D1-apf" userLabel="TimeSecond">
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="840" y="566"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="enx-P1-lq0">
+            <objects>
+                <controller id="XHx-ZM-LQ9">
+                    <items>
+                        <table alignment="left" id="t0t-Hh-xEn">
+                            <items>
+                                <tableRow id="rBN-ii-WfB">
+                                    <group key="rootItem" width="1" alignment="left" id="aWj-3n-e9m">
+                                        <connections>
+                                            <segue destination="y3b-Yp-3aq" kind="push" id="vCp-CX-tLM"/>
+                                        </connections>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="562" y="675"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vCp-CX-tLM"/>
+    </inferredMetricsTieBreakers>
+</document>
