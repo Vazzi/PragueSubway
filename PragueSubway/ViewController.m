@@ -19,7 +19,7 @@
 @property BOOL userInteractionLock;
 @property CGRect originalZoomRect;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -30,6 +30,8 @@
 
     [self setupSubwayView];
     self.userInteractionLock = NO;
+    [self.activityIndicator setHidden:YES];
+
 
 }
 
@@ -48,6 +50,12 @@
     [self.scrollView setDelegate:self];
     
     [self.scrollView setContentSize:self.subwayView.frame.size];
+}
+
+#pragma mark - Actions
+
+- (IBAction)findNearestStationAction:(id)sender {
+    NSLog(@"Find nearest station action");
 }
 
 #pragma mark - InterfaceOrientationMethods
@@ -123,11 +131,11 @@
 #pragma mark -
 
 - (CGFloat)getScrollViewHeight {
-    return (self.view.frame.size.height - self.toolbar.frame.size.height);
+    return (self.view.frame.size.height);
 }
 
 - (CGFloat)getScrollViewWidth {
-    return (self.view.frame.size.width - self.toolbar.frame.size.height);
+    return (self.view.frame.size.width);
 }
 
 - (void)setOriginalZoomRectForCurrentPosition {
