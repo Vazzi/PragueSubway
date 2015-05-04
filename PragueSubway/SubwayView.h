@@ -20,6 +20,7 @@
 
 @property (nonatomic, assign) id<SubwayViewDelegate> subwayDelegate;
 
+- (instancetype)initWithHeight:(CGFloat) height;
 - (void)transformToHeight:(CGFloat) height;
 
 @end

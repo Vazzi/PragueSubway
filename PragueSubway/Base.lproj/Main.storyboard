@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -12,13 +13,35 @@
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" delaysContentTouches="NO" bouncesZoom="NO" id="M01-pe-cJX">
+                    <view key="view" contentMode="scaleToFill" id="vOQ-my-p8P">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NG-So-y8A">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                            </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yia-h9-C8Y">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Wh1-OM-RTZ"/>
+                                    <barButtonItem title="Nejbližší stanice" id="uSo-JS-Xbl"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </scrollView>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8NG-So-y8A" secondAttribute="trailing" id="LIx-BE-XBs"/>
+                            <constraint firstItem="8NG-So-y8A" firstAttribute="bottom" secondItem="yia-h9-C8Y" secondAttribute="top" id="S1B-MH-7Ze"/>
+                            <constraint firstItem="8NG-So-y8A" firstAttribute="top" secondItem="vOQ-my-p8P" secondAttribute="topMargin" id="Xzx-Du-UiM"/>
+                            <constraint firstItem="yia-h9-C8Y" firstAttribute="leading" secondItem="vOQ-my-p8P" secondAttribute="leading" id="at5-mr-xX3"/>
+                            <constraint firstAttribute="trailing" secondItem="yia-h9-C8Y" secondAttribute="trailing" id="nGM-7N-uDS"/>
+                            <constraint firstAttribute="bottom" secondItem="yia-h9-C8Y" secondAttribute="bottom" id="tfV-1F-TlS"/>
+                            <constraint firstItem="8NG-So-y8A" firstAttribute="leading" secondItem="vOQ-my-p8P" secondAttribute="leading" id="vO7-hG-Fez"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <outlet property="scrollView" destination="M01-pe-cJX" id="PuD-pX-uSB"/>
+                        <outlet property="scrollView" destination="8NG-So-y8A" id="kpn-bN-9Qq"/>
+                        <outlet property="toolbar" destination="yia-h9-C8Y" id="fMf-uw-hjq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

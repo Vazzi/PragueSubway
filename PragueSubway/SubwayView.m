@@ -15,13 +15,13 @@
 @implementation SubwayView
 
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)initWithHeight:(CGFloat) height {
     self = [super initWithFrame:CGRectMake(0, 0, DRAW_WIDTH, DRAW_HEIGHT)];
     if (!self) {
         return nil;
     }
     
-    [self transformToHeight:frame.size.height];
+    [self transformToHeight:height];
     
     return self;
 }

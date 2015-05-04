@@ -19,6 +19,7 @@
 @property BOOL userInteractionLock;
 @property CGRect originalZoomRect;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 
 @end
 
@@ -40,7 +41,7 @@
 #pragma mark - Views setup
 
 - (void)setupSubwayView {
-    self.subwayView = [[SubwayView alloc] initWithFrame:self.view.bounds];
+    self.subwayView = [[SubwayView alloc] initWithHeight:[self getScrollViewHeight]];
     [self.subwayView setBackgroundColor:[UIColor whiteColor]];
     [self.subwayView setSubwayDelegate:self];
     [self.scrollView addSubview:self.subwayView];
@@ -71,11 +72,11 @@
     [UIView setAnimationDuration:duration];
     
     if (portrait) {
-        [self.subwayView transformToHeight:self.view.bounds.size.width];
+        [self.subwayView transformToHeight:[self getScrollViewWidth]];
         [(self.scrollView) setContentSize:self.subwayView.frame.size];
     } else {
-        if (self.subwayView.frame.size.height != self.view.bounds.size.width) {
-            [self.subwayView transformToHeight:self.view.bounds.size.width];
+        if (self.subwayView.frame.size.height != [self getScrollViewWidth]) {
+            [self.subwayView transformToHeight:[self getScrollViewWidth]];
             [(self.scrollView) setContentSize:self.subwayView.frame.size];
         }
     }
@@ -120,6 +121,14 @@
 }
 
 #pragma mark -
+
+- (CGFloat)getScrollViewHeight {
+    return (self.view.frame.size.height - self.toolbar.frame.size.height);
+}
+
+- (CGFloat)getScrollViewWidth {
+    return (self.view.frame.size.width - self.toolbar.frame.size.height);
+}
 
 - (void)setOriginalZoomRectForCurrentPosition {
     CGRect visibleRect;
