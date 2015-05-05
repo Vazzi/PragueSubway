@@ -117,7 +117,8 @@
 
 #pragma mark - StationLocationDelegate
 - (void)stationFound:(Station *)station {
-    NSLog(@"Station found");
+    CGRect stationRect = CGRectMake(station.drawPosX, station.drawPosY, 20, 20);
+    [self stationTouched:station rect:stationRect];
     [self.activityIndicator stopAnimating];
     [self.activityIndicator setHidden:YES];
 }
