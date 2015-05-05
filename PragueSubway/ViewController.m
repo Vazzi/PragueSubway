@@ -120,11 +120,11 @@
 - (void)stationFound:(Station *)station {
     CGRect stationRect = CGRectMake(station.drawPosX, station.drawPosY, 20, 20);
     [self stationTouched:station rect:stationRect];
-    [self activityIndicatorIsHiden:YES];
+    [self activityIndicatorIsHiden:NO];
 }
 
 - (void)stationSearchDidFailed {
-    [self activityIndicatorIsHiden:NO];
+    [self activityIndicatorIsHiden:YES];
     [self showAlertStaionSearchFailed];
 }
 
