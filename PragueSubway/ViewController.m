@@ -125,7 +125,7 @@
 
 - (void)stationSearchDidFailed {
     [self activityIndicatorIsHiden:NO];
-    [self showAlertStaionNotFound];
+    [self showAlertStaionSearchFailed];
 }
 
 - (void)noStationFound {
@@ -235,8 +235,8 @@
 }
 
 - (void)showAlertStaionNotFound {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Location services disabled", nil)
-                                                    message:NSLocalizedString(@"Station did not found description alert", nil)
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Station search error", nil)
+                                                    message:NSLocalizedString(@"Station search error description alert", nil)
                                                    delegate:nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];

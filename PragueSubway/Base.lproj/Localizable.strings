@@ -5,8 +5,8 @@
   Created by Jakub Vlasák on 05/05/15.
   Copyright (c) 2015 Jakub Vlasák. All rights reserved.
 */
-"Station did not found" = "Station did not found";
-"Station did not found description alert" = "...";
+"Station search error" = "Station search error";
+"Station search error description alert" = "There was an error in locating user.";
 "Location services disabled" = "Location services disabled";
 "Location services disabled description - other" = "...";
 "Location services disabled description - main" = "...";
