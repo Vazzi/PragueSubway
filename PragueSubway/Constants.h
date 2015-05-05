@@ -24,6 +24,9 @@
 #define DRAW_WIDTH (2*DRAW_INSETS_SIDE+2*DRAW_SIDE_STATIONS_SIZE+2*DRAW_MIDDLE_INSETS_SIDE+DRAW_MIDDLE_STATIONS_SIZE)
 #define DRAW_HEIGHT (5*DRAW_Y_STEP+DRAW_INSETS_TOP+DRAW_INSETS_BOTTOM)
 
+
+#define LOCATION_UPDATE_AFTER_METERS 100
+
 #ifdef DEBUG
 #define TRC_OBJ(A)                          NSLog(@"%@", A)
 #define TRC_DATA(A)                         NSLog(@"DATA %10db: %@", [A length], [[NSString alloc] initWithData:A encoding:NSUTF8StringEncoding])
