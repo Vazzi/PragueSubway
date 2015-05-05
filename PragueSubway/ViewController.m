@@ -234,7 +234,7 @@
     }
 }
 
-- (void)showAlertStaionNotFound {
+- (void)showAlertStaionSearchFailed {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Station search error", nil)
                                                     message:NSLocalizedString(@"Station search error description alert", nil)
                                                    delegate:nil
