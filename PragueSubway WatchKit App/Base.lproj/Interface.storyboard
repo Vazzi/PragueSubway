@@ -10,7 +10,7 @@
             <objects>
                 <controller id="aGO-bM-rRh" customClass="InterfaceController">
                     <items>
-                        <button width="1" alignment="left" title="Nejbližší stanice" id="X6U-HH-Dn4">
+                        <button width="1" alignment="left" title="Nearest Station" id="X6U-HH-Dn4">
                             <connections>
                                 <action selector="nearStationAction" destination="aGO-bM-rRh" id="zKb-e9-gcM"/>
                             </connections>
@@ -104,7 +104,7 @@
             <objects>
                 <controller id="Ksr-We-teL" customClass="LineInterfaceController">
                     <items>
-                        <label width="1" alignment="left" text="Linka A" textAlignment="center" id="MiW-7z-QbH" userLabel="LineName">
+                        <label width="1" alignment="left" text="Line A" textAlignment="center" id="MiW-7z-QbH" userLabel="LineName">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
                         <table alignment="left" id="SWp-ZN-DRJ">

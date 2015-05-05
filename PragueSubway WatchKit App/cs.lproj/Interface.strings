@@ -12,7 +12,7 @@
 "MiW-7z-QbH.text" = "Linka A";
 
 /* Class = "WKInterfaceLabel"; text = "Station"; ObjectID = "QUg-vE-rzx"; */
-"QUg-vE-rzx.text" = "Station";
+"QUg-vE-rzx.text" = "Stanice";
 
 /* Class = "WKInterfaceButton"; title = "Nejbližší stanice"; ObjectID = "X6U-HH-Dn4"; */
 "X6U-HH-Dn4.title" = "Nejbližší stanice";
@@ -27,7 +27,7 @@
 "d8T-ha-Ocv.text" = "0:00:00";
 
 /* Class = "WKInterfaceLabel"; text = "Station name"; ObjectID = "uGx-jI-p19"; */
-"uGx-jI-p19.text" = "Station name";
+"uGx-jI-p19.text" = "Jméno stanice";
 
 /* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "y9G-YC-gmT"; */
 "y9G-YC-gmT.text" = "Label";
