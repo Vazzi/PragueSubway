@@ -10,10 +10,19 @@
 
 @class Station;
 
+@protocol StationLocationDelegate <NSObject>
+
+- (void)stationFound:(Station *)station;
+
+@end
+
 @interface StationLocationManager : NSObject
+
+@property (nonatomic, assign) id<StationLocationDelegate> delegate;
 
 - (instancetype)init;
 - (void)startUpdatingLocation;
 - (Station *)getNearestStation;
+- (void)showAllertIfServiceDisabled;
 
 @end

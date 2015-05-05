@@ -87,6 +87,11 @@
             nearestStation = station;
         }
     }
+    
+    if (![self.nearestStation isEqual:nearestStation]){
+        self.nearestStation = nearestStation;
+        [self.delegate stationFound:nearestStation];
+    }
 }
 
 @end

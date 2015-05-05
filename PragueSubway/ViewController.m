@@ -10,8 +10,9 @@
 #import "SubwayView.h"
 #import "StationViewController.h"
 #import "Station.h"
+#import "StationLocationManager.h"
 
-@interface ViewController () <UIScrollViewDelegate, SubwayViewDelegate, StationViewDelegate>
+@interface ViewController () <UIScrollViewDelegate, SubwayViewDelegate, StationViewDelegate, StationLocationDelegate>
 
 @property (strong, nonatomic) SubwayView *subwayView;
 @property (weak, nonatomic) Station* stationToGo;
@@ -20,6 +21,7 @@
 @property CGRect originalZoomRect;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (strong, nonatomic) StationLocationManager *stationLocMan;
 
 @end
 
@@ -31,8 +33,13 @@
     [self setupSubwayView];
     self.userInteractionLock = NO;
     [self.activityIndicator setHidden:YES];
+    
+    self.stationLocMan = [[StationLocationManager alloc] init];
 
+}
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.stationLocMan showAllertIfServiceDisabled];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,7 +62,9 @@
 #pragma mark - Actions
 
 - (IBAction)findNearestStationAction:(id)sender {
-    NSLog(@"Find nearest station action");
+    [self.stationLocMan startUpdatingLocation];
+    [self.activityIndicator setHidden:NO];
+    [self.activityIndicator startAnimating];
 }
 
 #pragma mark - InterfaceOrientationMethods
@@ -103,6 +112,13 @@
     self.stationToGo = station;
     [self setOriginalZoomRectForCurrentPosition];
     [self.scrollView zoomToRect:rectToZoom animated:YES];
+}
+
+#pragma mark - StationLocationDelegate
+- (void)stationFound:(Station *)station {
+    NSLog(@"Station found");
+    [self.activityIndicator stopAnimating];
+    [self.activityIndicator setHidden:YES];
 }
 
 #pragma mark - StationViewDelegate
