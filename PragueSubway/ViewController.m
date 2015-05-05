@@ -235,7 +235,6 @@
 }
 
 - (void)showAlertStaionNotFound {
-    //TODO: add some text
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Location services disabled", nil)
                                                     message:NSLocalizedString(@"Station did not found description alert", nil)
                                                    delegate:nil
