@@ -24,5 +24,6 @@
 - (void)startUpdatingLocation;
 - (Station *)getNearestStation;
 - (void)showAllertIfServiceDisabled;
+- (BOOL)isServiceDisabled;
 
 @end

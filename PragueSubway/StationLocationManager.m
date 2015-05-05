@@ -55,6 +55,10 @@
     }
 }
 
+- (BOOL)isServiceDisabled {
+    return [CLLocationManager locationServicesEnabled];
+}
+
 - (void)startUpdatingLocation {
     [self.locationManager startUpdatingLocation];
 }
@@ -90,6 +94,7 @@
     
     if (![self.nearestStation isEqual:nearestStation]){
         self.nearestStation = nearestStation;
+        [self.locationManager stopUpdatingLocation];
         [self.delegate stationFound:nearestStation];
     }
 }

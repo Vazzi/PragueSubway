@@ -62,9 +62,13 @@
 #pragma mark - Actions
 
 - (IBAction)findNearestStationAction:(id)sender {
-    [self.stationLocMan startUpdatingLocation];
-    [self.activityIndicator setHidden:NO];
-    [self.activityIndicator startAnimating];
+    if ([self.stationLocMan isServiceDisabled]) {
+        [self.stationLocMan showAllertIfServiceDisabled];
+    } else {
+        [self.stationLocMan startUpdatingLocation];
+        [self.activityIndicator setHidden:NO];
+        [self.activityIndicator startAnimating];
+    }
 }
 
 #pragma mark - InterfaceOrientationMethods
