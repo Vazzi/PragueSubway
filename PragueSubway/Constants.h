@@ -26,6 +26,7 @@
 
 
 #define LOCATION_UPDATE_AFTER_METERS 100
+#define STATION_LIMIT_METERS 2000
 
 #ifdef DEBUG
 #define TRC_OBJ(A)                          NSLog(@"%@", A)

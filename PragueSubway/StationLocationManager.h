@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class Station;
+
 @interface StationLocationManager : NSObject
 
 - (instancetype)init;
 - (void)startUpdatingLocation;
+- (Station *)getNearestStation;
 
 @end
