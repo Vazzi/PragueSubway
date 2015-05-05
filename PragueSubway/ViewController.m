@@ -36,6 +36,7 @@
     [self.activityIndicator setHidden:YES];
     
     self.stationLocMan = [[StationLocationManager alloc] init];
+    [self.stationLocMan setDelegate:self];
 
 }
 
@@ -119,15 +120,18 @@
 - (void)stationFound:(Station *)station {
     CGRect stationRect = CGRectMake(station.drawPosX, station.drawPosY, 20, 20);
     [self stationTouched:station rect:stationRect];
-    [self.activityIndicator stopAnimating];
-    [self.activityIndicator setHidden:YES];
+    [self activityIndicatorIsHiden:YES];
 }
 
 - (void)stationSearchDidFailed {
-    [self.activityIndicator stopAnimating];
-    [self.activityIndicator setHidden:YES];
+    [self activityIndicatorIsHiden:NO];
     [self showAlertStaionNotFound];
 }
+
+- (void)noStationFound {
+    [self activityIndicatorIsHiden:YES];
+}
+
 
 #pragma mark - StationViewDelegate
 
@@ -196,6 +200,15 @@
     [self.scrollView setMinimumZoomScale:1];
     [self.scrollView setMaximumZoomScale:1];
     [self.scrollView setScrollEnabled:YES];
+}
+
+- (void)activityIndicatorIsHiden:(BOOL)hidden {
+    if (hidden) {
+        [self.activityIndicator stopAnimating];
+    } else {
+        [self.activityIndicator startAnimating];
+    }
+    [self.activityIndicator setHidden:hidden];
 }
 
 - (void)showAlertOnLocationServiceDisabled {

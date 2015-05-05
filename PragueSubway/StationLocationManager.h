@@ -14,6 +14,7 @@
 
 - (void)stationFound:(Station *)station;
 - (void)stationSearchDidFailed;
+- (void)noStationFound;
 
 @end
 

@@ -29,6 +29,7 @@
         self.locationManager.delegate = self;
         [self.locationManager setDistanceFilter:LOCATION_UPDATE_AFTER_METERS];;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+        [self.locationManager requestWhenInUseAuthorization];
     }
     return self;
 }
@@ -73,12 +74,18 @@
     if (![self.nearestStation isEqual:nearestStation]){
         self.nearestStation = nearestStation;
         [self.locationManager stopUpdatingLocation];
+    }
+    
+    if (self.nearestStation != nil) {
         [self.delegate stationFound:nearestStation];
+    } else {
+        [self.delegate noStationFound];
     }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     [self.locationManager stopUpdatingLocation];
+    self.nearestStation = nil;
     [self.delegate stationSearchDidFailed];
 }
 
