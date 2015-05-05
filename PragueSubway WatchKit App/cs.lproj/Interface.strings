@@ -1,0 +1,33 @@
+
+/* Class = "WKInterfaceLabel"; text = ">"; ObjectID = "4fT-L4-eUk"; */
+"4fT-L4-eUk.text" = ">";
+
+/* Class = "WKInterfaceLabel"; text = "0:00:00"; ObjectID = "AFB-9z-auv"; */
+"AFB-9z-auv.text" = "0:00:00";
+
+/* Class = "WKInterfaceLabel"; text = ">"; ObjectID = "E1c-XW-0ux"; */
+"E1c-XW-0ux.text" = ">";
+
+/* Class = "WKInterfaceLabel"; text = "Linka A"; ObjectID = "MiW-7z-QbH"; */
+"MiW-7z-QbH.text" = "Linka A";
+
+/* Class = "WKInterfaceLabel"; text = "Station"; ObjectID = "QUg-vE-rzx"; */
+"QUg-vE-rzx.text" = "Station";
+
+/* Class = "WKInterfaceButton"; title = "Nejbližší stanice"; ObjectID = "X6U-HH-Dn4"; */
+"X6U-HH-Dn4.title" = "Nejbližší stanice";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "XD8-PG-QAq"; */
+"XD8-PG-QAq.text" = "Label";
+
+/* Class = "WKInterfaceLabel"; text = "Station"; ObjectID = "ceF-BA-7Dp"; */
+"ceF-BA-7Dp.text" = "Station";
+
+/* Class = "WKInterfaceLabel"; text = "0:00:00"; ObjectID = "d8T-ha-Ocv"; */
+"d8T-ha-Ocv.text" = "0:00:00";
+
+/* Class = "WKInterfaceLabel"; text = "Station name"; ObjectID = "uGx-jI-p19"; */
+"uGx-jI-p19.text" = "Station name";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "y9G-YC-gmT"; */
+"y9G-YC-gmT.text" = "Label";

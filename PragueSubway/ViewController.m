@@ -215,16 +215,16 @@
     if ([CLLocationManager locationServicesEnabled]) {
         if ([CLLocationManager authorizationStatus]==kCLAuthorizationStatusDenied ||
            [CLLocationManager authorizationStatus]==kCLAuthorizationStatusRestricted ){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Polohové služby"
-                                                        message:@"Pro vyhledání nejbližší stanice, musíte mít zapnutou funkci Polohové služby. Pro povolení přejděte do Nastavení > Soukromí > Polohové služby a zaškrtněte tuto aplikaci."
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Location services disabled", nil)
+                                                        message:NSLocalizedString(@"Location services disabled description - main", nil)
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
             
         } else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Polohové služby"
-                                                            message:@"Pro vyhledání nejbližší stanice, musíte mít zapnutou funkci Polohové služby. Pro zapnutí přejděte do Nastavení > Soukromí > Polohové služby."
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Location services disabled", nil)
+                                                            message:NSLocalizedString(@"Location services disabled description - other", nil)
                                                            delegate:nil
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
@@ -236,8 +236,8 @@
 
 - (void)showAlertStaionNotFound {
     //TODO: add some text
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Stanice nenalezena"
-                                                    message:@"Stanice nebyla nalezena..."
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Location services disabled", nil)
+                                                    message:NSLocalizedString(@"Station did not found description alert", nil)
                                                    delegate:nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];

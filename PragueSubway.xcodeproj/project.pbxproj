@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7D062AF91AF11A4D0009162C /* StationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D062AF71AF11A4D0009162C /* StationViewController.m */; };
-		7D062AFA1AF11A4D0009162C /* StationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D062AF81AF11A4D0009162C /* StationViewController.xib */; };
 		7D24A8101AF26532002221E0 /* LineInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D24A80F1AF26532002221E0 /* LineInterfaceController.m */; };
 		7D24A8131AF2653D002221E0 /* StationInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D24A8121AF2653D002221E0 /* StationInterfaceController.m */; };
 		7D24A8161AF2689C002221E0 /* LineRowType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D24A8151AF2689C002221E0 /* LineRowType.m */; };
@@ -33,6 +32,8 @@
 		7D37252D1AE66CBE00E30D21 /* DataService+InitialData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D37252C1AE66CBE00E30D21 /* DataService+InitialData.m */; };
 		7D79CAE81AF8A6B400D01607 /* StationLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D79CAE71AF8A6B400D01607 /* StationLocationManager.m */; };
 		7D8C44631AF1779C00A7363A /* DepartureSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C44621AF1779C00A7363A /* DepartureSectionHeaderView.m */; };
+		7D9C889F1AF8F2CD0097AD7B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D9C88A11AF8F2CD0097AD7B /* Localizable.strings */; };
+		7D9C88A31AF8F30C0097AD7B /* StationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D9C88A51AF8F30C0097AD7B /* StationViewController.xib */; };
 		7DA0F4B01AF26312006FD465 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA0F4AF1AF26312006FD465 /* InterfaceController.m */; };
 		7DA0F4B21AF26312006FD465 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA0F4B11AF26312006FD465 /* Images.xcassets */; };
 		7DA0F4B61AF26312006FD465 /* PragueSubway WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 7DA0F4B51AF26312006FD465 /* PragueSubway WatchKit App.app */; };
@@ -95,7 +96,6 @@
 /* Begin PBXFileReference section */
 		7D062AF61AF11A4D0009162C /* StationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationViewController.h; sourceTree = "<group>"; };
 		7D062AF71AF11A4D0009162C /* StationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationViewController.m; sourceTree = "<group>"; };
-		7D062AF81AF11A4D0009162C /* StationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StationViewController.xib; sourceTree = "<group>"; };
 		7D24A80E1AF26532002221E0 /* LineInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineInterfaceController.h; sourceTree = "<group>"; };
 		7D24A80F1AF26532002221E0 /* LineInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineInterfaceController.m; sourceTree = "<group>"; };
 		7D24A8111AF2653D002221E0 /* StationInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationInterfaceController.h; sourceTree = "<group>"; };
@@ -141,6 +141,14 @@
 		7D79CAE71AF8A6B400D01607 /* StationLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationLocationManager.m; sourceTree = "<group>"; };
 		7D8C44611AF1779C00A7363A /* DepartureSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartureSectionHeaderView.h; sourceTree = "<group>"; };
 		7D8C44621AF1779C00A7363A /* DepartureSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartureSectionHeaderView.m; sourceTree = "<group>"; };
+		7D9C889C1AF8F2BB0097AD7B /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Interface.strings; sourceTree = "<group>"; };
+		7D9C889D1AF8F2BB0097AD7B /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Main.strings; sourceTree = "<group>"; };
+		7D9C889E1AF8F2BB0097AD7B /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		7D9C88A01AF8F2CD0097AD7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7D9C88A21AF8F2CF0097AD7B /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7D9C88A41AF8F30C0097AD7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/StationViewController.xib; sourceTree = "<group>"; };
+		7D9C88A71AF8F30F0097AD7B /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/StationViewController.strings; sourceTree = "<group>"; };
+		7D9C88A91AF8F4050097AD7B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/StationViewController.strings; sourceTree = "<group>"; };
 		7DA0F4AA1AF26312006FD465 /* PragueSubway WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PragueSubway WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA0F4AD1AF26312006FD465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DA0F4AE1AF26312006FD465 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
@@ -232,6 +240,7 @@
 				7D2887DB1AE3F36E000FDB46 /* Info.plist */,
 				7D2887DC1AE3F36E000FDB46 /* main.m */,
 				7D2888321AE40BAC000FDB46 /* Constants.h */,
+				7D9C88A11AF8F2CD0097AD7B /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -256,7 +265,7 @@
 		7D2888111AE40152000FDB46 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7D062AF81AF11A4D0009162C /* StationViewController.xib */,
+				7D9C88A51AF8F30C0097AD7B /* StationViewController.xib */,
 				7D2887E71AE3F36E000FDB46 /* Main.storyboard */,
 				7D2887EC1AE3F36E000FDB46 /* LaunchScreen.xib */,
 				7D8C44611AF1779C00A7363A /* DepartureSectionHeaderView.h */,
@@ -479,6 +488,7 @@
 			knownRegions = (
 				en,
 				Base,
+				cs,
 			);
 			mainGroup = 7D2887CE1AE3F36E000FDB46;
 			productRefGroup = 7D2887D81AE3F36E000FDB46 /* Products */;
@@ -498,10 +508,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D9C889F1AF8F2CD0097AD7B /* Localizable.strings in Resources */,
 				7D2887E91AE3F36E000FDB46 /* Main.storyboard in Resources */,
 				7D2887EE1AE3F36E000FDB46 /* LaunchScreen.xib in Resources */,
 				7D2887EB1AE3F36E000FDB46 /* Images.xcassets in Resources */,
-				7D062AFA1AF11A4D0009162C /* StationViewController.xib in Resources */,
+				7D9C88A31AF8F30C0097AD7B /* StationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +623,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7D2887E81AE3F36E000FDB46 /* Base */,
+				7D9C889D1AF8F2BB0097AD7B /* cs */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -620,14 +632,35 @@
 			isa = PBXVariantGroup;
 			children = (
 				7D2887ED1AE3F36E000FDB46 /* Base */,
+				7D9C889E1AF8F2BB0097AD7B /* cs */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		7D9C88A11AF8F2CD0097AD7B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D9C88A01AF8F2CD0097AD7B /* Base */,
+				7D9C88A21AF8F2CF0097AD7B /* cs */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		7D9C88A51AF8F30C0097AD7B /* StationViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D9C88A41AF8F30C0097AD7B /* Base */,
+				7D9C88A71AF8F30F0097AD7B /* cs */,
+				7D9C88A91AF8F4050097AD7B /* en */,
+			);
+			name = StationViewController.xib;
 			sourceTree = "<group>";
 		};
 		7DA0F4BC1AF26312006FD465 /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7DA0F4BD1AF26312006FD465 /* Base */,
+				7D9C889C1AF8F2BB0097AD7B /* cs */,
 			);
 			name = Interface.storyboard;
 			sourceTree = "<group>";

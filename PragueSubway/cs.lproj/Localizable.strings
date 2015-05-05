@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  PragueSubway
+
+  Created by Jakub Vlasák on 05/05/15.
+  Copyright (c) 2015 Jakub Vlasák. All rights reserved.
+*/
+"Station did not found" = "Stanice nenalezena";
+"Station did not found description alert" = "...";
+"Location services disabled" = "Polohové služby";
+"Location services disabled description - other" = "Pro vyhledání nejbližší stanice, musíte mít zapnutou funkci Polohové služby. Pro zapnutí přejděte do Nastavení > Soukromí > Polohové služby.";
+"Location services disabled description - main"="Pro vyhledání nejbližší stanice, musíte mít zapnutou funkci Polohové služby. Pro povolení přejděte do Nastavení > Soukromí > Polohové služby a zaškrtněte tuto aplikaci.";

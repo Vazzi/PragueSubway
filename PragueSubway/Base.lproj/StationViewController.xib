@@ -37,7 +37,7 @@
                         <constraint firstAttribute="height" constant="60" id="5OJ-6f-jgA"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
-                    <state key="normal" title="Zpět"/>
+                    <state key="normal" title="Back"/>
                     <connections>
                         <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="sxI-1L-NAE"/>
                     </connections>
