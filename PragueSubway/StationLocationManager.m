@@ -34,7 +34,7 @@
 }
 
 - (BOOL)isServiceDisabled {
-    return [CLLocationManager locationServicesEnabled];
+    return ![CLLocationManager locationServicesEnabled];
 }
 
 - (void)startUpdatingLocation {
