@@ -53,7 +53,7 @@
 
 #pragma mark - Setup views and data
 - (void)setTitleWithSubwayLine:(SubwayLine *)line {
-    NSString *title = [NSString stringWithFormat:@"Linka %@", line.name];
+    NSString *title = [NSString stringWithFormat:NSLocalizedString(@"Line %@", nil), line.name];
     [self.titleLabel setText:title];
 }
 
