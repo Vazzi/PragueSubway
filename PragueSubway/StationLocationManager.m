@@ -49,7 +49,7 @@
     CLLocation *userLoc = [locations lastObject];
     NSLog(@"NewLocation %f %f", userLoc.coordinate.latitude, userLoc.coordinate.longitude);
     
-    CLLocationDistance smallestDist = STATION_LIMIT_METERS;
+    CLLocationDistance smallestDist = LOCATION_STATION_LIMIT_METERS;
     Station *nearestStation = nil;
     
     for (Station *station in self.stations) {
@@ -62,7 +62,7 @@
         
         CLLocationDistance dist = [stationLoc distanceFromLocation:userLoc];
         //If station is far then STATION_LIMIT_METERS meters do not save it
-        if (dist > STATION_LIMIT_METERS) {
+        if (dist > LOCATION_STATION_LIMIT_METERS) {
             continue;
         } else if (dist < smallestDist) {
             smallestDist = dist;
