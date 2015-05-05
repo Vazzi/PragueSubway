@@ -13,6 +13,7 @@
 @protocol StationLocationDelegate <NSObject>
 
 - (void)stationFound:(Station *)station;
+- (void)stationSearchDidFailed;
 
 @end
 
@@ -23,7 +24,6 @@
 - (instancetype)init;
 - (void)startUpdatingLocation;
 - (Station *)getNearestStation;
-- (void)showAllertIfServiceDisabled;
 - (BOOL)isServiceDisabled;
 
 @end

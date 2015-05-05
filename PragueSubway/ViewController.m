@@ -11,6 +11,7 @@
 #import "StationViewController.h"
 #import "Station.h"
 #import "StationLocationManager.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface ViewController () <UIScrollViewDelegate, SubwayViewDelegate, StationViewDelegate, StationLocationDelegate>
 
@@ -38,10 +39,6 @@
 
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [self.stationLocMan showAllertIfServiceDisabled];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -63,7 +60,7 @@
 
 - (IBAction)findNearestStationAction:(id)sender {
     if ([self.stationLocMan isServiceDisabled]) {
-        [self.stationLocMan showAllertIfServiceDisabled];
+        [self showAlertOnLocationServiceDisabled];
     } else {
         [self.stationLocMan startUpdatingLocation];
         [self.activityIndicator setHidden:NO];
@@ -123,6 +120,12 @@
     NSLog(@"Station found");
     [self.activityIndicator stopAnimating];
     [self.activityIndicator setHidden:YES];
+}
+
+- (void)stationSearchDidFailed {
+    [self.activityIndicator stopAnimating];
+    [self.activityIndicator setHidden:YES];
+    [self showAlertStaionNotFound];
 }
 
 #pragma mark - StationViewDelegate
@@ -192,6 +195,39 @@
     [self.scrollView setMinimumZoomScale:1];
     [self.scrollView setMaximumZoomScale:1];
     [self.scrollView setScrollEnabled:YES];
+}
+
+- (void)showAlertOnLocationServiceDisabled {
+    if ([CLLocationManager locationServicesEnabled]) {
+        if ([CLLocationManager authorizationStatus]==kCLAuthorizationStatusDenied ||
+           [CLLocationManager authorizationStatus]==kCLAuthorizationStatusRestricted ){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Polohové služby"
+                                                        message:@"Pro vyhledání nejbližší stanice, musíte mít zapnutou funkci Polohové služby. Pro povolení přejděte do Nastavení > Soukromí > Polohové služby a zaškrtněte tuto aplikaci."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+            
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Polohové služby"
+                                                            message:@"Pro vyhledání nejbližší stanice, musíte mít zapnutou funkci Polohové služby. Pro zapnutí přejděte do Nastavení > Soukromí > Polohové služby."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+
+        }
+    }
+}
+
+- (void)showAlertStaionNotFound {
+    //TODO: add some text
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Stanice nenalezena"
+                                                    message:@"Stanice nebyla nalezena..."
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 
 @end

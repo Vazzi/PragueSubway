@@ -33,28 +33,6 @@
     return self;
 }
 
-
-- (void)showAllertIfServiceDisabled {
-    if([CLLocationManager locationServicesEnabled]){
-        if( [CLLocationManager authorizationStatus]==kCLAuthorizationStatusDenied ||
-           [CLLocationManager authorizationStatus]==kCLAuthorizationStatusRestricted ){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Polohové služby"
-                                                            message:@"Pro vyhledání nejbližší stanice, musíte mít zapnutou funkci Polohové služby. Pro povolení přejděte do Nastavení > Soukromí > Polohové služby a zaškrtněte tuto aplikaci."
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            [alert show];
-        }
-    } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Polohové služby"
-                                                        message:@"Pro vyhledání nejbližší stanice, musíte mít zapnutou funkci Polohové služby. Pro zapnutí přejděte do Nastavení > Soukromí > Polohové služby."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
-}
-
 - (BOOL)isServiceDisabled {
     return [CLLocationManager locationServicesEnabled];
 }
@@ -97,6 +75,11 @@
         [self.locationManager stopUpdatingLocation];
         [self.delegate stationFound:nearestStation];
     }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    [self.locationManager stopUpdatingLocation];
+    [self.delegate stationSearchDidFailed];
 }
 
 @end
