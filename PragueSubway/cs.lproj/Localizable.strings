@@ -8,5 +8,5 @@
 "Station search error" = "Stanice nenalezena";
 "Station search error description alert" = "Při určování polohy nastala chyba."
 "Location services disabled" = "Polohové služby";
-"Location services disabled description - other" = "Pro vyhledání nejbližší stanice, musíte mít zapnutou funkci Polohové služby. Pro zapnutí přejděte do Nastavení > Soukromí > Polohové služby.";
-"Location services disabled description - main"="Pro vyhledání nejbližší stanice, musíte mít zapnutou funkci Polohové služby. Pro povolení přejděte do Nastavení > Soukromí > Polohové služby a zaškrtněte tuto aplikaci.";
+"Location services disabled description - other" = "Pro vyhledání nejbližší stanice, musíte mít zapnutou funkci Polohové služby. Pro povolení přejděte do Nastavení a povolte tuto aplikaci.";
+"Location services disabled description - main"="Pro vyhledání nejbližší stanice, musíte mít zapnutou funkci Polohové služby. Pro povolení přejděte do Nastavení a povolte tuto aplikaci.";
