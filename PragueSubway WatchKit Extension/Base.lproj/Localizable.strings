@@ -6,3 +6,5 @@
   Copyright (c) 2015 Jakub Vlasák. All rights reserved.
 */
 "Line %@"="Line %@";
+"Some error occured when finding station." = "Some error occured when finding station.";
+"Can not find any near station." = "Can not find any near station.";

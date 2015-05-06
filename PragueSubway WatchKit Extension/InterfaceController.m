@@ -87,15 +87,11 @@
 }
 
 - (void)stationSearchDidFailed {
-    // TODO: localization
-    // TODO: AlertView
-//   [self presentControllerWithName:@"AlertViewController" context:@"Some error occured when finding station."];
+   [self presentControllerWithName:@"AlertView" context:NSLocalizedString(@"Some error occured when finding station.", nil)];
 }
 
 - (void)noStationFound {
-    // TODO: localization
-    // TODO: AlertView
-//   [self presentControllerWithName:@"AlertViewController" context:@"Station was not found."];
+   [self presentControllerWithName:@"AlertView" context:NSLocalizedString(@"Can not find any near station.", nil)];
     
 }
 

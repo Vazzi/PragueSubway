@@ -56,6 +56,7 @@
 		7DBDB2041AF29A910031C32C /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2888211AE403C3000FDB46 /* Station.m */; };
 		7DBDB2051AF29A940031C32C /* PragueSubway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D2887E11AE3F36E000FDB46 /* PragueSubway.xcdatamodeld */; };
 		7DFEDA9C1AFA613900C4125D /* StationLinesChoiceInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFEDA9B1AFA613900C4125D /* StationLinesChoiceInterfaceController.m */; };
+		7DFEDA9F1AFA685600C4125D /* AlertInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFEDA9E1AFA685600C4125D /* AlertInterfaceController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,8 @@
 		7DBB60071AE78FE5007C6B2A /* SubwayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubwayView.m; sourceTree = "<group>"; };
 		7DFEDA9A1AFA613900C4125D /* StationLinesChoiceInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationLinesChoiceInterfaceController.h; sourceTree = "<group>"; };
 		7DFEDA9B1AFA613900C4125D /* StationLinesChoiceInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationLinesChoiceInterfaceController.m; sourceTree = "<group>"; };
+		7DFEDA9D1AFA685600C4125D /* AlertInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertInterfaceController.h; sourceTree = "<group>"; };
+		7DFEDA9E1AFA685600C4125D /* AlertInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertInterfaceController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,6 +366,8 @@
 				7DA0F4AC1AF26312006FD465 /* Supporting Files */,
 				7D24A8141AF2689C002221E0 /* LineRowType.h */,
 				7D24A8151AF2689C002221E0 /* LineRowType.m */,
+				7DFEDA9D1AFA685600C4125D /* AlertInterfaceController.h */,
+				7DFEDA9E1AFA685600C4125D /* AlertInterfaceController.m */,
 			);
 			path = "PragueSubway WatchKit Extension";
 			sourceTree = "<group>";
@@ -607,6 +612,7 @@
 				7DBDB2001AF29A840031C32C /* DataService+InitialData.m in Sources */,
 				7DBDB2021AF29A8D0031C32C /* SubwayLine.m in Sources */,
 				7DBDB2041AF29A910031C32C /* Station.m in Sources */,
+				7DFEDA9F1AFA685600C4125D /* AlertInterfaceController.m in Sources */,
 				7D24A8131AF2653D002221E0 /* StationInterfaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
