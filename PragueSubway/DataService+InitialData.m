@@ -249,11 +249,11 @@
 };
 
 - (NSArray *)middleStations {
-    return @[@{@"name": @"Můstek", @"latitude": @0.0, @"longitude": @0.0},
-             @{@"name": @"Muzeum", @"latitude": @0.0, @"longitude": @0.0},
-             @{@"name": @"Hlavní nádraží", @"latitude": @0.0, @"longitude": @0.0},
-             @{@"name": @"Náměstí Republiky", @"latitude": @0.0, @"longitude": @0.0},
-             @{@"name": @"Florenc", @"latitude": @0.0, @"longitude": @0.0},
+    return @[@{@"name": @"Můstek", @"latitude": @50.0842, @"longitude": @14.4233},
+             @{@"name": @"Muzeum", @"latitude": @50.0796, @"longitude": @14.4312},
+             @{@"name": @"Hlavní nádraží", @"latitude": @50.083, @"longitude": @14.436},
+             @{@"name": @"Náměstí Republiky", @"latitude": @50.0883, @"longitude": @14.4318},
+             @{@"name": @"Florenc", @"latitude": @50.091, @"longitude": @14.439},
              ];
 }
 
