@@ -182,22 +182,21 @@
 #pragma mark Stations
 
 - (NSDictionary *)lineAStations {
-    return @{@"left" : @[@{@"name": @"Nemocnice Motol", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Petřiny", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Nádraží Veleslavín", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Bořislavka", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Dejvická", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Hradčany", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Malostranská", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Staroměstská", @"latitude": @0.0, @"longitude": @0.0}],
-             @"right" : @[@{@"name": @"Náměstí Míru", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Jiřího z Poděbrad", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Flora", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Želivského", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Strašnická", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Skalka", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Depo Hostivař", @"latitude": @0.0, @"longitude": @0.0}]
-             
+    return @{@"left" : @[@{@"name": @"Nemocnice Motol", @"latitude": @50.086389, @"longitude": @14.345278},
+                         @{@"name": @"Petřiny", @"latitude": @50.086389, @"longitude": @14.345278},
+                         @{@"name": @"Nádraží Veleslavín", @"latitude": @50.0959, @"longitude": @14.3474},
+                         @{@"name": @"Bořislavka", @"latitude": @50.098561, @"longitude": @14.363208},
+                         @{@"name": @"Dejvická", @"latitude": @50.100594, @"longitude": @14.392014},
+                         @{@"name": @"Hradčany", @"latitude": @50.097214, @"longitude": @14.404569},
+                         @{@"name": @"Malostranská", @"latitude": @50.091236, @"longitude": @14.409492},
+                         @{@"name": @"Staroměstská", @"latitude": @50.088185, @"longitude": @14.417633}],
+             @"right" : @[@{@"name": @"Náměstí Míru", @"latitude": @50.075333, @"longitude": @14.43769},
+                          @{@"name": @"Jiřího z Poděbrad", @"latitude": @50.07783, @"longitude": @14.450295},
+                          @{@"name": @"Flora", @"latitude": @50.077631, @"longitude": @14.461236},
+                          @{@"name": @"Želivského", @"latitude": @50.0784, @"longitude": @14.4741},
+                          @{@"name": @"Strašnická", @"latitude": @50.072778, @"longitude": @14.491111},
+                          @{@"name": @"Skalka", @"latitude": @50.068056, @"longitude": @14.5075},
+                          @{@"name": @"Depo Hostivař", @"latitude": @50.075833, @"longitude": @14.515556}]
              };
 };
 
