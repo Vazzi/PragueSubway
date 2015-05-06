@@ -227,25 +227,25 @@
 };
 
 - (NSDictionary *)lineCStations {
-    return @{@"left" : @[@{@"name": @"Háje", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Opatov", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Chodov", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Roztyly", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Kačerov", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Budějovická", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Pankrác", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Pražského povstání", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Vyšehrad", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"I.P. Pavlova", @"latitude": @0.0, @"longitude": @0.0}],
-             @"right" : @[@{@"name": @"Vltavská", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Nádraží Holešovice", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Kobylisy", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Ládví", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Střížkov", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Prosek", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Letňany", @"latitude": @0.0, @"longitude": @0.0}]
-             
+    return @{@"left" : @[@{@"name": @"Háje", @"latitude": @50.031, @"longitude": @14.527},
+                         @{@"name": @"Opatov", @"latitude": @50.028, @"longitude": @14.508},
+                         @{@"name": @"Chodov", @"latitude": @50.031, @"longitude": @14.491},
+                         @{@"name": @"Roztyly", @"latitude": @50.037, @"longitude": @14.478},
+                         @{@"name": @"Kačerov", @"latitude": @50.042, @"longitude": @14.46},
+                         @{@"name": @"Budějovická", @"latitude": @50.044, @"longitude": @14.449},
+                         @{@"name": @"Pankrác", @"latitude": @50.051, @"longitude": @14.439},
+                         @{@"name": @"Pražského povstání", @"latitude": @50.056, @"longitude": @14.434},
+                         @{@"name": @"Vyšehrad", @"latitude": @50.063, @"longitude": @14.431},
+                         @{@"name": @"I.P. Pavlova", @"latitude": @50.075, @"longitude": @14.43}],
+             @"right" : @[@{@"name": @"Vltavská", @"latitude": @50.099, @"longitude": @14.438},
+                          @{@"name": @"Nádraží Holešovice", @"latitude": @50.11, @"longitude": @14.44},
+                          @{@"name": @"Kobylisy", @"latitude": @50.123, @"longitude": @14.452},
+                          @{@"name": @"Ládví", @"latitude": @50.127, @"longitude": @14.469},
+                          @{@"name": @"Střížkov", @"latitude": @50.126, @"longitude": @14.489},
+                          @{@"name": @"Prosek", @"latitude": @50.119, @"longitude": @14.499},
+                          @{@"name": @"Letňany", @"latitude": @50.125, @"longitude": @14.514}]
              };
+
 };
 
 - (NSArray *)middleStations {
