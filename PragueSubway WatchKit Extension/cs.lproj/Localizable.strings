@@ -6,5 +6,5 @@
   Copyright (c) 2015 Jakub Vlasák. All rights reserved.
 */
 "Line %@"="Linka %@";
-"Some error occured when finding station." = "";
-"Can not find any near station." = "";
+"Some error occured when searching for station." = "Nastala chyba při hledání nejbližší stanice.";
+"Can not find any near station." = "Nebyla nalezena žádná stanice v okolí.";

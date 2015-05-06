@@ -87,7 +87,7 @@
 }
 
 - (void)stationSearchDidFailed {
-   [self presentControllerWithName:@"AlertView" context:NSLocalizedString(@"Some error occured when finding station.", nil)];
+   [self presentControllerWithName:@"AlertView" context:NSLocalizedString(@"Some error occured when searching for station.", nil)];
 }
 
 - (void)noStationFound {
