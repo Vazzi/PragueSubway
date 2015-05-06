@@ -39,6 +39,35 @@
             </objects>
             <point key="canvasLocation" x="406" y="377"/>
         </scene>
+        <!--StationLinesChoice-->
+        <scene sceneID="W6x-B5-0Sz">
+            <objects>
+                <controller identifier="StationLinesChoice" id="zoh-fT-cAT" customClass="StationLinesChoiceInterfaceController">
+                    <items>
+                        <label width="1" alignment="left" text="Station name" textAlignment="center" id="K2z-jt-Wfs"/>
+                        <table alignment="left" id="tbP-Kg-bYW">
+                            <items>
+                                <tableRow id="FSe-of-S5y" customClass="LineRowType">
+                                    <group key="rootItem" width="1" alignment="left" id="p5y-hb-1zu">
+                                        <items>
+                                            <label width="1" height="1" alignment="left" text="Label" textAlignment="center" id="Ib1-Qy-KuZ"/>
+                                        </items>
+                                        <connections>
+                                            <segue destination="Wox-sv-dsh" kind="push" identifier="toStationDetail" id="3Y7-My-SqV"/>
+                                        </connections>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="linesTable" destination="tbP-Kg-bYW" id="eqJ-oo-ULA"/>
+                        <outlet property="stationNameLabel" destination="K2z-jt-Wfs" id="Uq4-5i-KMQ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="406" y="687"/>
+        </scene>
         <!--StationView-->
         <scene sceneID="dxE-Jo-FL3">
             <objects>
@@ -133,4 +162,7 @@
             <point key="canvasLocation" x="665" y="377"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3Y7-My-SqV"/>
+    </inferredMetricsTieBreakers>
 </document>
