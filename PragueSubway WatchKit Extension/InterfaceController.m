@@ -11,6 +11,7 @@
 #import "DataService+InitialData.h"
 #import "LineRowType.h"
 #import "SubwayLine.h"
+#import "Station.h"
 #import "StationLocationManager.h"
 
 #define SEQUE_IDETIFIER_TO_LINE @"toLine"
@@ -76,8 +77,13 @@
 
 #pragma mark - StationLocationDelegate
 - (void)stationFound:(Station *)station {
-    // TODO: Show station
-//    [self pushControllerWithName:@"StationView" context:station];
+    if (station.line.count > 1) {
+        [self pushControllerWithName:@"StationLinesChoice" context:station];
+    } else {
+        NSDictionary *data = @{@"station" : station,
+                               @"line" : [station getFirstLine]};
+        [self pushControllerWithName:@"StationDetail" context:data];
+    }
 }
 
 - (void)stationSearchDidFailed {
@@ -90,6 +96,7 @@
     // TODO: localization
     // TODO: AlertView
 //   [self presentControllerWithName:@"AlertViewController" context:@"Station was not found."];
+    
 }
 
 #pragma mark - Actions

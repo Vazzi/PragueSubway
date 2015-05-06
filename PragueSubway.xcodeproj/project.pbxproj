@@ -355,14 +355,14 @@
 				7D24A80F1AF26532002221E0 /* LineInterfaceController.m */,
 				7D24A8111AF2653D002221E0 /* StationInterfaceController.h */,
 				7D24A8121AF2653D002221E0 /* StationInterfaceController.m */,
+				7DFEDA9A1AFA613900C4125D /* StationLinesChoiceInterfaceController.h */,
+				7DFEDA9B1AFA613900C4125D /* StationLinesChoiceInterfaceController.m */,
 				7DA0F4B11AF26312006FD465 /* Images.xcassets */,
 				7DAB73D91AF287AD0008CBF9 /* StationRowType.h */,
 				7DAB73DA1AF287AD0008CBF9 /* StationRowType.m */,
 				7DA0F4AC1AF26312006FD465 /* Supporting Files */,
 				7D24A8141AF2689C002221E0 /* LineRowType.h */,
 				7D24A8151AF2689C002221E0 /* LineRowType.m */,
-				7DFEDA9A1AFA613900C4125D /* StationLinesChoiceInterfaceController.h */,
-				7DFEDA9B1AFA613900C4125D /* StationLinesChoiceInterfaceController.m */,
 			);
 			path = "PragueSubway WatchKit Extension";
 			sourceTree = "<group>";

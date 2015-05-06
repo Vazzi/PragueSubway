@@ -7,6 +7,8 @@
 //
 
 #import "StationLinesChoiceInterfaceController.h"
+#import "LineRowType.h"
+#import "SubwayLine.h"
 #import "Station.h"
 
 #define SEQUE_IDETIFIER_TO_STATION @"toStationDetail"
@@ -26,6 +28,7 @@
     
     self.station = context;
     [self.stationNameLabel setText:self.station.name];
+    [self setupTableDataWithStation:self.station];
     
 }
 
@@ -51,7 +54,14 @@
 #pragma mark - Setup views and data
 
 - (void)setupTableDataWithStation:(Station *)station {
-   // TODO: lines to table
+    [self.linesTable setNumberOfRows:self.station.line.count withRowType:@"LineRowType"];
+    for (NSUInteger i = 0; i < self.linesTable.numberOfRows; i++) {
+        LineRowType *row = [self.linesTable rowControllerAtIndex:i];
+        SubwayLine *line = self.station.line[i];
+        NSString *text = [NSString stringWithFormat:NSLocalizedString(@"Line %@", nil), line.name];
+        [row.LineTitle setText:text];
+        [row.group setBackgroundColor:[line UIColor]];
+    }
 }
 
 @end

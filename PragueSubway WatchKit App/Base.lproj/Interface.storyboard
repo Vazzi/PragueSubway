@@ -47,15 +47,19 @@
                         <label width="1" alignment="left" text="Station name" textAlignment="center" id="K2z-jt-Wfs"/>
                         <table alignment="left" id="tbP-Kg-bYW">
                             <items>
-                                <tableRow id="FSe-of-S5y" customClass="LineRowType">
-                                    <group key="rootItem" width="1" alignment="left" id="p5y-hb-1zu">
+                                <tableRow identifier="LineRowType" id="uGu-bv-3GT" customClass="LineRowType">
+                                    <group key="rootItem" width="1" alignment="left" id="XMm-8d-Fgc">
                                         <items>
-                                            <label width="1" height="1" alignment="left" text="Label" textAlignment="center" id="Ib1-Qy-KuZ"/>
+                                            <label width="1" height="1" alignment="left" text="Label" textAlignment="center" id="yhR-0W-gf2" userLabel="LineName"/>
                                         </items>
                                         <connections>
-                                            <segue destination="Wox-sv-dsh" kind="push" identifier="toStationDetail" id="3Y7-My-SqV"/>
+                                            <segue destination="Wox-sv-dsh" kind="push" identifier="toStationDetail" id="rAN-5U-RcM"/>
                                         </connections>
                                     </group>
+                                    <connections>
+                                        <outlet property="LineTitle" destination="yhR-0W-gf2" id="NjY-rS-TI0"/>
+                                        <outlet property="group" destination="XMm-8d-Fgc" id="4rY-B2-kYN"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
@@ -68,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="406" y="687"/>
         </scene>
-        <!--StationView-->
+        <!--StationDetail-->
         <scene sceneID="dxE-Jo-FL3">
             <objects>
-                <controller identifier="StationView" id="Wox-sv-dsh" customClass="StationInterfaceController">
+                <controller identifier="StationDetail" id="Wox-sv-dsh" customClass="StationInterfaceController">
                     <items>
                         <group width="1" alignment="left" layout="vertical" id="3pr-RQ-7h4">
                             <items>
@@ -163,6 +167,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3Y7-My-SqV"/>
+        <segue reference="rAN-5U-RcM"/>
     </inferredMetricsTieBreakers>
 </document>
