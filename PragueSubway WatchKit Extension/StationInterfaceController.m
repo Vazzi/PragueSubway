@@ -8,6 +8,7 @@
 
 #import "StationInterfaceController.h"
 #import "Station.h"
+#import "SubwayLine.h"
 #import "DeparturesTimer.h"
 #import "Departure.h"
 
@@ -19,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *secondToStationLabel;
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *secondTimeLabel;
 @property (weak, nonatomic) IBOutlet WKInterfaceGroup *secondGroup;
+@property (weak, nonatomic) IBOutlet WKInterfaceSeparator *separator;
 
 @property (strong, atomic) Station *station;
 @property (strong, atomic) DeparturesTimer *timerFirst;
@@ -75,6 +77,7 @@
         self.timerSecond = false;
     }
     
+    [self.separator setColor:[line UIColor]];
 }
 
 

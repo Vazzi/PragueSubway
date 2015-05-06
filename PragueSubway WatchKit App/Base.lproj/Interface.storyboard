@@ -82,7 +82,7 @@
                                 <label width="1" alignment="left" text="Station name" textAlignment="center" id="uGx-jI-p19" userLabel="StationName">
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
-                                <separator alignment="left" alpha="0.5" id="KMr-va-kMf"/>
+                                <separator alignment="left" id="KMr-va-kMf"/>
                                 <group width="1" alignment="left" layout="vertical" id="ZmG-oD-jdp" userLabel="firstGroup">
                                     <items>
                                         <group width="1" alignment="left" id="E9B-FA-Zqi">
@@ -126,6 +126,7 @@
                         <outlet property="secondGroup" destination="4oj-Cr-IW6" id="R3j-zC-8Cb"/>
                         <outlet property="secondTimeLabel" destination="d8T-ha-Ocv" id="Y49-ks-EyU"/>
                         <outlet property="secondToStationLabel" destination="ceF-BA-7Dp" id="Q7h-ap-Y6o"/>
+                        <outlet property="separator" destination="KMr-va-kMf" id="fkO-g1-Kbr"/>
                         <outlet property="stationNameLabel" destination="uGx-jI-p19" id="Qz9-8W-URJ"/>
                     </connections>
                 </controller>
