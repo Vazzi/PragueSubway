@@ -202,28 +202,27 @@
 };
 
 - (NSDictionary *)lineBStations {
-    return @{@"left" : @[@{@"name": @"Zličín", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Stodůlky", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Luka", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Lužiny", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Hůrka", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Nové Butovice", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Jinonice", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Radlická", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Smíchovské nádraží", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Anděl", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Karlovo náměstí", @"latitude": @0.0, @"longitude": @0.0},
-                         @{@"name": @"Národní třída", @"latitude": @0.0, @"longitude": @0.0}],
-             @"right" : @[@{@"name": @"Křižíkova", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Invalidovna", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Palmovka", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Českomoravská", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Vysočanská", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Kolbenova", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Hloubětín", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Rajská zahrada", @"latitude": @0.0, @"longitude": @0.0},
-                          @{@"name": @"Černý most", @"latitude": @0.0, @"longitude": @0.0}]
-             
+    return @{@"left" : @[@{@"name": @"Zličín", @"latitude": @50.054, @"longitude": @14.291},
+                         @{@"name": @"Stodůlky", @"latitude": @50.046944, @"longitude": @14.306944},
+                         @{@"name": @"Luka", @"latitude": @50.045556, @"longitude": @14.322222},
+                         @{@"name": @"Lužiny", @"latitude": @50.045, @"longitude": @14.33},
+                         @{@"name": @"Hůrka", @"latitude": @50.05, @"longitude": @14.343},
+                         @{@"name": @"Nové Butovice", @"latitude": @50.051, @"longitude": @14.352},
+                         @{@"name": @"Jinonice", @"latitude": @50.054444, @"longitude": @14.371111},
+                         @{@"name": @"Radlická", @"latitude": @50.058, @"longitude": @14.389},
+                         @{@"name": @"Smíchovské nádraží", @"latitude": @50.065, @"longitude": @14.408},
+                         @{@"name": @"Anděl", @"latitude": @50.074, @"longitude": @14.405},
+                         @{@"name": @"Karlovo náměstí", @"latitude": @50.076, @"longitude": @14.418},
+                         @{@"name": @"Národní třída", @"latitude": @50.08, @"longitude": @14.42}],
+             @"right" : @[@{@"name": @"Křižíkova", @"latitude": @50.0925, @"longitude": @14.451389},
+                          @{@"name": @"Invalidovna", @"latitude": @50.096667, @"longitude": @14.463056},
+                          @{@"name": @"Palmovka", @"latitude": @50.103889, @"longitude": @14.475},
+                          @{@"name": @"Českomoravská", @"latitude": @50.106, @"longitude": @14.492},
+                          @{@"name": @"Vysočanská", @"latitude": @50.111389, @"longitude": @14.501944},
+                          @{@"name": @"Kolbenova", @"latitude": @50.110278, @"longitude": @14.513056},
+                          @{@"name": @"Hloubětín", @"latitude": @50.106111, @"longitude": @14.538056},
+                          @{@"name": @"Rajská zahrada", @"latitude": @50.106667, @"longitude": @14.560556},
+                          @{@"name": @"Černý most", @"latitude": @50.109167, @"longitude": @14.5775}]
              };
 };
 
