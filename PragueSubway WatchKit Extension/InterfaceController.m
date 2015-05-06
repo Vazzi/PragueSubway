@@ -11,13 +11,15 @@
 #import "DataService+InitialData.h"
 #import "LineRowType.h"
 #import "SubwayLine.h"
+#import "StationLocationManager.h"
 
 #define SEQUE_IDETIFIER_TO_LINE @"toLine"
 
-@interface InterfaceController()
+@interface InterfaceController() <StationLocationDelegate>
 
 @property (weak, nonatomic) IBOutlet WKInterfaceTable *linesTable;
 @property (strong, atomic) NSArray *lines;
+@property (strong, nonatomic) StationLocationManager *stationLocMan;
 
 @end
 
@@ -28,6 +30,7 @@
     [super awakeWithContext:context];
     [self initializeData];
     [self setupTableData];
+    [self initializeStationLocationManager];
 }
 
 -(id)contextForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex {
@@ -42,13 +45,18 @@
     [super willActivate];
 }
 
-
 - (void)didDeactivate {
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
 }
 
 #pragma mark - Setup views and data 
+
+- (void)initializeStationLocationManager {
+    self.stationLocMan = [[StationLocationManager alloc] init];
+    [self.stationLocMan setDelegate:self];
+}
+
 - (void)initializeData {
     [[DataService sharedService] createAndSaveInitialData];
     
@@ -66,12 +74,30 @@
     }
 }
 
+#pragma mark - StationLocationDelegate
+- (void)stationFound:(Station *)station {
+    // TODO: Show station
+//    [self pushControllerWithName:@"StationView" context:station];
+}
+
+- (void)stationSearchDidFailed {
+    // TODO: localization
+    // TODO: AlertView
+//   [self presentControllerWithName:@"AlertViewController" context:@"Some error occured when finding station."];
+}
+
+- (void)noStationFound {
+    // TODO: localization
+    // TODO: AlertView
+//   [self presentControllerWithName:@"AlertViewController" context:@"Station was not found."];
+}
 
 #pragma mark - Actions
 
 - (IBAction)nearStationAction {
-    // TODO: Implement
-    NSLog(@"Find nearest station and show");
+    if (![self.stationLocMan isServiceDisabled]) {
+        [self.stationLocMan startUpdatingLocation];
+    }
 }
 
 @end

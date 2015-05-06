@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="406" y="377"/>
         </scene>
-        <!--Station Interface Controller-->
+        <!--StationView-->
         <scene sceneID="dxE-Jo-FL3">
             <objects>
-                <controller id="Wox-sv-dsh" customClass="StationInterfaceController">
+                <controller identifier="StationView" id="Wox-sv-dsh" customClass="StationInterfaceController">
                     <items>
                         <group width="1" alignment="left" layout="vertical" id="3pr-RQ-7h4">
                             <items>

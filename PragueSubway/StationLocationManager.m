@@ -29,7 +29,7 @@
         self.locationManager.delegate = self;
         [self.locationManager setDistanceFilter:LOCATION_UPDATE_AFTER_METERS];;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-        [self.locationManager requestWhenInUseAuthorization];
+       [self.locationManager requestWhenInUseAuthorization];
     }
     return self;
 }
