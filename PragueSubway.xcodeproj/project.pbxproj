@@ -145,7 +145,6 @@
 		7D79CAE71AF8A6B400D01607 /* StationLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationLocationManager.m; sourceTree = "<group>"; };
 		7D8C44611AF1779C00A7363A /* DepartureSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartureSectionHeaderView.h; sourceTree = "<group>"; };
 		7D8C44621AF1779C00A7363A /* DepartureSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartureSectionHeaderView.m; sourceTree = "<group>"; };
-		7D9C889C1AF8F2BB0097AD7B /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Interface.strings; sourceTree = "<group>"; };
 		7D9C889D1AF8F2BB0097AD7B /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Main.strings; sourceTree = "<group>"; };
 		7D9C889E1AF8F2BB0097AD7B /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		7D9C88A01AF8F2CD0097AD7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -174,6 +173,7 @@
 		7DFEDA9B1AFA613900C4125D /* StationLinesChoiceInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationLinesChoiceInterfaceController.m; sourceTree = "<group>"; };
 		7DFEDA9D1AFA685600C4125D /* AlertInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertInterfaceController.h; sourceTree = "<group>"; };
 		7DFEDA9E1AFA685600C4125D /* AlertInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertInterfaceController.m; sourceTree = "<group>"; };
+		7DFEDAA21AFA6AF100C4125D /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Interface.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -688,7 +688,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7DA0F4BD1AF26312006FD465 /* Base */,
-				7D9C889C1AF8F2BB0097AD7B /* cs */,
+				7DFEDAA21AFA6AF100C4125D /* cs */,
 			);
 			name = Interface.storyboard;
 			sourceTree = "<group>";

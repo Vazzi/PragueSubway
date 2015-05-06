@@ -170,7 +170,13 @@
             <objects>
                 <controller identifier="AlertView" id="FVa-jU-KgM" customClass="AlertInterfaceController">
                     <items>
-                        <label width="1" height="1" alignment="left" text="Context" textAlignment="justified" numberOfLines="0" id="6Wz-kc-nqP"/>
+                        <label width="1" alignment="left" text="Alert" textAlignment="center" id="l3X-Vv-J73">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <separator alignment="left" id="4G3-Wc-Iyr">
+                            <color key="color" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </separator>
+                        <label width="1" alignment="left" verticalAlignment="center" text="Context" textAlignment="justified" numberOfLines="0" id="6Wz-kc-nqP"/>
                     </items>
                     <connections>
                         <outlet property="contextLabel" destination="6Wz-kc-nqP" id="qI6-BK-gXG"/>
